@@ -1,0 +1,95 @@
+{
+    "sources": [
+        {
+            "DOI": "10.1007/978-3-642-55035-5_11",
+            "ISBN": "978-3-642-55035-5",
+            "URL": "https://doi.org/10.1007/978-3-642-55035-5_11",
+            "abstract": "Agile software development represents a new approach for planning and managing software projects. It puts less emphasis on up-front plans and strict control and relies more on informal collaboration, coordination, and learning. This chapter provides a characterization and definition of agile project management based on extensive studies of industrial projects. It explains the circumstances behind the change from traditional management with its focus on direct supervision and standardization of work processes, to the newer, agile focus on self-managing teams, including its opportunities and benefits, but also its complexity and challenges. The main contribution of the chapter is the four principles of agile project management: minimum critical specification, autonomous teams, redundancy, and feedback and learning.",
+            "author": [
+                {
+                    "family": "Dybå",
+                    "given": "Tore"
+                },
+                {
+                    "family": "Dingsøyr",
+                    "given": "Torgeir"
+                },
+                {
+                    "family": "Moe",
+                    "given": "Nils Brede"
+                }
+            ],
+            "container-title": "Software project management in a changing world",
+            "editor": [
+                {
+                    "family": "Ruhe",
+                    "given": "Günther"
+                },
+                {
+                    "family": "Wohlin",
+                    "given": "Claes"
+                }
+            ],
+            "id": "Dyba2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "page": "277-300",
+            "publisher": "Springer Berlin Heidelberg",
+            "publisher-place": "Berlin, Heidelberg",
+            "title": "Agile project management",
+            "type": "chapter"
+        },
+        {
+            "DOI": "10.5281/zenodo.7682609",
+            "URL": "https://CRAN.R-project.org/package=igraph",
+            "author": [
+                {
+                    "family": "Csárdi",
+                    "given": "Gábor"
+                },
+                {
+                    "family": "Nepusz",
+                    "given": "Tamás"
+                },
+                {
+                    "family": "Traag",
+                    "given": "Vincent"
+                },
+                {
+                    "family": "Horvát",
+                    "given": "Szabolcs"
+                },
+                {
+                    "family": "Zanini",
+                    "given": "Fabio"
+                },
+                {
+                    "family": "Noom",
+                    "given": "Daniel"
+                },
+                {
+                    "family": "Müller",
+                    "given": "Kirill"
+                }
+            ],
+            "id": "Csardi2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "note": "R package version 1.6.0",
+            "title": "igraph: Network analysis and visualization in r",
+            "title-short": "igraph",
+            "type": "book"
+        }
+    ],
+    "project_biblios": []
+}

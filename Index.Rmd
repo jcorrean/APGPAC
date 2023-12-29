@@ -12,7 +12,7 @@ github-repo: jcorrean/APGPAC
 description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
 ---
 
-# Prerequisites
+# Prerequisitos
 
 Este es un pequeño *demo* de documentación realizada **Markdown**. Usted puede usar cualquier funcionalidad de documentos Markdown soportada por Pandoc (e.g., ecuaciones matemáticas $a^2 + b^2 = c^2$).
 

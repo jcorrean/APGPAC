@@ -14,9 +14,9 @@ link-citations: yes
 
 ---
 
-# Prerequisitos {-}
+# Prefacio {-}
 
-Este es un pequeño demo de documentación realizada Markdown. Usted puede usar cualquier funcionalidad de documentos Markdown soportada por Pandoc (e.g., ecuaciones matemáticas $a^2 + b^2 = c^2$).
+Como psicólogo, docente universitario, consultor e investigador mi experiencia en la gestión de proyectos se ha diversificado a diversas áreas que incluyen servicios de salud veterinaria, servicios de recursos humanos en la industria petrolera, servicios de consultoría para incentivar el uso de transporte público, y la transformación digital en la educación superior.
 
 El paquete bookdown package can be installed from CRAN or Github:
 

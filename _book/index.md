@@ -4,7 +4,7 @@ author:
 - name: Juan C. Correa
   email: jcc@criticalcentrality.com
   affiliation: Critical Centrality Institute
-date: "`r Sys.Date()`"
+date: "2023-12-30"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -20,7 +20,8 @@ Este es un pequeño demo de documentación realizada Markdown. Usted puede usar 
 
 El paquete bookdown package can be installed from CRAN or Github:
 
-```{r eval=FALSE}
+
+```r
 install.packages("bookdown")
 # or the development version
 # devtools::install_github("rstudio/bookdown")
@@ -30,9 +31,4 @@ Recuerde que cada archivo Rmd contiene uno y solo un capítulo y cada capítulo 
 
 Para compilar este ejemplo a PDF, usted necesitará XeLaTeX. Se recomienda que instale TinyTeX (el cual incluye XeLaTeX): https://yihui.name/tinytex/.
 
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
+

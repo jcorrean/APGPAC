@@ -1,5 +1,4 @@
-book_filename: "validatecookbook"
-output_dir: "../docs"
+book_filename: "Introducción a la Gestión Agil de Proyectos"
 delete_merged_file: true
 new_session: true
 language:

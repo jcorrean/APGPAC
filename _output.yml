@@ -1,1 +1,5 @@
-bookdown::gitbook
+bookdown::gitbook:
+  bibliography: [book.bib, packages.bib]
+  language:
+    label:
+      refs: "Referencias"

@@ -34,3 +34,13 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
+
+<!--chapter:end:index.Rmd-->
+
+
+## Introducción
+
+Este es un breve ejemplo para ver cómo funciona. 
+
+<!--chapter:end:01-Intro.Rmd-->
+

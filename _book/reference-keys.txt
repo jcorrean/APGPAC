@@ -1,4 +1,3 @@
-introducción
-fig:pressure
 fig:donde
 parte-1-usted-está-aquí
+introducción

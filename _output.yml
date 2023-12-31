@@ -1,4 +1,6 @@
 bookdown::gitbook:
+  split_by: "section"
+  split_bib: no
   bibliography: [book.bib, packages.bib]
   language:
     label:

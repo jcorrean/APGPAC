@@ -1,5 +1,5 @@
 fig:donde
 primera-parte-usted-está-aquí
-gerencia-de-proyectos-y-complejidad
+complejidad-y-gerencia-de-proyectos.
 gemelos-digitales-y-su-utilidad-para-gestionar-proyectos-tecnológicos-y-no-tecnológicos.
 documentación-reproducible

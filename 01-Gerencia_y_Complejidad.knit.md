@@ -79,49 +79,10 @@ html_table
 </tbody>
 </table>
 
+## Nueva sección
+
+Ahora vamos a ver cómo funciona con el siguiente código, pues debería funcionar.
 
 
-```{=latex}
-\begin{table}
-\caption{Statistical Estimated Parameters for Personality CFA}
-\label{t1}\begin{tabular}{@{}r*{6}{S[
-                         input-symbols = ( ) +,
-                         group-digits = false,
-                         table-number-alignment = center,
-                         %table-space-text-pre = (,
-                         table-align-text-pre = false,
-                         table-align-text-post = false,
-                         table-space-text-post = {***},
-                         parse-units = false]}@{}}
-& \multicolumn{3}{c}{Personality (M1)}& \multicolumn{3}{c}{Personality (M2)}\tabularnewline \hline
-& \multicolumn{1}{c}{Estimate(Std.Err.)}& \multicolumn{1}{c}{z}& \multicolumn{1}{c}{p}& \multicolumn{1}{c}{Estimate(Std.Err.)}& \multicolumn{1}{c}{z}& \multicolumn{1}{c}{p}\tabularnewline\hline
-& \multicolumn{6}{c}{\underline{Factor Loadings}}\tabularnewline \multicolumn{1}{l}{\underline{Personality}}\tabularnewline
-P1& 0.06{(0.03)}& 1.77& .077& 0.06{(0.03)}& 2.19& .028\tabularnewline
-P2& -0.26{(0.04)}& -6.25& .000& -0.26{(0.05)}& -5.67& .000\tabularnewline
-P3& -0.20{(0.04)}& -5.41& .000& -0.20{(0.04)}& -5.57& .000\tabularnewline
-P4& 0.25{(0.04)}& 6.23& .000& 0.25{(0.04)}& 5.67& .000\tabularnewline
-& \multicolumn{6}{c}{\underline{Intercepts}}\tabularnewline
-P1& 1.32{(0.02)}& 58.67& .000& 1.32{(0.02)}& 58.60& .000\tabularnewline
-P2& 1.60{(0.02)}& 67.56& .000& 1.60{(0.02)}& 67.48& .000\tabularnewline
-P3& 1.55{(0.02)}& 64.54& .000& 1.55{(0.02)}& 64.47& .000\tabularnewline
-P4& 1.34{(0.02)}& 58.66& .000& 1.34{(0.02)}& 58.59& .000\tabularnewline
-& \multicolumn{6}{c}{\underline{Residual Variances}}\tabularnewline
-P1& 0.22{(0.01)}& 14.42& .000& 0.22{(0.01)}& 25.03& .000\tabularnewline
-P2& 0.17{(0.02)}& 7.91& .000& 0.17{(0.02)}& 7.15& .000\tabularnewline
-P3& 0.21{(0.02)}& 11.62& .000& 0.21{(0.01)}& 14.57& .000\tabularnewline
-P4& 0.16{(0.02)}& 8.08& .000& 0.16{(0.02)}& 7.23& .000\tabularnewline
-& \multicolumn{6}{c}{\underline{Latent Intercepts}}\tabularnewline
-Personality& 0.00$^+$& & & 0.00$^+$& & \tabularnewline
-& \multicolumn{6}{c}{\underline{Latent Variances}}\tabularnewline
-Personality& 1.00$^+$& & & 1.00$^+$& & \tabularnewline
-& \multicolumn{6}{c}{\underline{Fit Indices}}\tabularnewline
-$\chi^{2}(\mathrm{df})$& 1.88(2)& & .391& 1.42(2)& & .491\tabularnewline
-RMSEA& 0.00& & & 0.00& & \tabularnewline
-SRMR& 0.02& & & 0.02& & \tabularnewline
-CFI& 1.00& & & 1.00& & \tabularnewline
-TLI& 1.01& & & 1.02& & \tabularnewline
-\hline\multicolumn{7}{l}{$^+$Fixed parameter}\tabularnewline
-\end{tabular}
-                       \end{table}
-```
+
 

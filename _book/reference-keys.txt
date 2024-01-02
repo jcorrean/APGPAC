@@ -1,4 +1,3 @@
-fig:donde
 primera-parte-usted-está-aquí
 complejidad-y-gerencia-de-proyectos.
 gemelos-digitales-y-su-utilidad-para-gestionar-proyectos-tecnológicos-y-no-tecnológicos.

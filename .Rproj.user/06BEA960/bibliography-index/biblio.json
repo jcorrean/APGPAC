@@ -1,33 +1,891 @@
 {
     "sources": [
         {
-            "DOI": "10.1007/978-3-642-55035-5_11",
-            "ISBN": "978-3-642-55035-5",
-            "URL": "https://doi.org/10.1007/978-3-642-55035-5_11",
-            "abstract": "Agile software development represents a new approach for planning and managing software projects. It puts less emphasis on up-front plans and strict control and relies more on informal collaboration, coordination, and learning. This chapter provides a characterization and definition of agile project management based on extensive studies of industrial projects. It explains the circumstances behind the change from traditional management with its focus on direct supervision and standardization of work processes, to the newer, agile focus on self-managing teams, including its opportunities and benefits, but also its complexity and challenges. The main contribution of the chapter is the four principles of agile project management: minimum critical specification, autonomous teams, redundancy, and feedback and learning.",
+            "DOI": "10.1016/j.ijcip.2021.100433",
             "author": [
                 {
-                    "family": "Dybå",
-                    "given": "Tore"
+                    "family": "Yadav",
+                    "given": "Geeta"
                 },
                 {
-                    "family": "Dingsøyr",
-                    "given": "Torgeir"
+                    "family": "Paul",
+                    "given": "Kolin"
+                }
+            ],
+            "container-title": "International Journal of Critical Infrastructure Protection",
+            "id": "Yadav2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "page": "100433",
+            "title": "Architecture and security of SCADA systems: A review",
+            "title-short": "Architecture and security of SCADA systems",
+            "type": "article-journal",
+            "volume": "34"
+        },
+        {
+            "author": [
+                {
+                    "family": "Casanave",
+                    "given": "C."
+                }
+            ],
+            "container-title": "Business object design and implementation",
+            "editor": [
+                {
+                    "family": "Sutherland",
+                    "given": "Jeff"
                 },
                 {
-                    "family": "Moe",
-                    "given": "Nils Brede"
+                    "family": "Casanave",
+                    "given": "Cory"
+                },
+                {
+                    "family": "Miller",
+                    "given": "Joaquin"
+                },
+                {
+                    "family": "Patel",
+                    "given": "Philip"
+                },
+                {
+                    "family": "Hollowell",
+                    "given": "Glenn"
+                }
+            ],
+            "id": "Casanave1997",
+            "issued": {
+                "date-parts": [
+                    [
+                        1997
+                    ]
+                ]
+            },
+            "page": "7-28",
+            "publisher": "Springer",
+            "publisher-place": "London",
+            "title": "Business-object architectures and standards",
+            "type": "paper-conference"
+        },
+        {
+            "DOI": "10.1007/3-540-34518-3_8",
+            "ISBN": "978-3-540-34518-3",
+            "author": [
+                {
+                    "family": "Colomb",
+                    "given": "R."
+                },
+                {
+                    "family": "Raymond",
+                    "given": "K."
+                },
+                {
+                    "family": "Hart",
+                    "given": "L."
+                },
+                {
+                    "family": "Emery",
+                    "given": "P."
+                },
+                {
+                    "family": "Welty",
+                    "given": "C."
+                },
+                {
+                    "family": "Xie",
+                    "given": "G. T."
+                },
+                {
+                    "family": "Kendall",
+                    "given": "E."
+                }
+            ],
+            "container-title": "Ontologies for software engineering and software technology",
+            "editor": [
+                {
+                    "family": "Calero",
+                    "given": "C."
+                },
+                {
+                    "family": "Ruiz",
+                    "given": "F."
+                },
+                {
+                    "family": "Piattini",
+                    "given": "M."
+                }
+            ],
+            "id": "Colomb2006",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006
+                    ]
+                ]
+            },
+            "page": "217-247",
+            "publisher": "Springer",
+            "publisher-place": "Berlin, Heidelberg",
+            "title": "The object management group ontology definition metamodel",
+            "type": "chapter"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sayama",
+                    "given": "H."
+                }
+            ],
+            "id": "Sayama2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "publisher": "Open SUNY Textbooks",
+            "publisher-place": "New York",
+            "title": "Introduction to the modeling and analysis of complex systems",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1016/j.jmsy.2022.06.015",
+            "author": [
+                {
+                    "family": "Tao",
+                    "given": "F."
+                },
+                {
+                    "family": "Xiao",
+                    "given": "B."
+                },
+                {
+                    "family": "Qi",
+                    "given": "Q."
+                },
+                {
+                    "family": "Cheng",
+                    "given": "J."
+                },
+                {
+                    "family": "Ji",
+                    "given": "P."
+                }
+            ],
+            "container-title": "Journal of Manufacturing Systems",
+            "id": "Tao2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "page": "372-389",
+            "title": "Digital twin modeling",
+            "type": "article-journal",
+            "volume": "64"
+        },
+        {
+            "DOI": "10.1016/j.rlp.2016.06.002",
+            "author": [
+                {
+                    "family": "Correa",
+                    "given": "J. C."
+                }
+            ],
+            "container-title": "Revista Latinoamericana de Psicología",
+            "id": "Correa2016",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "page": "201-208",
+            "title": "The behavioral interaction of road users in traffic: An example of the potential of intelligent agent-based simulations in psychology",
+            "title-short": "The behavioral interaction of road users in traffic",
+            "type": "article-journal",
+            "volume": "48"
+        },
+        {
+            "author": [
+                {
+                    "family": "Wilensky",
+                    "given": "U."
+                }
+            ],
+            "id": "Wilensky1999",
+            "issued": {
+                "date-parts": [
+                    [
+                        1999
+                    ]
+                ]
+            },
+            "publisher": "Center for connected learning; computer-based modeling",
+            "publisher-place": "Northwestern University",
+            "title": "NetLogo (and NetLogo user manual)",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1016/j.trb.2008.02.002",
+            "author": [
+                {
+                    "family": "Geroliminis",
+                    "given": "N."
+                },
+                {
+                    "family": "Daganzo",
+                    "given": "C. F."
+                }
+            ],
+            "container-title": "Transportation Research Part B: Methodological",
+            "id": "Geroliminis2008",
+            "issue": "9",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ]
+            },
+            "page": "759-770",
+            "title": "Existence of urban-scale macroscopic fundamental diagrams: Some experimental findings",
+            "title-short": "Existence of urban-scale macroscopic fundamental diagrams",
+            "type": "article-journal",
+            "volume": "42"
+        },
+        {
+            "DOI": "10.1126/science.1133755",
+            "author": [
+                {
+                    "family": "Nowak",
+                    "given": "M. A."
+                }
+            ],
+            "container-title": "science",
+            "id": "Nowak2006",
+            "issue": "5805",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006
+                    ]
+                ]
+            },
+            "page": "1560-1563",
+            "title": "Five rules for the evolution of cooperation",
+            "type": "article-journal",
+            "volume": "314"
+        },
+        {
+            "DOI": "10.1371/journal.pone.0165381",
+            "author": [
+                {
+                    "family": "Cortés-Berrueco",
+                    "given": "L. E."
+                },
+                {
+                    "family": "Gershenson",
+                    "given": "C."
+                },
+                {
+                    "family": "Stephens",
+                    "given": "C. R."
+                }
+            ],
+            "container-title": "PLoS One",
+            "id": "Cortes2016",
+            "issue": "11",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "page": "e0165381",
+            "title": "Traffic games: Modeling freeway traffic with game theory",
+            "title-short": "Traffic games",
+            "type": "article-journal",
+            "volume": "11"
+        },
+        {
+            "DOI": "10.1016/0951-5240(89)90037-2",
+            "author": [
+                {
+                    "family": "Bison",
+                    "given": "P."
+                },
+                {
+                    "family": "Gini",
+                    "given": "M."
+                }
+            ],
+            "container-title": "Computer Integrated Manufacturing Systems",
+            "id": "Bison1989",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1989
+                    ]
+                ]
+            },
+            "page": "29-34",
+            "title": "An object-oriented approach to robot programming",
+            "type": "article-journal",
+            "volume": "2"
+        },
+        {
+            "author": [
+                {
+                    "family": "Wilkinson",
+                    "given": "L."
+                }
+            ],
+            "id": "Wilkinson2012",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "publisher": "Springer",
+            "publisher-place": "Chicago",
+            "title": "The grammar of graphics",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1007/s00170-017-0233-1",
+            "author": [
+                {
+                    "family": "Tao",
+                    "given": "F."
+                },
+                {
+                    "family": "Cheng",
+                    "given": "J."
+                },
+                {
+                    "family": "Qi",
+                    "given": "Q."
+                },
+                {
+                    "family": "Zhang",
+                    "given": "M."
+                },
+                {
+                    "family": "Zhang",
+                    "given": "H."
+                },
+                {
+                    "family": "Sui",
+                    "given": "F."
+                }
+            ],
+            "container-title": "International Journal of Advanced Manufacturing Technology",
+            "id": "Tao2018",
+            "issue": "9-12",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "3563 - 3576",
+            "title": "Digital twin-driven product design, manufacturing and service with big data",
+            "type": "article-journal",
+            "volume": "94"
+        },
+        {
+            "author": [
+                {
+                    "family": "Wooldridge",
+                    "given": "M."
+                },
+                {
+                    "family": "Jennings",
+                    "given": "N. R."
+                }
+            ],
+            "container-title": "The knowledge engineering review",
+            "id": "Wooldridge1995",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "page": "115-152",
+            "publisher": "Cambridge University Press",
+            "title": "Intelligent agents: Theory and practice",
+            "title-short": "Intelligent agents",
+            "type": "article-journal",
+            "volume": "10"
+        },
+        {
+            "DOI": "10.1016/j.simpat.2023.102855",
+            "author": [
+                {
+                    "family": "Shakya",
+                    "given": "J."
+                },
+                {
+                    "family": "Ghribi",
+                    "given": "C."
+                },
+                {
+                    "family": "Merghem-Boulahia",
+                    "given": "L."
+                }
+            ],
+            "container-title": "Simulation Modelling Practice and Theory",
+            "id": "Shakya2024",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "title": "Agent-based modeling and simulation for 5G and beyond networks : A comprehensive survey",
+            "title-short": "Agent-based modeling and simulation for 5G and beyond networks ",
+            "type": "article-journal",
+            "volume": "130"
+        },
+        {
+            "author": [
+                {
+                    "family": "Sutherland",
+                    "given": "J."
+                },
+                {
+                    "family": "Casanave",
+                    "given": "C."
+                },
+                {
+                    "family": "Miller",
+                    "given": "J."
+                },
+                {
+                    "family": "Patel",
+                    "given": "P."
+                },
+                {
+                    "family": "Hollowell",
+                    "given": "G."
+                }
+            ],
+            "id": "Sutherland1997",
+            "issued": {
+                "date-parts": [
+                    [
+                        1997
+                    ]
+                ]
+            },
+            "publisher": "Springer London",
+            "title": "Business object design and implementation",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1007/978-1-4471-0947-1_11",
+            "author": [
+                {
+                    "family": "Schwaber",
+                    "given": "K."
+                }
+            ],
+            "container-title": "Business object design and implementation",
+            "editor": [
+                {
+                    "family": "Sutherland",
+                    "given": "J."
+                },
+                {
+                    "family": "Casanave",
+                    "given": "C."
+                },
+                {
+                    "family": "Miller",
+                    "given": "J."
+                },
+                {
+                    "family": "Patel",
+                    "given": "P."
+                },
+                {
+                    "family": "Hollowell",
+                    "given": "G."
+                }
+            ],
+            "id": "Schwaber1997",
+            "issued": {
+                "date-parts": [
+                    [
+                        1997
+                    ]
+                ]
+            },
+            "page": "117-134",
+            "publisher": "Springer",
+            "publisher-place": "London",
+            "title": "SCRUM development process",
+            "type": "paper-conference"
+        },
+        {
+            "author": [
+                {
+                    "family": "Takeuchi",
+                    "given": "H."
+                },
+                {
+                    "family": "Nonaka",
+                    "given": "I."
+                }
+            ],
+            "container-title": "Harvard business review",
+            "id": "Takeuchi1986",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1986
+                    ]
+                ]
+            },
+            "page": "137-146",
+            "title": "The new new product development game",
+            "type": "article-journal",
+            "volume": "64"
+        },
+        {
+            "author": [
+                {
+                    "family": "Russell",
+                    "given": "S."
+                },
+                {
+                    "family": "Norvig",
+                    "given": "P."
+                }
+            ],
+            "edition": "4th",
+            "id": "Russell2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "publisher": "Pearson",
+            "title": "Artificial intelligence: A modern approach",
+            "title-short": "Artificial intelligence",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1007/978-3-642-55035-5_1",
+            "author": [
+                {
+                    "family": "Ruhe",
+                    "given": "G."
+                },
+                {
+                    "family": "Wohlin",
+                    "given": "C."
                 }
             ],
             "container-title": "Software project management in a changing world",
             "editor": [
                 {
                     "family": "Ruhe",
-                    "given": "Günther"
+                    "given": "G."
                 },
                 {
                     "family": "Wohlin",
-                    "given": "Claes"
+                    "given": "C."
+                }
+            ],
+            "id": "Ruhe2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "page": "1-24",
+            "publisher": "Springer",
+            "publisher-place": "Berlin Heidelberg",
+            "title": "Software project management: Setting the context",
+            "title-short": "Software project management",
+            "type": "chapter"
+        },
+        {
+            "DOI": "10.1007/978-3-642-55035-5_11",
+            "author": [
+                {
+                    "family": "Dybå",
+                    "given": "T."
+                },
+                {
+                    "family": "Dingsoyr",
+                    "given": "T."
+                },
+                {
+                    "family": "Moe",
+                    "given": "N. B."
+                }
+            ],
+            "container-title": "Software project management in a changing world",
+            "editor": [
+                {
+                    "family": "Ruhe",
+                    "given": "G."
+                },
+                {
+                    "family": "Wohlin",
+                    "given": "C."
+                }
+            ],
+            "id": "Dyba2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "page": "277 - 300",
+            "publisher": "Springer",
+            "publisher-place": "Berlin Heidelberg",
+            "title": "Agile project management",
+            "type": "chapter"
+        },
+        {
+            "DOI": "10.1080/23311975.2022.2071099",
+            "author": [
+                {
+                    "family": "Correa",
+                    "given": "J. C."
+                },
+                {
+                    "family": "Dakduk",
+                    "given": "Silvana"
+                },
+                {
+                    "dropping-particle": "van der",
+                    "family": "Woude",
+                    "given": "David"
+                },
+                {
+                    "family": "Sandoval-Escobar",
+                    "given": "Marithza"
+                },
+                {
+                    "family": "Lopez-Llamas",
+                    "given": "Rafael"
+                }
+            ],
+            "container-title": "Cogent Business and Management",
+            "id": "Correa2022",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "title": "Low-income consumers’ disposition to use automated banking services",
+            "type": "article-journal",
+            "volume": "9"
+        },
+        {
+            "DOI": "10.3389/fpsyg.2023.940961",
+            "author": [
+                {
+                    "family": "Zárate-Torres",
+                    "given": "R."
+                },
+                {
+                    "family": "Correa",
+                    "given": "J. C."
+                }
+            ],
+            "container-title": "Frontiers in Psychology",
+            "id": "Zarate2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "title": "How good is the myers-briggs type indicator for predicting leadership-related behaviors?",
+            "type": "article-journal",
+            "volume": "14"
+        },
+        {
+            "DOI": "10.1080/03075079.2023.2254799",
+            "author": [
+                {
+                    "family": "García-Chitiva",
+                    "given": "M.d.P."
+                },
+                {
+                    "family": "Correa",
+                    "given": "J. C."
+                }
+            ],
+            "container-title": "Studies in Higher Education",
+            "id": "Garciachitiva2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "title": "Soft skills centrality in graduate studies offerings",
+            "type": "article-journal"
+        },
+        {
+            "DOI": "10.20982/tqmp.19.4.p333",
+            "author": [
+                {
+                    "family": "Correa",
+                    "given": "J. C."
+                },
+                {
+                    "family": "Kneib",
+                    "given": "T."
+                },
+                {
+                    "family": "Ospina",
+                    "given": "R."
+                },
+                {
+                    "family": "Tejada",
+                    "given": "J."
+                },
+                {
+                    "family": "Marmolejo-Ramos",
+                    "given": "F."
+                }
+            ],
+            "container-title": "The Quantitative Methods for Psychology",
+            "id": "Correa2023",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "page": "333-346",
+            "title": "Assessing potential heteroscedasticity in psychological data: A GAMLSS approach",
+            "title-short": "Assessing potential heteroscedasticity in psychological data",
+            "type": "article-journal",
+            "volume": "19"
+        },
+        {
+            "URL": "https://betaandbit.github.io/RML/",
+            "author": [
+                {
+                    "family": "Biecek",
+                    "given": "P"
+                },
+                {
+                    "family": "Kozak",
+                    "given": "A"
+                },
+                {
+                    "family": "Zawada",
+                    "given": "A"
+                }
+            ],
+            "id": "Biecek2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "publisher": "Warsaw University of Technology",
+            "title": "The Hitchhiker’s Guide to Responsible Machine Learning",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Y."
+                },
+                {
+                    "family": "Allaire",
+                    "given": "J. J."
+                },
+                {
+                    "family": "Grolemund",
+                    "given": "G."
+                }
+            ],
+            "id": "Xie2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "publisher": "CRC Press",
+            "title": "R markdown: The definitive guide",
+            "title-short": "R markdown",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1007/978-3-642-55035-5_11",
+            "URL": "https://doi.org/10.1007/978-3-642-55035-5_11",
+            "author": [
+                {
+                    "family": "Dybå",
+                    "given": "T."
+                },
+                {
+                    "family": "Dingsøyr",
+                    "given": "T."
+                },
+                {
+                    "family": "Moe",
+                    "given": "Nils B."
+                }
+            ],
+            "container-title": "Software project management in a changing world",
+            "editor": [
+                {
+                    "family": "Ruhe",
+                    "given": "G."
+                },
+                {
+                    "family": "Wohlin",
+                    "given": "C."
                 }
             ],
             "id": "Dyba2014",
@@ -45,39 +903,13 @@
             "type": "chapter"
         },
         {
-            "DOI": "10.5281/zenodo.7682609",
-            "URL": "https://CRAN.R-project.org/package=igraph",
+            "URL": "https://www.R-project.org/",
             "author": [
                 {
-                    "family": "Csárdi",
-                    "given": "Gábor"
-                },
-                {
-                    "family": "Nepusz",
-                    "given": "Tamás"
-                },
-                {
-                    "family": "Traag",
-                    "given": "Vincent"
-                },
-                {
-                    "family": "Horvát",
-                    "given": "Szabolcs"
-                },
-                {
-                    "family": "Zanini",
-                    "given": "Fabio"
-                },
-                {
-                    "family": "Noom",
-                    "given": "Daniel"
-                },
-                {
-                    "family": "Müller",
-                    "given": "Kirill"
+                    "literal": "R Core Team"
                 }
             ],
-            "id": "Csardi2023",
+            "id": "R-base",
             "issued": {
                 "date-parts": [
                     [
@@ -85,9 +917,256 @@
                     ]
                 ]
             },
-            "note": "R package version 1.6.0",
-            "title": "igraph: Network analysis and visualization in r",
-            "title-short": "igraph",
+            "publisher": "R Foundation for Statistical Computing",
+            "publisher-place": "Vienna, Austria",
+            "title": "R: A language and environment for statistical computing",
+            "title-short": "R",
+            "type": "book"
+        },
+        {
+            "URL": "https://github.com/rstudio/bookdown",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "id": "R-bookdown",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "note": "R package version 0.37, https://pkgs.rstudio.com/bookdown/",
+            "title": "Bookdown: Authoring books and technical documents with r markdown",
+            "title-short": "Bookdown",
+            "type": "book"
+        },
+        {
+            "URL": "https://yihui.org/knitr/",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "id": "R-knitr",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "note": "R package version 1.45",
+            "title": "Knitr: A general-purpose package for dynamic report generation in r",
+            "title-short": "Knitr",
+            "type": "book"
+        },
+        {
+            "URL": "https://github.com/rstudio/rmarkdown",
+            "author": [
+                {
+                    "family": "Allaire",
+                    "given": "JJ"
+                },
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "Dervieux",
+                    "given": "Christophe"
+                },
+                {
+                    "family": "McPherson",
+                    "given": "Jonathan"
+                },
+                {
+                    "family": "Luraschi",
+                    "given": "Javier"
+                },
+                {
+                    "family": "Ushey",
+                    "given": "Kevin"
+                },
+                {
+                    "family": "Atkins",
+                    "given": "Aron"
+                },
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "Cheng",
+                    "given": "Joe"
+                },
+                {
+                    "family": "Chang",
+                    "given": "Winston"
+                },
+                {
+                    "family": "Iannone",
+                    "given": "Richard"
+                }
+            ],
+            "id": "R-rmarkdown",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "note": "R package version 2.25, https://pkgs.rstudio.com/rmarkdown/",
+            "title": "Rmarkdown: Dynamic documents for r",
+            "title-short": "Rmarkdown",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-1138700109",
+            "URL": "https://bookdown.org/yihui/bookdown",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "id": "bookdown2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "Bookdown: Authoring books and technical documents with R markdown",
+            "title-short": "Bookdown",
+            "type": "book"
+        },
+        {
+            "URL": "https://yihui.org/knitr/",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "edition": "2nd",
+            "id": "knitr2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1498716963",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "Dynamic documents with R and knitr",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "container-title": "Implementing reproducible computational research",
+            "editor": [
+                {
+                    "family": "Stodden",
+                    "given": "Victoria"
+                },
+                {
+                    "family": "Leisch",
+                    "given": "Friedrich"
+                },
+                {
+                    "family": "Peng",
+                    "given": "Roger D."
+                }
+            ],
+            "id": "knitr2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1466561595",
+            "publisher": "Chapman; Hall/CRC",
+            "title": "Knitr: A comprehensive tool for reproducible research in R",
+            "title-short": "Knitr",
+            "type": "chapter"
+        },
+        {
+            "ISBN": "9781138359338",
+            "URL": "https://bookdown.org/yihui/rmarkdown",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "Allaire",
+                    "given": "J. J."
+                },
+                {
+                    "family": "Grolemund",
+                    "given": "Garrett"
+                }
+            ],
+            "id": "rmarkdown2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "R markdown: The definitive guide",
+            "title-short": "R markdown",
+            "type": "book"
+        },
+        {
+            "ISBN": "9780367563837",
+            "URL": "https://bookdown.org/yihui/rmarkdown-cookbook",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "Dervieux",
+                    "given": "Christophe"
+                },
+                {
+                    "family": "Riederer",
+                    "given": "Emily"
+                }
+            ],
+            "id": "rmarkdown2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "R markdown cookbook",
             "type": "book"
         }
     ],

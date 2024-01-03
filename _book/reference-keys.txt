@@ -1,4 +1,7 @@
+fig:donde
+tab:unnamed-chunk-1
 primera-parte-usted-está-aquí
 complejidad-y-gerencia-de-proyectos.
+nueva-sección
 gemelos-digitales-y-su-utilidad-para-gestionar-proyectos-tecnológicos-y-no-tecnológicos.
 documentación-reproducible

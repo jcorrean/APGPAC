@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1.1 Complejidad y Gerencia de Proyectos. | Introducción a la Analítica de Datos para la Gestión de Proyectos de Alta Complejidad</title>
-  <meta name="description" content="1.1 Complejidad y Gerencia de Proyectos. | Introducción a la Analítica de Datos para la Gestión de Proyectos de Alta Complejidad" />
+  <title>1.2 Nueva sección | Introducción a la Analítica de Datos para la Gestión de Proyectos de Alta Complejidad</title>
+  <meta name="description" content="1.2 Nueva sección | Introducción a la Analítica de Datos para la Gestión de Proyectos de Alta Complejidad" />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1.1 Complejidad y Gerencia de Proyectos. | Introducción a la Analítica de Datos para la Gestión de Proyectos de Alta Complejidad" />
+  <meta property="og:title" content="1.2 Nueva sección | Introducción a la Analítica de Datos para la Gestión de Proyectos de Alta Complejidad" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1.1 Complejidad y Gerencia de Proyectos. | Introducción a la Analítica de Datos para la Gestión de Proyectos de Alta Complejidad" />
+  <meta name="twitter:title" content="1.2 Nueva sección | Introducción a la Analítica de Datos para la Gestión de Proyectos de Alta Complejidad" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="primera-parte-usted-está-aquí.html"/>
-<link rel="next" href="nueva-sección.html"/>
+<link rel="prev" href="complejidad-y-gerencia-de-proyectos..html"/>
+<link rel="next" href="gemelos-digitales-y-su-utilidad-para-gestionar-proyectos-tecnológicos-y-no-tecnológicos..html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -186,131 +186,19 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="complejidad-y-gerencia-de-proyectos." class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> Complejidad y Gerencia de Proyectos.<a href="complejidad-y-gerencia-de-proyectos..html#complejidad-y-gerencia-de-proyectos." class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Los sistemas complejos son un objeto de estudio científico. Aunque existen múltiples institutos, laboratorios y universidades que brindan formación en sistemas complejos, sus esfuerzos suelen coincidir y divulgarse a través de una red profesional conocida como la <a href="https://cssociety.org/home">Sociedad de Sistemas Complejos</a>.</p>
-<p>Según Hiroki Sayama <span class="citation">(<a href="referencias.html#ref-Sayama2015">2015</a>)</span>, los sistemas complejos son redes constituidas por una serie de componentes que interactúan entre sí, normalmente de forma no lineal que pueden surgir y evolucionar a través de la auto-organización (sin la intervención de un gerente o líder), y sin llegar a ser ni completamente predecibles ni completamente aleatorios, pueden mostrar comportamientos emergentes que solo resultan visibles cuando vemos al sistema cambiando la perspectiva de una escala local o microscópica a otra escala general o macroscópica.</p>
-<p>Los sistemas complejos suelen caracterizarse por tener muchos componentes que interactúan de formas múltiples entre sí y potencialmente con su entorno. Estas partes forman redes de interacciones, a veces con unos pocos componentes involucrados en muchas interacciones. Las interacciones pueden
-generar información nueva que complica el estudio individual de las partes o la predicción correcta de su futuro. Adicionalmente, los componentes de un
-sistema pueden también ser nuevos sistemas, es decir, sistemas de sistemas
-interdependientes entre sí. El mayor reto de las ciencias de la complejidad no es sólo apreciar las partes y sus conexiones, sino también entender cómo estas interacciones dan lugar al todo.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="complejidad-y-gerencia-de-proyectos..html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
-<span id="cb1-2"><a href="complejidad-y-gerencia-de-proyectos..html#cb1-2" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb1-3"><a href="complejidad-y-gerencia-de-proyectos..html#cb1-3" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="complejidad-y-gerencia-de-proyectos..html#cb1-4" tabindex="-1"></a><span class="co"># Fit your regression model (replace lm() with your specific model)</span></span>
-<span id="cb1-5"><a href="complejidad-y-gerencia-de-proyectos..html#cb1-5" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> cyl <span class="sc">+</span> hp <span class="sc">+</span> wt, <span class="at">data =</span> mtcars)</span>
-<span id="cb1-6"><a href="complejidad-y-gerencia-de-proyectos..html#cb1-6" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="complejidad-y-gerencia-de-proyectos..html#cb1-7" tabindex="-1"></a><span class="co"># Tidy the regression results using broom</span></span>
-<span id="cb1-8"><a href="complejidad-y-gerencia-de-proyectos..html#cb1-8" tabindex="-1"></a>tidy_results <span class="ot">&lt;-</span> <span class="fu">tidy</span>(model)</span>
-<span id="cb1-9"><a href="complejidad-y-gerencia-de-proyectos..html#cb1-9" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="complejidad-y-gerencia-de-proyectos..html#cb1-10" tabindex="-1"></a><span class="co"># Create a nicely formatted HTML table using kableExtra</span></span>
-<span id="cb1-11"><a href="complejidad-y-gerencia-de-proyectos..html#cb1-11" tabindex="-1"></a>html_table <span class="ot">&lt;-</span> <span class="fu">kable</span>(tidy_results, <span class="at">format =</span> <span class="st">&quot;html&quot;</span>, <span class="at">caption =</span> <span class="st">&quot;Regression Results&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb1-12"><a href="complejidad-y-gerencia-de-proyectos..html#cb1-12" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span>
-<span id="cb1-13"><a href="complejidad-y-gerencia-de-proyectos..html#cb1-13" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="complejidad-y-gerencia-de-proyectos..html#cb1-14" tabindex="-1"></a><span class="co"># Print the HTML table</span></span>
-<span id="cb1-15"><a href="complejidad-y-gerencia-de-proyectos..html#cb1-15" tabindex="-1"></a>html_table</span></code></pre></div>
-<table class="table" style="margin-left: auto; margin-right: auto;">
-<caption>
-<span id="tab:unnamed-chunk-1">Table 1.1: </span>Regression Results
-</caption>
-<thead>
-<tr>
-<th style="text-align:left;">
-term
-</th>
-<th style="text-align:right;">
-estimate
-</th>
-<th style="text-align:right;">
-std.error
-</th>
-<th style="text-align:right;">
-statistic
-</th>
-<th style="text-align:right;">
-p.value
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-(Intercept)
-</td>
-<td style="text-align:right;">
-38.7517874
-</td>
-<td style="text-align:right;">
-1.7868640
-</td>
-<td style="text-align:right;">
-21.687038
-</td>
-<td style="text-align:right;">
-0.0000000
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-cyl
-</td>
-<td style="text-align:right;">
--0.9416168
-</td>
-<td style="text-align:right;">
-0.5509164
-</td>
-<td style="text-align:right;">
--1.709183
-</td>
-<td style="text-align:right;">
-0.0984801
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-hp
-</td>
-<td style="text-align:right;">
--0.0180381
-</td>
-<td style="text-align:right;">
-0.0118762
-</td>
-<td style="text-align:right;">
--1.518838
-</td>
-<td style="text-align:right;">
-0.1400152
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-wt
-</td>
-<td style="text-align:right;">
--3.1669731
-</td>
-<td style="text-align:right;">
-0.7405759
-</td>
-<td style="text-align:right;">
--4.276365
-</td>
-<td style="text-align:right;">
-0.0001995
-</td>
-</tr>
-</tbody>
-</table>
+<div id="nueva-sección" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Nueva sección<a href="nueva-sección.html#nueva-sección" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ahora vamos a ver cómo funciona con el siguiente código, pues debería funcionar.</p>
+
 </div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="primera-parte-usted-está-aquí.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="nueva-sección.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="complejidad-y-gerencia-de-proyectos..html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gemelos-digitales-y-su-utilidad-para-gestionar-proyectos-tecnológicos-y-no-tecnológicos..html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

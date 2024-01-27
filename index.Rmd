@@ -13,6 +13,11 @@ biblio-style: apacite
 link-citations: TRUE
 ---
 
+```{r, echo=FALSE, include=TRUE, message=FALSE, warning=FALSE}
+suppressMessages(library(igraph))
+```
+
+
 # Sobre el autor {.unnumbered}
 
 ::: {style="text-align:center"}

@@ -1,4 +1,4 @@
-# Primer Caso: Midiendo las "habilidades blandas" en las ofertas de postgrado
+# Primer Caso: Las "habilidades blandas" en las Ofertas de Postgrado
 
 En Colombia, las universidades publican en sus páginas web la oferta académica de cursos de especialización, maestría y doctorado. Esta oferta académica se dirigide como información para estudiantes interesados en estudiar un postgrado.
 
@@ -11,9 +11,60 @@ Para empezar, García-Chitiva y Correa [-@Garciachitiva2023] se apoyaron en una 
 
 Aplicando las nociones explicadas en el video anterior, podemos mostrar la apariencia visual de una red bipartita para este ejemplo en algo como esto.
 
-```{r donde, echo=FALSE, out.width = '100%', fig.show='hold', fig.cap='La Analítica de Datos para la Gestión de Proyectos de Alta Complejidad', }
+```{r f1, echo=FALSE, out.width = '100%', fig.show='hold', fig.cap='La Analítica de Datos para la Gestión de Proyectos de Alta Complejidad', }
 knitr::include_graphics("F1.png")
 ```
+
+En una red bipartita, uno está interesado en comprender cómo se conectan dos conjuntos disjuntos. La Figura \@ref(fig:f1) muestra un ejemplo hipotético con una lista no exhaustiva de habilidades interpersonales sugeridas por Scheerens, van der Werf y de Boer (2020) y una lista corta y no exhaustiva de estudios de posgrado. La conexión entre estos dos conjuntos se basa en cada vínculo representado como líneas grises rectas. En cada conjunto, cada entidad se conoce formalmente como nodo, y la adyacencia del nodo se refiere a un borde (es decir, una línea gris recta) que los conecta. La Figura \@ref(fig:f1) muestra que el número de conexiones varía para cada nodo en ambos conjuntos. Lo más importante es que no es necesario que la conexión entre estos dos conjuntos sea completa para afirmar que la capacitación en habilidades interpersonales está presente en un programa de posgrado. En otras palabras, el número de conexiones que cada habilidad blanda de la izquierda tiene con cada programa de posgrado de la derecha puede variar desde cero hasta su máximo, que es el total de programas de posgrado muestreados. Expliquemos. En la Figura \@ref(fig:f1), el pensamiento crítico es la habilidad blanda más conectada, ya que se conecta con cuatro programas (es decir, Doctorado en Física de Altas Energías, Maestría en Ciencia de Datos, Doctorado en Gestión de Residuos y Maestría en Administración de Empresas). La curiosidad es la menos conectada ya que solo tiene una conexión con un programa (es decir, Doctorado en Física de Altas Energías). En la Figura \@ref(fig:f1), la creatividad, la negociación y la empatía tienen el mismo número de conexiones, pero se conectan de manera diferente (por ejemplo, la negociación se conecta con la administración de empresas y la especialización en recursos humanos, mientras que la empatía se conecta con la odontología maxilofacial y los recursos humanos, y la creatividad está ligada con la ciencia de datos y la gestión de residuos). Así, en el análisis de redes bipartitas, el número de conexiones y quién se conecta con quién son el centro del estudio. Sin embargo, el trabajo de García-Chitiva y Correa [-@Garciachitiva2023] no se centra en el mero reconteo porque dicho recuento se plantea como un sistema en el que la centralidad de un nodo es relativa a la centralidad de otros nodos de la red. El sistema bajo escrutinio es entonces la información textual disponible en cada programa de posgrado de la muestra, tratado como un corpus que representa la comprensión institucional de los perfiles profesionales de los graduados. Además, el enfoque de red bipartita nos permite estimar la conectividad de cada programa. Así, el doctorado en física de altas energías y la maestría en ciencia de datos comparten el mismo número de conexiones (cada uno con tres enlaces), mientras que el resto de programas comparten el mismo número de conexiones (cada uno con dos enlaces).
+
+Con la red bipartita, se pueden examinar las conexiones directas entre los nodos de un conjunto a la vez (es decir, habilidades blandas y estudios de posgrado). Para hacer esto, se pueden extraer y visualizar las proyecciones unipartitas de la red bipartita original, de la siguiente manera.
+
+```{r, echo=FALSE, include=TRUE, message=FALSE}
+library(readr)
+Data_Figure2 <- read_csv("Data/Data_Figure2.csv")
+```
+
+```{r, echo=FALSE, include=TRUE, message=FALSE, warning=FALSE}
+library(igraph)
+Network <- Data_Figure2
+bn2 <- graph.data.frame(Network,directed=FALSE)
+V(bn2)$type <- bipartite_mapping(bn2)$type
+V(bn2)$color <- ifelse(V(bn2)$type, "green", "red")
+V(bn2)$shape <- ifelse(V(bn2)$type, "square", "circle")
+V(bn2)$label.cex <- ifelse(V(bn2)$type, 0.5, 1)
+V(bn2)$size <- sqrt(igraph::degree(bn2))
+E(bn2)$color <- "lightgrey"
+
+bn2.pr <- bipartite.projection(bn2)
+Programs <- bn2.pr$proj2
+Skills <- bn2.pr$proj1
+class(Skills)
+
+
+
+plot(Skills, vertex.label.color = "black", 
+     vertex.label.cex = 1.5, 
+     vertex.color = "lightgreen", 
+     vertex.size = 60, 
+     edge.width = 3.5, 
+     edge.color = "gray30", 
+     layout = layout_components, main = "")
+
+plot(Programs, vertex.label.color = "black", 
+     vertex.label.cex = 1.2, 
+     vertex.color = "pink", 
+     vertex.size = 40, 
+     edge.width = 5, 
+     edge.color = "gray30", 
+     layout = layout_components, 
+     main = "")
+
+```
+
+
+
+Lo divertido de este trabajo fue la manera cómo García-Chitiva y Correa [-@Garciachitiva2023] encontraron una manera de recolectar la información necesaria para armar una tabla como la anterior pero reflejando la realidad de la oferta académica presentada por 49 universidades colombianas que en total ofrecían 230 programas de postgrado, incluyendo especializaciones, maestrías y doctorados. 
+
 
 Los datos para representar una red bipartita entre programas de postgrado y habilidades blandas tendrían la estructura de una simple tabla con dos columnas. La primera columna muestra algunas habilidades blandas (que en inglés llamamos "Soft Skill") y en la segunda columna se muestran algunos programas de postgrados (que simplemente llamaremos "Program"). 
 
@@ -31,27 +82,4 @@ html_table <- kable(data, format = "html")%>%
 html_table
 ```
 
-Lo divertido de este trabajo fue la manera cómo García-Chitiva y Correa [-@Garciachitiva2023] encontraron la manera de recolectar la información necesaria para armar una tabla como la anterior pero reflejando la realidad de la oferta académica presentada por 49 universidades colombianas que en total ofrecían 230 programas de postgrado, incluyendo especializaciones, maestrías y doctorados. 
-
-```{r, echo=FALSE, message=FALSE}
-library(igraph)
-bn <- graph_from_data_frame(data, directed = FALSE)
-
-bipartite.mapping(bn)
-V(bn)$type <- bipartite_mapping(bn)$type
-V(bn)$color <- ifelse(V(bn)$type, "#FF671F", "#046A38")
-V(bn)$shape == "circle" 
-V(bn)$labelcolor <- ifelse(V(bn)$type, "#FF671F", "#046A38")
-E(bn)$color <- "lightgray"
-E(bn)$width <- 1.5
-
-
-layout <- layout_as_bipartite(bn)
-rotated_layout <- cbind(layout[, 2], -layout[, 1])  # Swap x and y coordinates and negate y
-plot(bn, vertex.label = V(bn)$name, layout = rotated_layout, main = "",
-     vertex.label.color = V(bn)$labelcolor, 
-     vertex.color = "black",
-     edge.lty = E(bn)$linetype, vertex.shape = "none")
-
-```
 

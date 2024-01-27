@@ -8,3 +8,5 @@ documentación-reproducible
 midiendo-la-importancia-de-las-habilidades-blandas-en-la-oferta-de-postgrado
 print-the-html-table
 primer-caso-midiendo-las-habilidades-blandas-en-las-ofertas-de-postgrado
+fig:f1
+primer-caso-las-habilidades-blandas-en-las-ofertas-de-postgrado

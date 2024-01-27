@@ -7,8 +7,9 @@ author:
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
+toc_depth: 3
 documentclass: book
-bibliography: [book.bib, packages.bib]
+bibliography: [book.bib,packages.bib]
 biblio-style: apacite
 link-citations: TRUE
 ---
@@ -30,7 +31,7 @@ Juan C. Correa es venezolano, está casado y tiene un hijo. Es egresado de la Un
 
 Nuestro planeta enfrenta problemas de gran complejidad en diversas industrias donde la solución con "enfoques simples" está perdiendo eficacia versus las soluciones de "enforques complejos". La complejidad de estas soluciones se ve en los sistemas de información usados en la gestión de procesos productivos de plantas industriales, de aeropuertos internacionales con mayor tráfico aéreo, de represas hidroeléctricas o de plataformas de comercio electrónico a nivel continental.
 
-La creciente complejidad tecnológica de las empresas ha dado lugar al surgimiento de consorcios especializados en establecer normas y estándares para el desarrollo de tecnologías orientadas a objetos [@Colomb2006]. Este tipo de tecnologías ha establecido los cimientos sobre los cuales se relacionan el desarrollo de nuevos productos [@Ruhe2014], con herramientas de ciencia de datos e inteligencia artificial [@Russell2021]. Esta conexión se vuelve aún más evidente al considerar cómo los estándares de OMG influyen directamente en la planificación y ejecución de proyectos complejos, en los que la agilidad resalta como un elemento clave y estratégico.
+La creciente complejidad tecnológica de las empresas ha dado lugar al surgimiento de consorcios especializados en establecer normas y estándares para el desarrollo de tecnologías orientadas a objetos [@Colomb2006]. Este tipo de tecnologías ha establecido los cimientos sobre los cuales se relacionan el desarrollo de nuevos productos [@Ruhe2014], con herramientas de ciencia de datos e inteligencia artificial [@Russell2021]. Esta conexión se vuelve aún más evidente al considerar cómo los estándares de OMG influyen directamente en la planificación y ejecución de proyectos complejos, en los que la agilidad resalta como un elemento clave y estratégico [@Robles2012453].
 
 En un artículo de *Harvard Business Review*, Takeuchi y Nonaka [-@Takeuchi1986] introdujeron el término **SCRUM**, asociándolo con un enfoque ágil para aumentar la velocidad y flexibilidad en el desarrollo de productos comerciales. Cuando Schwaber [-@Schwaber1997] formalizó dicho término, expresó de manera explícita que SCRUM asume que el proceso de desarrollo de sistemas es un proceso impredecible y complicado que sólo puede describirse a grandes rasgos "como una progresión general donde se combinan herramientas y técnicas conocidas y viables con lo mejor que un equipo de desarrollo puede idear para construir sistemas". Dado que estas actividades pueden variar de un momento a otro, en el proceso se utilizan controles para gestionar el proceso y el riesgo inherente. SCRUM, entendido así, resulta un enfoque de mejora para el ciclo de desarrollo incremental iterativo orientado a objetos.
 

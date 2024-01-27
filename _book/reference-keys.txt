@@ -5,3 +5,5 @@ complejidad-y-gerencia-de-proyectos.
 nueva-sección
 gemelos-digitales-y-su-utilidad-para-gestionar-proyectos-tecnológicos-y-no-tecnológicos.
 documentación-reproducible
+midiendo-la-importancia-de-las-habilidades-blandas-en-la-oferta-de-postgrado
+print-the-html-table

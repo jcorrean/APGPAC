@@ -4,7 +4,7 @@ author:
 - name: Juan C. Correa
   email: jcc@criticalcentrality.com
   affiliation: Critical Centrality Institute
-date: "2024-01-02"
+date: "2024-01-27"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book

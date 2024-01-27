@@ -7,3 +7,4 @@ gemelos-digitales-y-su-utilidad-para-gestionar-proyectos-tecnológicos-y-no-tecn
 documentación-reproducible
 midiendo-la-importancia-de-las-habilidades-blandas-en-la-oferta-de-postgrado
 print-the-html-table
+primer-caso-midiendo-las-habilidades-blandas-en-las-ofertas-de-postgrado

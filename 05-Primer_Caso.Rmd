@@ -1,0 +1,40 @@
+# Midiendo la importancia de las "habilidades blandas" en la oferta de postgrado
+
+En un trabajo recientemente publicado, [@Cortes2016]
+
+```{r, include=TRUE, message=FALSE}
+library(knitr)
+library(broom)
+library(kableExtra)
+setwd("Data")
+data <- readr::read_csv("Data_Figure2.csv")
+html_table <- kable(data, format = "html")%>%
+  kable_styling()
+
+# Print the HTML table
+html_table
+```
+
+
+```{r, message=FALSE}
+library(igraph)
+bn <- graph_from_data_frame(data, directed = FALSE)
+
+bipartite.mapping(bn)
+V(bn)$type <- bipartite_mapping(bn)$type
+V(bn)$color <- ifelse(V(bn)$type, "#FF671F", "#046A38")
+V(bn)$shape == "circle" 
+V(bn)$labelcolor <- ifelse(V(bn)$type, "#FF671F", "#046A38")
+E(bn)$color <- "#06038D"
+E(bn)$width <- 1.5
+
+
+layout <- layout_as_bipartite(bn)
+rotated_layout <- cbind(layout[, 2], -layout[, 1])  # Swap x and y coordinates and negate y
+plot(bn, vertex.label = V(bn)$name, layout = rotated_layout, main = "",
+     vertex.label.color = V(bn)$labelcolor, 
+     vertex.color = "black",
+     edge.lty = E(bn)$linetype, vertex.shape = "none")
+
+```
+

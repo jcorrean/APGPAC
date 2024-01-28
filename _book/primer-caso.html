@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2024-01-27" />
+<meta name="date" content="2024-01-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -172,6 +172,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="primer-caso.html"><a href="primer-caso.html#etapa-1-concepctualización-de-los-datos-del-proyecto"><i class="fa fa-check"></i><b>2.1.1</b> Etapa 1: Concepctualización de los datos del proyecto</a></li>
 <li class="chapter" data-level="2.1.2" data-path="primer-caso.html"><a href="primer-caso.html#etapa-2-recolección-de-los-datos-reales-del-proyecto"><i class="fa fa-check"></i><b>2.1.2</b> Etapa 2: Recolección de los datos reales del proyecto</a></li>
+<li class="chapter" data-level="2.1.3" data-path="primer-caso.html"><a href="primer-caso.html#etapa-3-análisis-de-los-datos"><i class="fa fa-check"></i><b>2.1.3</b> Etapa 3: Análisis de los Datos</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="gemelos-digitales-y-su-utilidad-para-gestionar-proyectos-tecnológicos-y-no-tecnológicos..html"><a href="gemelos-digitales-y-su-utilidad-para-gestionar-proyectos-tecnológicos-y-no-tecnológicos..html"><i class="fa fa-check"></i><b>3</b> “Gemelos Digitales” y su utilidad para gestionar proyectos tecnológicos y no tecnológicos.</a></li>
@@ -219,7 +220,7 @@ Figure 2.1: Una representación visual de la relación entre habilidades blandas
 <p>Primero, se cargan los datos que deben usarse para construir la red. Esto se hace a través de los siguientes códigos.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="primer-caso.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb1-2"><a href="primer-caso.html#cb1-2" tabindex="-1"></a>Data_Figure2 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data/Data_Figure2.csv&quot;</span>)</span></code></pre></div>
-<table class="table" style="margin-left: auto; margin-right: auto;">
+<table class="table" style="color: black; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;">
@@ -383,20 +384,114 @@ Human Resources
 </div>
 <div id="etapa-2-recolección-de-los-datos-reales-del-proyecto" class="section level3 hasAnchor" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> Etapa 2: Recolección de los datos reales del proyecto<a href="primer-caso.html#etapa-2-recolección-de-los-datos-reales-del-proyecto" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Para la recolección de los datos se siguió un procedimiento de muestreo aleatorio estratificado considerando las características del sistema de información nacional de educación superior (SNIES) de Colombia. La Figura <a href="primer-caso.html#fig:f3">2.2</a> la distribución de programas de postgrado que se incluyeron en el análisis.</p>
+<p>Para la recolección de los datos se siguió un procedimiento de muestreo aleatorio estratificado considerando las características del sistema de información nacional de educación superior (SNIES) de Colombia. La Figura <a href="primer-caso.html#fig:f3">2.2</a> muestra la distribución muestral de programas de postgrado analizados para el proyecto.</p>
 <div class="figure"><span style="display:block;" id="fig:f3"></span>
 <img src="F3.jpg" alt="Total de ofertas de postgrado muestreadas para el proyecto" width="100%" />
 <p class="caption">
 Figure 2.2: Total de ofertas de postgrado muestreadas para el proyecto
 </p>
 </div>
-<p>La Figura <a href="primer-caso.html#fig:f2">2.3</a> muestra un flujograma que representa cómo se ejecutaron tres procesos interrelacionados para recolectar los datos (parte superior), analizar el texto de la oferta académica de postgrado (parte intermedia) y analizar la red bipartita entre programas y habilidades blandas (parte inferior).</p>
+<p>La Figura <a href="primer-caso.html#fig:f2">2.3</a> muestra un flujograma de tres procesos interrelacionados para analizar y preprocesar los datos recolectados (parte superior), analizar el texto de la oferta académica de postgrado con técnicas de minería de textos (parte intermedia) y con la red bipartita entre programas y habilidades blandas (parte inferior).</p>
 <div class="figure"><span style="display:block;" id="fig:f2"></span>
 <img src="F2.jpg" alt="Flujograma del proceso de recolección de datos asociados a la importancia de las habilidades blandas para la oferta de postgrado en Colombia" width="100%" />
 <p class="caption">
 Figure 2.3: Flujograma del proceso de recolección de datos asociados a la importancia de las habilidades blandas para la oferta de postgrado en Colombia
 </p>
 </div>
+</div>
+<div id="etapa-3-análisis-de-los-datos" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Etapa 3: Análisis de los Datos<a href="primer-caso.html#etapa-3-análisis-de-los-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para el análisis de los datos, el proyecto empleó la librería “quanteda”. Con esta librería, el analista puede hacer minería de textos. Dicho de otra manera, se pueden tratar a los textos “como si fuesen datos” y a partir del conteo de sílabas, palabras, oraciones y párrafos, se les puede representar en un espacio vectorial y con ello analizar de manera cuantitativa su “representación vectorial”.</p>
+<p>Esta “representación vectorial” empieza por definir de manera explícita cuáles son las habilidades blandas que queremos incluir en nuestros análisis. Luego, a cada habilidad blanda la identificamos con una etiqueta de la siguiente manera:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="primer-caso.html#cb4-1" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;Data/DataForFigure4.RData&quot;</span>)</span>
+<span id="cb4-2"><a href="primer-caso.html#cb4-2" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">setdiff</span>(<span class="fu">ls</span>(), <span class="st">&quot;TODAS&quot;</span>))</span>
+<span id="cb4-3"><a href="primer-caso.html#cb4-3" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword <span class="ot">&lt;-</span> <span class="fu">tolower</span>(TODAS<span class="sc">$</span>keyword)</span>
+<span id="cb4-4"><a href="primer-caso.html#cb4-4" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;acercar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S1&quot;</span></span>
+<span id="cb4-5"><a href="primer-caso.html#cb4-5" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;analizar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S2&quot;</span></span>
+<span id="cb4-6"><a href="primer-caso.html#cb4-6" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;argumentar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S3&quot;</span></span>
+<span id="cb4-7"><a href="primer-caso.html#cb4-7" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;ayudar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S4&quot;</span></span>
+<span id="cb4-8"><a href="primer-caso.html#cb4-8" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;cambiar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S5&quot;</span></span>
+<span id="cb4-9"><a href="primer-caso.html#cb4-9" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;compartir&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S6&quot;</span></span>
+<span id="cb4-10"><a href="primer-caso.html#cb4-10" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;competir&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S7&quot;</span></span>
+<span id="cb4-11"><a href="primer-caso.html#cb4-11" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;comprender&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S8&quot;</span></span>
+<span id="cb4-12"><a href="primer-caso.html#cb4-12" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;comprometerse&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S9&quot;</span></span>
+<span id="cb4-13"><a href="primer-caso.html#cb4-13" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;comunicar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S10&quot;</span></span>
+<span id="cb4-14"><a href="primer-caso.html#cb4-14" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;conflictos&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S11&quot;</span></span>
+<span id="cb4-15"><a href="primer-caso.html#cb4-15" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;controlar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S12&quot;</span></span>
+<span id="cb4-16"><a href="primer-caso.html#cb4-16" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;crear&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S13&quot;</span></span>
+<span id="cb4-17"><a href="primer-caso.html#cb4-17" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;creatividad&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S14&quot;</span></span>
+<span id="cb4-18"><a href="primer-caso.html#cb4-18" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;decidir&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S15&quot;</span></span>
+<span id="cb4-19"><a href="primer-caso.html#cb4-19" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;dirigir&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S16&quot;</span></span>
+<span id="cb4-20"><a href="primer-caso.html#cb4-20" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;empatía&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S17&quot;</span></span>
+<span id="cb4-21"><a href="primer-caso.html#cb4-21" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;equipos&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S18&quot;</span></span>
+<span id="cb4-22"><a href="primer-caso.html#cb4-22" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;ético&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S19&quot;</span></span>
+<span id="cb4-23"><a href="primer-caso.html#cb4-23" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;evaluar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S20&quot;</span></span>
+<span id="cb4-24"><a href="primer-caso.html#cb4-24" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;flexibilidad&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S21&quot;</span></span>
+<span id="cb4-25"><a href="primer-caso.html#cb4-25" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;fomentar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S22&quot;</span></span>
+<span id="cb4-26"><a href="primer-caso.html#cb4-26" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;fortalecer&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S23&quot;</span></span>
+<span id="cb4-27"><a href="primer-caso.html#cb4-27" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;generar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S24&quot;</span></span>
+<span id="cb4-28"><a href="primer-caso.html#cb4-28" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;gestionar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S25&quot;</span></span>
+<span id="cb4-29"><a href="primer-caso.html#cb4-29" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;identificar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S26&quot;</span></span>
+<span id="cb4-30"><a href="primer-caso.html#cb4-30" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;impulsar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S27&quot;</span></span>
+<span id="cb4-31"><a href="primer-caso.html#cb4-31" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;innovar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S28&quot;</span></span>
+<span id="cb4-32"><a href="primer-caso.html#cb4-32" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;interactuar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S29&quot;</span></span>
+<span id="cb4-33"><a href="primer-caso.html#cb4-33" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;liderar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S30&quot;</span></span>
+<span id="cb4-34"><a href="primer-caso.html#cb4-34" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;manifestar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S31&quot;</span></span>
+<span id="cb4-35"><a href="primer-caso.html#cb4-35" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;motivar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S32&quot;</span></span>
+<span id="cb4-36"><a href="primer-caso.html#cb4-36" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;orientar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S33&quot;</span> </span>
+<span id="cb4-37"><a href="primer-caso.html#cb4-37" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;pensamiento crítico&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S34&quot;</span></span>
+<span id="cb4-38"><a href="primer-caso.html#cb4-38" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;persuasión&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S35&quot;</span></span>
+<span id="cb4-39"><a href="primer-caso.html#cb4-39" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;planificar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S36&quot;</span></span>
+<span id="cb4-40"><a href="primer-caso.html#cb4-40" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;reconocer&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S37&quot;</span></span>
+<span id="cb4-41"><a href="primer-caso.html#cb4-41" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;reflexionar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S38&quot;</span></span>
+<span id="cb4-42"><a href="primer-caso.html#cb4-42" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;resolver&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S39&quot;</span></span>
+<span id="cb4-43"><a href="primer-caso.html#cb4-43" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;respetar&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S40&quot;</span></span>
+<span id="cb4-44"><a href="primer-caso.html#cb4-44" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;responsable&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S41&quot;</span></span>
+<span id="cb4-45"><a href="primer-caso.html#cb4-45" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;solucionar problemas&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S42&quot;</span></span>
+<span id="cb4-46"><a href="primer-caso.html#cb4-46" tabindex="-1"></a>TODAS<span class="sc">$</span>keyword[TODAS<span class="sc">$</span>keyword<span class="sc">==</span><span class="st">&quot;tomar decisiones&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;S43&quot;</span></span></code></pre></div>
+<p>Así pues, la habilidad de “acercar” es etiquetada con “S1”, la habilidad de “analizar” es etiquetada con “S2” y así siguiendo como se observa en la lista anterior. Con ello, procedemos a dibujar la proyección unipartita de la red bipartita entre habilidades blandas y programas, de la siguiente manera.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="primer-caso.html#cb5-1" tabindex="-1"></a>Network <span class="ot">&lt;-</span> TODAS[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>)]</span>
+<span id="cb5-2"><a href="primer-caso.html#cb5-2" tabindex="-1"></a>Network <span class="ot">&lt;-</span> Network[<span class="sc">!</span><span class="fu">duplicated</span>(Network[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)]),]</span>
+<span id="cb5-3"><a href="primer-caso.html#cb5-3" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="primer-caso.html#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="primer-caso.html#cb5-5" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
+<span id="cb5-6"><a href="primer-caso.html#cb5-6" tabindex="-1"></a>bn2 <span class="ot">&lt;-</span> <span class="fu">graph.data.frame</span>(Network,<span class="at">directed=</span><span class="cn">FALSE</span>)</span>
+<span id="cb5-7"><a href="primer-caso.html#cb5-7" tabindex="-1"></a><span class="fu">V</span>(bn2)<span class="sc">$</span>type <span class="ot">&lt;-</span> <span class="fu">bipartite_mapping</span>(bn2)<span class="sc">$</span>type</span>
+<span id="cb5-8"><a href="primer-caso.html#cb5-8" tabindex="-1"></a><span class="fu">V</span>(bn2)<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">V</span>(bn2)<span class="sc">$</span>type, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>)</span>
+<span id="cb5-9"><a href="primer-caso.html#cb5-9" tabindex="-1"></a><span class="fu">V</span>(bn2)<span class="sc">$</span>shape <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">V</span>(bn2)<span class="sc">$</span>type, <span class="st">&quot;circle&quot;</span>, <span class="st">&quot;square&quot;</span>)</span>
+<span id="cb5-10"><a href="primer-caso.html#cb5-10" tabindex="-1"></a><span class="fu">V</span>(bn2)<span class="sc">$</span>label.cex <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">V</span>(bn2)<span class="sc">$</span>type, <span class="fl">0.5</span>, <span class="dv">1</span>)</span>
+<span id="cb5-11"><a href="primer-caso.html#cb5-11" tabindex="-1"></a><span class="fu">V</span>(bn2)<span class="sc">$</span>size <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(igraph<span class="sc">::</span><span class="fu">degree</span>(bn2))</span>
+<span id="cb5-12"><a href="primer-caso.html#cb5-12" tabindex="-1"></a><span class="fu">E</span>(bn2)<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="st">&quot;lightgrey&quot;</span></span>
+<span id="cb5-13"><a href="primer-caso.html#cb5-13" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="primer-caso.html#cb5-14" tabindex="-1"></a>bn2.pr <span class="ot">&lt;-</span> <span class="fu">bipartite.projection</span>(bn2)</span>
+<span id="cb5-15"><a href="primer-caso.html#cb5-15" tabindex="-1"></a>Terms <span class="ot">&lt;-</span> bn2.pr<span class="sc">$</span>proj2</span>
+<span id="cb5-16"><a href="primer-caso.html#cb5-16" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="primer-caso.html#cb5-17" tabindex="-1"></a>centrality_scores <span class="ot">&lt;-</span> <span class="fu">degree</span>(Terms)</span>
+<span id="cb5-18"><a href="primer-caso.html#cb5-18" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="primer-caso.html#cb5-19" tabindex="-1"></a><span class="co"># Normalize the centrality scores to a range between 0 and 1</span></span>
+<span id="cb5-20"><a href="primer-caso.html#cb5-20" tabindex="-1"></a>normalized_scores <span class="ot">&lt;-</span> (centrality_scores <span class="sc">-</span> <span class="fu">min</span>(centrality_scores)) <span class="sc">/</span> (<span class="fu">max</span>(centrality_scores) <span class="sc">-</span> <span class="fu">min</span>(centrality_scores))</span>
+<span id="cb5-21"><a href="primer-caso.html#cb5-21" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="primer-caso.html#cb5-22" tabindex="-1"></a><span class="co"># Create a color palette with different colors</span></span>
+<span id="cb5-23"><a href="primer-caso.html#cb5-23" tabindex="-1"></a>color_palette <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, </span>
+<span id="cb5-24"><a href="primer-caso.html#cb5-24" tabindex="-1"></a>                                    <span class="st">&quot;pink&quot;</span>, </span>
+<span id="cb5-25"><a href="primer-caso.html#cb5-25" tabindex="-1"></a>                                    <span class="st">&quot;lightgreen&quot;</span>, </span>
+<span id="cb5-26"><a href="primer-caso.html#cb5-26" tabindex="-1"></a>                                    <span class="st">&quot;green&quot;</span>))(<span class="fu">length</span>(<span class="fu">unique</span>(normalized_scores)))</span>
+<span id="cb5-27"><a href="primer-caso.html#cb5-27" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="primer-caso.html#cb5-28" tabindex="-1"></a><span class="co"># Assign colors to nodes based on their normalized centrality scores</span></span>
+<span id="cb5-29"><a href="primer-caso.html#cb5-29" tabindex="-1"></a>node_colors <span class="ot">&lt;-</span> color_palette[<span class="fu">rank</span>(normalized_scores)]</span>
+<span id="cb5-30"><a href="primer-caso.html#cb5-30" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="primer-caso.html#cb5-31" tabindex="-1"></a><span class="co"># Plot the network with node colors based on centrality</span></span>
+<span id="cb5-32"><a href="primer-caso.html#cb5-32" tabindex="-1"></a><span class="fu">plot</span>(Terms, </span>
+<span id="cb5-33"><a href="primer-caso.html#cb5-33" tabindex="-1"></a>     <span class="at">vertex.label.color =</span> <span class="st">&quot;black&quot;</span>, </span>
+<span id="cb5-34"><a href="primer-caso.html#cb5-34" tabindex="-1"></a>     <span class="at">vertex.label.cex =</span> <span class="fl">0.8</span>, </span>
+<span id="cb5-35"><a href="primer-caso.html#cb5-35" tabindex="-1"></a>     <span class="at">vertex.color =</span> node_colors, </span>
+<span id="cb5-36"><a href="primer-caso.html#cb5-36" tabindex="-1"></a>     <span class="at">vertex.size =</span> <span class="dv">15</span>, </span>
+<span id="cb5-37"><a href="primer-caso.html#cb5-37" tabindex="-1"></a>     <span class="at">edge.width =</span> <span class="fl">0.5</span>, </span>
+<span id="cb5-38"><a href="primer-caso.html#cb5-38" tabindex="-1"></a>     <span class="at">edge.color =</span> <span class="st">&quot;lightgray&quot;</span>, </span>
+<span id="cb5-39"><a href="primer-caso.html#cb5-39" tabindex="-1"></a>     <span class="at">layout =</span> layout_components, </span>
+<span id="cb5-40"><a href="primer-caso.html#cb5-40" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Los nodos en rojo representan las habilidades blandas menos importantes, mientras que los nodos en verde representan las habilidades blandas más importantes. Los nodos blancos están en una “posición intermedia” de importancia entre los rojos y los verdes.</p>
 
 </div>
 </div>

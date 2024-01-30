@@ -173,6 +173,7 @@ div.csl-indent {
 <li class="chapter" data-level="2.1.1" data-path="primer-caso.html"><a href="primer-caso.html#etapa-1-concepctualización-de-los-datos-del-proyecto"><i class="fa fa-check"></i><b>2.1.1</b> Etapa 1: Concepctualización de los datos del proyecto</a></li>
 <li class="chapter" data-level="2.1.2" data-path="primer-caso.html"><a href="primer-caso.html#etapa-2-recolección-de-los-datos-reales-del-proyecto"><i class="fa fa-check"></i><b>2.1.2</b> Etapa 2: Recolección de los datos reales del proyecto</a></li>
 <li class="chapter" data-level="2.1.3" data-path="primer-caso.html"><a href="primer-caso.html#etapa-3-análisis-de-los-datos"><i class="fa fa-check"></i><b>2.1.3</b> Etapa 3: Análisis de los Datos</a></li>
+<li class="chapter" data-level="2.1.4" data-path="primer-caso.html"><a href="primer-caso.html#etapa-4-respuesta-a-las-preguntas-de-investigación"><i class="fa fa-check"></i><b>2.1.4</b> Etapa 4: Respuesta a las preguntas de Investigación</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="gemelos-digitales-y-su-utilidad-para-gestionar-proyectos-tecnológicos-y-no-tecnológicos..html"><a href="gemelos-digitales-y-su-utilidad-para-gestionar-proyectos-tecnológicos-y-no-tecnológicos..html"><i class="fa fa-check"></i><b>3</b> “Gemelos Digitales” y su utilidad para gestionar proyectos tecnológicos y no tecnológicos.</a></li>
@@ -492,6 +493,53 @@ Figure 2.3: Flujograma del proceso de recolección de datos asociados a la impor
 <span id="cb5-40"><a href="primer-caso.html#cb5-40" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Los nodos en rojo representan las habilidades blandas menos importantes, mientras que los nodos en verde representan las habilidades blandas más importantes. Los nodos blancos están en una “posición intermedia” de importancia entre los rojos y los verdes.</p>
+</div>
+<div id="etapa-4-respuesta-a-las-preguntas-de-investigación" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Etapa 4: Respuesta a las preguntas de Investigación<a href="primer-caso.html#etapa-4-respuesta-a-las-preguntas-de-investigación" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En el trabajo de García-Chitiva y Correa <span class="citation">(<a href="#ref-Garciachitiva2023">2023</a>)</span> se establecieron las siguientes preguntas de investigación:</p>
+<ul>
+<li><p>¿Podemos estimar la relación entre las habilidades blandas como habilidades socioemocionales y la oferta de programas de posgrado? Y de ser así,</p></li>
+<li><p>¿Podemos identificar qué habilidades interpersonales tienden a ser más centrales en una muestra de programas de posgrado? Y de ser así,</p></li>
+<li><p>¿Estas habilidades sociales están igualmente vinculadas a todos los estándares de acreditación y tipos de programas, o se conectan de manera diferente en función de la acreditación o el tipo de programa?</p></li>
+</ul>
+<p>La respuesta a la primera pregunta es visible a través de la proyección unipartita de la red que muestra las conexiones entre nodos rojos, blancos y verdes anteriormente. Y para complementar esa respuesta, podemos presentar visualmente cómo se correlacionan las diferentes medidas de centralidad de estas competencias, de la siguiente manera:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="primer-caso.html#cb6-1" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;Data/DataForFigure4B.RData&quot;</span>)</span>
+<span id="cb6-2"><a href="primer-caso.html#cb6-2" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">setdiff</span>(<span class="fu">ls</span>(), <span class="st">&quot;Gen&quot;</span>))</span>
+<span id="cb6-3"><a href="primer-caso.html#cb6-3" tabindex="-1"></a>Gen <span class="ot">&lt;-</span> Gen[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]</span>
+<span id="cb6-4"><a href="primer-caso.html#cb6-4" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="primer-caso.html#cb6-5" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb6-6"><a href="primer-caso.html#cb6-6" tabindex="-1"></a><span class="fu">pairs.panels</span>(Gen, </span>
+<span id="cb6-7"><a href="primer-caso.html#cb6-7" tabindex="-1"></a>             <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>, </span>
+<span id="cb6-8"><a href="primer-caso.html#cb6-8" tabindex="-1"></a>             <span class="at">hist.col =</span> <span class="st">&quot;green&quot;</span>,</span>
+<span id="cb6-9"><a href="primer-caso.html#cb6-9" tabindex="-1"></a>             <span class="at">density =</span> <span class="cn">TRUE</span>,  </span>
+<span id="cb6-10"><a href="primer-caso.html#cb6-10" tabindex="-1"></a>             <span class="at">ellipses =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-11"><a href="primer-caso.html#cb6-11" tabindex="-1"></a>             <span class="at">pch =</span> <span class="dv">10</span>,</span>
+<span id="cb6-12"><a href="primer-caso.html#cb6-12" tabindex="-1"></a>             <span class="at">cex =</span> <span class="dv">1</span>,</span>
+<span id="cb6-13"><a href="primer-caso.html#cb6-13" tabindex="-1"></a>             <span class="at">cex.axis =</span> <span class="fl">1.8</span>,</span>
+<span id="cb6-14"><a href="primer-caso.html#cb6-14" tabindex="-1"></a>             <span class="at">cex.labels =</span> <span class="fl">1.5</span>,</span>
+<span id="cb6-15"><a href="primer-caso.html#cb6-15" tabindex="-1"></a>             <span class="at">lwd =</span> <span class="dv">1</span>,</span>
+<span id="cb6-16"><a href="primer-caso.html#cb6-16" tabindex="-1"></a>             <span class="at">rug =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-17"><a href="primer-caso.html#cb6-17" tabindex="-1"></a>             <span class="at">stars =</span> <span class="cn">TRUE</span></span>
+<span id="cb6-18"><a href="primer-caso.html#cb6-18" tabindex="-1"></a>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Es bastante evidente a partir de la Figura anterior que las cuatro medidas de centralidad correlacionan bastante bien entre sí (revelando un aspecto deseable en la medición de la importancia de las habilidades blandas). Ahora podemos llegar a mostrar cuál sería las diez habilidades blandas más imortantes según los datos recolectados.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="primer-caso.html#cb7-1" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;Data/DataforResultingBipartiteNetwork.RData&quot;</span>)</span>
+<span id="cb7-2"><a href="primer-caso.html#cb7-2" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">setdiff</span>(<span class="fu">ls</span>(), <span class="st">&quot;DTM3&quot;</span>))</span>
+<span id="cb7-3"><a href="primer-caso.html#cb7-3" tabindex="-1"></a>DTM4 <span class="ot">&lt;-</span> <span class="fu">apply</span>(DTM3, <span class="dv">1</span>, <span class="cf">function</span>(row) <span class="fu">any</span>(row <span class="sc">!=</span> <span class="dv">0</span>))</span>
+<span id="cb7-4"><a href="primer-caso.html#cb7-4" tabindex="-1"></a>BN <span class="ot">&lt;-</span> DTM3[DTM4, ]</span>
+<span id="cb7-5"><a href="primer-caso.html#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="primer-caso.html#cb7-6" tabindex="-1"></a><span class="fu">library</span>(bipartite)</span>
+<span id="cb7-7"><a href="primer-caso.html#cb7-7" tabindex="-1"></a><span class="fu">plotweb</span>(BN, <span class="at">method =</span> <span class="st">&quot;normal&quot;</span>,</span>
+<span id="cb7-8"><a href="primer-caso.html#cb7-8" tabindex="-1"></a>        <span class="at">text.rot =</span> <span class="dv">0</span>,</span>
+<span id="cb7-9"><a href="primer-caso.html#cb7-9" tabindex="-1"></a>        <span class="at">col.high =</span> <span class="st">&quot;lightgreen&quot;</span>, </span>
+<span id="cb7-10"><a href="primer-caso.html#cb7-10" tabindex="-1"></a>        <span class="at">bor.col.high =</span> <span class="st">&quot;lightgreen&quot;</span>,</span>
+<span id="cb7-11"><a href="primer-caso.html#cb7-11" tabindex="-1"></a>        <span class="at">col.low =</span> <span class="st">&quot;pink&quot;</span>, </span>
+<span id="cb7-12"><a href="primer-caso.html#cb7-12" tabindex="-1"></a>        <span class="at">bor.col.low =</span> <span class="st">&quot;pink&quot;</span>,</span>
+<span id="cb7-13"><a href="primer-caso.html#cb7-13" tabindex="-1"></a>        <span class="at">col.interaction =</span> <span class="st">&quot;grey90&quot;</span>,</span>
+<span id="cb7-14"><a href="primer-caso.html#cb7-14" tabindex="-1"></a>        <span class="at">bor.col.interaction =</span> <span class="st">&quot;grey90&quot;</span>,</span>
+<span id="cb7-15"><a href="primer-caso.html#cb7-15" tabindex="-1"></a>        <span class="at">low.lablength =</span> <span class="dv">0</span>,</span>
+<span id="cb7-16"><a href="primer-caso.html#cb7-16" tabindex="-1"></a>        <span class="at">labsize =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="1440" /></p>
 
 </div>
 </div>

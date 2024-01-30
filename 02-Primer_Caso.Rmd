@@ -207,3 +207,58 @@ plot(Terms,
 ```
 
 Los nodos en rojo representan las habilidades blandas menos importantes, mientras que los nodos en verde representan las habilidades blandas más importantes. Los nodos blancos están en una "posición intermedia" de importancia entre los rojos y los verdes. 
+
+### Etapa 4: Respuesta a las preguntas de Investigación
+
+En el trabajo de García-Chitiva y Correa [-@Garciachitiva2023] se establecieron las siguientes preguntas de investigación:
+
+- ¿Podemos estimar la relación entre las habilidades blandas como habilidades socioemocionales y la oferta de programas de posgrado? Y de ser así,
+
+- ¿Podemos identificar qué habilidades interpersonales tienden a ser más centrales en una muestra de programas de posgrado? Y de ser así,
+
+- ¿Estas habilidades sociales están igualmente vinculadas a todos los estándares de acreditación y tipos de programas, o se conectan de manera diferente en función de la acreditación o el tipo de programa?
+
+La respuesta a la primera pregunta es visible a través de la proyección unipartita de la red que muestra las conexiones entre nodos rojos, blancos y verdes anteriormente. Y para complementar esa respuesta, podemos presentar visualmente cómo se correlacionan las diferentes medidas de centralidad de estas competencias, de la siguiente manera:
+
+```{r}
+load("Data/DataForFigure4B.RData")
+rm(list=setdiff(ls(), "Gen"))
+Gen <- Gen[1:4]
+
+library(psych)
+pairs.panels(Gen, 
+             method = "spearman", 
+             hist.col = "green",
+             density = TRUE,  
+             ellipses = TRUE,
+             pch = 10,
+             cex = 1,
+             cex.axis = 1.8,
+             cex.labels = 1.5,
+             lwd = 1,
+             rug = TRUE,
+             stars = TRUE
+)
+```
+
+Es bastante evidente a partir de la Figura anterior que las cuatro medidas de centralidad correlacionan bastante bien entre sí (revelando un aspecto deseable en la medición de la importancia de las habilidades blandas). Ahora podemos llegar a mostrar cuál sería las diez habilidades blandas más imortantes según los datos recolectados. 
+
+```{r, echo=TRUE, include=TRUE, message=FALSE, warning=FALSE, fig.height=8, fig.width=15}
+load("Data/DataforResultingBipartiteNetwork.RData")
+rm(list=setdiff(ls(), "DTM3"))
+DTM4 <- apply(DTM3, 1, function(row) any(row != 0))
+BN <- DTM3[DTM4, ]
+
+library(bipartite)
+plotweb(BN, method = "normal",
+        text.rot = 0,
+        col.high = "lightgreen", 
+        bor.col.high = "lightgreen",
+        col.low = "pink", 
+        bor.col.low = "pink",
+        col.interaction = "grey90",
+        bor.col.interaction = "grey90",
+        low.lablength = 0,
+        labsize = 2)
+```
+

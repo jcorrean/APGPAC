@@ -1,0 +1,1 @@
+A lo largo de este libro, vamos a centrarnos en una librería de R llamada "ProjectManagement".

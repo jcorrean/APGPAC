@@ -22,9 +22,9 @@ suppressMessages(library(igraph))
 
 # <span style="color: #b31e29;">Sobre la edición de este libro</span> {.unnumbered}
 
-Este libro resume las lecciones del curso de "<span style="color: #b31e29;">**Analítica para Proyectos**</span>" de la <span style="color: #b31e29;">**Maestría en Estructuración Ágil de Proyectos de Alta Complejidad**</span> de la
+Este libro resume las lecciones del curso de "<span style="color: #b31e29;">**Analítica para Proyectos**</span>" de la [<span style="color: #b31e29;">**Maestría en Estructuración Ágil de Proyectos de Alta Complejidad**</span>](https://urosario.edu.co/en/node/681) de la
 <span style="color: #b31e29;">**Universidad del Rosario**</span> en Bogotá, Colombia.
 
-A excepción de los primeros dos capítulos, el resto del libro está organizado en capítulos escritos por la primera cohorte de estudiantes de nuestra maestría. Desde esta perspectiva, vale la pena preguntarse, ¿por qué involucrar a los estudiantes en escribir capítulos de un libro electrónico como este?
+A excepción de los primeros dos capítulos, el resto del libro está organizado en capítulos escritos por la primera cohorte de estudiantes de nuestra maestría. Desde esta perspectiva, vale la pena preguntarse, ¿por qué involucrar a los estudiantes en escribir capítulos de un libro electrónico como este? La respuesta corta a esta pregunta es porque este libro fue desarrollado bajo un ecosistema de herramientas desconocidas por los estudiantes y al trabajar con ellas, todos los estudiantes pudieron llevarse un aprendizaje práctico que los expuso de manera guiada a una forma "novedosa" de agilizar proyectos.
 
-El libro se desarrolló colaborativamente como un proyecto de [GitHub](https://github.com/), sobre la base de tecnología ["_Bookdown_"](https://www.gitbook.com/) que integra  herramientas de edición de textos en HTML/CSS/bibtex, empleando funcionalidades de [R](https://cran.rstudio.com/), [Python](https://www.python.org/), y [Latex](https://es.wikipedia.org/wiki/LaTeX), dentro de [RStudio](https://posit.co/download/rstudio-desktop/)
+El libro se desarrolló colaborativamente como un proyecto de [GitHub](https://github.com/), sobre la base de tecnología ["_Bookdown_"](https://www.gitbook.com/) que integra  herramientas de edición de textos en HTML/CSS/bibtex, empleando funcionalidades de [R](https://cran.rstudio.com/), [Python](https://www.python.org/), y [Latex](https://es.wikipedia.org/wiki/LaTeX), dentro de [RStudio](https://posit.co/download/rstudio-desktop/).

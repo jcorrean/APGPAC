@@ -18,3 +18,4 @@ etapa-3-análisis-de-los-datos
 etapa-4-respuesta-a-las-preguntas-de-investigación
 gestión-de-proyectos-con-analítica-de-datos
 prefacio
+algunos-hitos-históricos

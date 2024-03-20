@@ -1,0 +1,29 @@
+# Primera Parte: Gerencia (Ágil) de Proyectos
+```{r, echo=FALSE, include=TRUE, message=FALSE, results='asis'}
+authors <- unlist(noquote(yaml::yaml.load_file("01-Prefacio.yml")$default))
+affil <- unlist(noquote(yaml::yaml.load_file("01-Prefacio.yml")$affiliation))
+cat(paste(authors, collapse = ", "), "\n")
+```
+
+```{r, echo=FALSE, include=TRUE, message=FALSE, results='asis'}
+cat(paste(affil, collapse = ", "), "\n")
+```
+
+
+La gerencia de proyectos se apoya en estándares y buenas prácticas reconocidas por el [Project Management Institute](https://www.pmi.org/). 
+
+El Instituto Nacional de Estándares de los Estados Unidos publicó en 1987 la primera versión de estos estándares. Desde entonces, hay varias versiones, siendo la del 2017 la versión más reciente. En estos estándares se incluyen prácticas que permiten aumentar las posibilidades de culminar con éxito proyectos orientados a una amplia variedad de propósitos.
+
+El término **Gerencia Ágil de Proyectos**, por su parte, suele estar muy vinculado a la gestión de proyectos especialmente dirigidos al desarrollo de software [@Dyba2014], desde que la **metodología SCRUM** fue acuñada por @Schwaber1997. 
+
+La metodología SCRUM puede ser usada o aplicada a proyectos que no necesariamente suponen el desarrollo de un software o producto tecnológico, aunque sí requieran de software para mantener el control y gestionar las diferentes fases de un proyecto orientado al desarrollo de servicios, al desarrollo social y económico, o simplemente al estudio de [**sistemas complejos**](https://complexityexplained.github.io/ComplexityExplained%5BSpanish%5D.pdf). 
+
+Para los profesionales que no han escuchado acerca de los sistemas complejos, puede resultar valioso advertir de entrada que lo complejo de un sistema no debe ser confundido con lo complicado que pueda resultar estudiarlo.
+
+## Complejidad y Gerencia de Proyectos.
+
+Los sistemas complejos son un objeto de estudio científico. Aunque existen múltiples institutos, laboratorios y universidades que brindan formación en sistemas complejos, sus esfuerzos suelen coincidir y divulgarse a través de una red profesional conocida como la [Sociedad de Sistemas Complejos](https://cssociety.org/home).
+
+Según Hiroki Sayama [-@Sayama2015], los sistemas complejos son redes constituidas por una serie de componentes que interactúan entre sí, normalmente de forma no lineal que pueden surgir y evolucionar a través de la auto-organización (sin la intervención de un gerente o líder), y sin llegar a ser ni completamente predecibles ni completamente aleatorios, pueden mostrar comportamientos emergentes que solo resultan visibles cuando vemos al sistema cambiando la perspectiva de una escala local o microscópica a otra escala general o macroscópica.
+
+Los casos que presentamos en este libro usan algunas de estas nociones de sistemas complejos. No obstante, el contenido de estos capítulos fue desarrollado por nuestros grupos de estudiantes de la Maestría en Estructuración Ágil de Proyectos de Alta Complejidad, de la Universidad del Rosario, en Bogotá, Colombia.

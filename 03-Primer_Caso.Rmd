@@ -1,6 +1,14 @@
 # Primer Caso
+```{r, echo=FALSE, include=TRUE, message=FALSE, results='asis'}
+authors <- unlist(noquote(yaml::yaml.load_file("03-Primer_Caso.yml")$default))
+affil <- unlist(noquote(yaml::yaml.load_file("03-Primer_Caso.yml")$affiliation))
+cat(paste(authors, collapse = ", "), "\n") 
+cat(paste(affil, collapse = ", "), "\n")
+```
 
-Nuestro primer caso es de interés estratégico para rectores y autoridades universitarias que buscan responder a la siguiente pregunta de interés estratégico:
+
+
+Nuestro primer caso es de interés estratégico para rectores y autoridades universitarias que buscan responder a la siguiente pregunta:
 
 **¿Cuáles son las habilidades blandas más importantes en la oferta de postgrado de las universidades Colombianas?**
 

@@ -1,12 +1,18 @@
-# Primer Caso
+# Centralidad de las Habilidades Blandas en la Formación Profesional de Colombia
+
+
+
 ```{r, echo=FALSE, include=TRUE, message=FALSE, results='asis'}
 authors <- unlist(noquote(yaml::yaml.load_file("03-Primer_Caso.yml")$default))
-affil <- unlist(noquote(yaml::yaml.load_file("03-Primer_Caso.yml")$affiliation))
 cat(paste(authors, collapse = ", "), "\n") 
+```
+
+```{r, echo=FALSE, include=TRUE, message=FALSE, results='asis'}
+affil <- unlist(noquote(yaml::yaml.load_file("03-Primer_Caso.yml")$affiliation))
 cat(paste(affil, collapse = ", "), "\n")
 ```
 
-
+Imagine que usted es designado como rector de una universidad. Bajo su liderazgo, usted debe introducir reformas importantes en la manera cómo se enseña dentro de la universidad. Luego de varias juntas de trabajo, usted observa que muchas instituciones de educación superior se están inclinando hacia la oferta de programas de estudio que formen habilidades blandas. 
 
 Nuestro primer caso es de interés estratégico para rectores y autoridades universitarias que buscan responder a la siguiente pregunta:
 
@@ -32,7 +38,7 @@ Para empezar el proyecto, los investigadores se apoyaron en una metodología lla
 
 Aplicando las nociones explicadas en el video anterior, podemos concebir la relación entre habilidades blandas y programas de postgrado como lo reflejado en la Figura \@ref(fig:f1). En esta red bipartita, uno está interesado en comprender cómo se conectan las habilidades blandas interpersonales sugeridas por Scheerens, van der Werf y de Boer [-@Scheerens2020] con los programas de postgrado ofrecidos en Colombia. La conexión entre estos dos conjuntos se basa en cada vínculo representado como líneas grises rectas. En cada conjunto, cada entidad se conoce formalmente como nodo, y la adyacencia del nodo se refiere a su conexión con otro nodo (es decir, una línea gris recta). La Figura \@ref(fig:f1) muestra que el número de conexiones varía para cada nodo en ambos conjuntos. Lo más importante es que no es necesario que la conexión entre estos dos conjuntos sea completa para afirmar que la capacitación en habilidades interpersonales está presente en un programa de posgrado. En otras palabras, el número de conexiones que cada habilidad blanda de la izquierda tiene con cada programa de posgrado de la derecha puede variar desde cero hasta su máximo, que es el total de programas de posgrado muestreados. Expliquemos. En la Figura \@ref(fig:f1), el pensamiento crítico es la habilidad blanda más conectada, ya que se conecta con cuatro programas (es decir, Doctorado en Física de Altas Energías, Maestría en Ciencia de Datos, Doctorado en Gestión de Residuos y Maestría en Administración de Empresas). La curiosidad es la menos conectada ya que solo tiene una conexión con un programa (es decir, Doctorado en Física de Altas Energías). En la Figura \@ref(fig:f1), la creatividad, la negociación y la empatía tienen el mismo número de conexiones, pero se conectan de manera diferente (por ejemplo, la negociación se conecta con la administración de empresas y la especialización en recursos humanos, mientras que la empatía se conecta con la odontología maxilofacial y los recursos humanos, y la creatividad está ligada con la ciencia de datos y la gestión de residuos). Así, en el análisis de redes bipartitas, el número de conexiones y quién se conecta con quién son el centro del estudio. Sin embargo, el trabajo de García-Chitiva y Correa [-@Garciachitiva2023] no se centra en el mero reconteo porque dicho recuento se plantea como un sistema en el que la centralidad de un nodo es relativa a la centralidad de otros nodos de la red. El sistema bajo escrutinio es entonces la información textual disponible en cada programa de posgrado de la muestra, tratado como un corpus que representa la comprensión institucional de los perfiles profesionales de los graduados. Además, el enfoque de red bipartita nos permite estimar la conectividad de cada programa. Así, el doctorado en física de altas energías y la maestría en ciencia de datos comparten el mismo número de conexiones (cada uno con tres enlaces), mientras que el resto de programas comparten el mismo número de conexiones (cada uno con dos enlaces).
 
-### Etapa 1: Concepctualización de los datos del proyecto
+### Etapa 1: Conceptualización de los datos del proyecto
 
 Para responder a la pregunta del proyecto, necesitamos encontrar unos datos que puedan ser analizables desde el punto de vista de la red bipartita y con ella examinar las conexiones directas entre los nodos de un conjunto a la vez (es decir, habilidades blandas y estudios de posgrado). Para hacer esto, se pueden extraer y visualizar las proyecciones unipartitas de la red bipartita original, de la siguiente manera.
 

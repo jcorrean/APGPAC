@@ -4,7 +4,7 @@ Nuestro planeta enfrenta problemas de gran complejidad (e.g., calentamiento glob
 
 Debido a lo anterior, es razonable esperar que las innovaciones en fusión nuclear con dispositivos como el tokamak, la inteligencia artificial, la edición genética con tecnología CRISP-R, la impresión 3D, y la carrera espacial, sean el "As bajo la manga" que garantice la vida sostenible dentro y fuera de nuestro planeta.
 
-Las soluciones que usan "enfoques simples" están perdiendo eficacia versus las soluciones de "enfoques complejos". La complejidad de estas soluciones se ve en la gestión de procesos productivos de plantas industriales, de aeropuertos con gran tráfico aéreo, de represas hidroeléctricas, o de plataformas de comercio electrónico. En todas estas instancias, la combinación de tecnología con talento humano ha logrado que lo impensable (e.g., viajar grandes distancias) se convierta en realidades cotidianas (e.g., abordando aviones transcontinentales).
+Las soluciones que usan "enfoques simples" están perdiendo eficacia versus las soluciones de "enfoques complejos". La complejidad de estas soluciones se ve en la gestión de procesos productivos de plantas industriales, de aeropuertos con gran tráfico aéreo, de represas hidroeléctricas, o de plataformas de comercio electrónico. En todas estas instancias, la combinación de tecnología con talento humano ha logrado que lo impensable (e.g., viajar grandes distancias) se convierta en realidades posibles (e.g., el uso de cohetes espaciales para hacer turismo fuera de la tierra) o realidades cotidianas (e.g., abordando aviones transcontinentales).
 
 ## Algunos hitos históricos {.unnumbered}
 

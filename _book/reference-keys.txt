@@ -22,3 +22,5 @@ algunos-hitos-históricos
 habilidades-blandas-en-la-formación-profesional-de-colombia
 centralidad-de-las-habilidades-blandas-en-la-formación-profesional-de-colombia
 etapa-1-conceptualización-de-los-datos-del-proyecto
+agencia-financiadora-del-proyecto
+situación-problema

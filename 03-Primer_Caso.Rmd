@@ -12,7 +12,9 @@ affil <- unlist(noquote(yaml::yaml.load_file("03-Primer_Caso.yml")$affiliation))
 cat(paste(affil, collapse = ", "), "\n")
 ```
 
-Imagine que usted es designado como rector de una universidad. Bajo su liderazgo, usted debe introducir reformas importantes en la manera cómo se enseña dentro de la universidad. Luego de varias juntas de trabajo, usted observa que muchas instituciones de educación superior se están inclinando hacia la oferta de programas de estudio que formen habilidades blandas. 
+## Situación Problema
+
+Imagine la siguiente situación. Las miembros de la junta directiva de una universidad deciden que usted se encargue de la rectoría de dicha casa de estudios. Los miembros de la junta directiva esperan que con su liderazgo usted sea capaz de introducir innovaciones docentes para que esa innovación sea uno de los motivos que aumenta el interés del público por matricularse en sus programas de postgrado. Luego de varias reuniones de trabajo con sus decanos, coordinadores académicos y cuerpo docente, usted observa que muchas instituciones de educación superior dentro y fuera de Colombia, están inclinando su oferta académica hacia programas de estudio donde se formen habilidades blandas relevantes para formar profesionales capaces de mantenerse actualizados en el conocimiento.
 
 Nuestro primer caso es de interés estratégico para rectores y autoridades universitarias que buscan responder a la siguiente pregunta:
 
@@ -24,6 +26,9 @@ Para responder esa pregunta, uno podría pensar la relación entre la oferta de 
 knitr::include_graphics("F1.png")
 ```
 
+## Agencia Financiadora del Proyecto
+
+Este proyecto fue desarrollado por [Critical Centrality Institute](https://www.criticalcentrality.com/home) y la publicación de sus resultados fue "financiada" por el [Instituto para el Futuro de la Educación](https://tec.mx/es/ife), del Tecnológico de Monterrey. El reporte del proyecto está disponible en la prestigiosa revista [Studies in Higher Education](https://www.tandfonline.com/doi/epdf/10.1080/03075079.2023.2254799?needAccess=true) bajo la modalidad de un artículo científico en modo "Open Access" o "Acceso Abierto". 
 
 ## Contexto del Proyecto
 

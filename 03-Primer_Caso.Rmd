@@ -26,7 +26,7 @@ knitr::include_graphics("F1.png")
 
 ## Agencia Financiadora del Proyecto
 
-Este proyecto fue desarrollado por [Critical Centrality Institute](https://www.criticalcentrality.com/home) y la publicación de sus resultados fue "financiada" por el [Instituto para el Futuro de la Educación](https://tec.mx/es/ife), del Tecnológico de Monterrey. El reporte del proyecto está disponible en la prestigiosa revista [Studies in Higher Education](https://www.tandfonline.com/doi/full/10.1080/03075079.2023.2254799) bajo la modalidad de un artículo científico en modo "Open Access" o "Acceso Abierto".
+El financiamiento para la publicación de los resultados de este proyecto por el [Instituto para el Futuro de la Educación](https://tec.mx/es/ife), del Tecnológico de Monterrey. El proyecto fue co-desarrollado entre el Tecnológico de Monterrey y [Critical Centrality Institute](https://www.criticalcentrality.com/home). El reporte del proyecto está disponible en la prestigiosa revista [Studies in Higher Education](https://www.tandfonline.com/doi/full/10.1080/03075079.2023.2254799) bajo la modalidad de un artículo científico en modo "Open Access" o "Acceso Abierto".
 
 ## Contexto del Proyecto
 

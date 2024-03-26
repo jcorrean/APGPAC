@@ -6,7 +6,7 @@ etapa-1-conceptualización-de-los-datos-del-proyecto
 etapa-2-recolección-de-los-datos-reales-del-proyecto
 etapa-3-análisis-de-los-datos
 etapa-4-respuesta-a-las-preguntas-de-investigación
-fig:donde
 fig:f1
 fig:f3
 fig:f2
+fig:donde

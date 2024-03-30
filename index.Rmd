@@ -1,20 +1,22 @@
 ---
 title: "Introducción a la Analítica de Datos para la Gestión de Proyectos de Alta Complejidad"
 author: 
-- name: Juan C. Correa (Editor Jefe)
-  email: jcc@criticalcentrality.com
-  affiliation: Critical Centrality Institute
+  - name: Juan C. Correa (Editor Jefe)
+email: jcc@criticalcentrality.com
+affiliation: Critical Centrality Institute
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 bookdown::gitbook:
- css: assets/custom.css
+  css: assets/custom.css
 toc_depth: 4
 documentclass: book
 bibliography: [book.bib,packages.bib]
 biblio-style: apacite
 link-citations: TRUE
 ---
+
+
 
 ```{r, echo=FALSE, include=TRUE, message=FALSE, warning=FALSE}
 suppressMessages(library(igraph))
@@ -28,3 +30,4 @@ Este libro resume las lecciones del curso de "<span style="color: #b31e29;">**An
 A excepción de los primeros dos capítulos, el resto del libro está organizado en capítulos escritos por la primera cohorte de estudiantes de nuestra maestría. Desde esta perspectiva, vale la pena preguntarse, ¿por qué involucrar a los estudiantes en escribir capítulos de un libro electrónico como este? La respuesta corta es porque este libro está desarrollado bajo un ecosistema de herramientas desconocidas por los estudiantes y al trabajar con ellas, ellos pudieron "aprender haciendo" usando tecnologías "novedosas" para agilizar proyectos.
 
 El libro se desarrolló colaborativamente como un proyecto de [GitHub](https://github.com/), sobre la base de tecnología ["_Bookdown_"](https://www.gitbook.com/) que integra  herramientas de edición de textos en HTML/CSS/bibtex, empleando funcionalidades de [R](https://cran.rstudio.com/), [Python](https://www.python.org/), y [Latex](https://es.wikipedia.org/wiki/LaTeX), dentro de [RStudio](https://posit.co/download/rstudio-desktop/). Esta combinación de herramientas es apenas una muestra de todas las que existen y pueden usarse para generar proyectos ágiles de alta complejidad. 
+

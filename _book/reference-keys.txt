@@ -10,3 +10,10 @@ fig:f1
 fig:f3
 fig:f2
 fig:donde
+conceptos-básicos-de-proyectos-deterministicos-y-estocásticos
+conceptos-básicos-de-gestión-de-proyectos-con-analítica-de-datos
+la-influencia-de-linus-torvalds-y-el-sistema-git
+gestión-de-proyectos-con-analítica-de-datos
+github-gitlab-y-bitbucket
+linus-torvalds-y-el-sistema-git
+más-allá-de-los-diagramas-de-gantt

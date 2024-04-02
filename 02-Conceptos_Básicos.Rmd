@@ -75,7 +75,6 @@ GitHub, GitLab y Bitbucket son plataformas de alojamiento de repositorios Git, q
 *GitLab* es una plataforma de código abierto que ofrece una amplia gama de funcionalidades, incluyendo CI/CD integrado, lo que lo hace ideal para el ciclo completo de DevOps. GitLab es el único de los tres que es completamente de código abierto, lo que permite a las empresas alojarlo localmente y mantener su código privado.
 *Bitbucket* Es parte de la línea de productos de [Atlassian](https://es.wikipedia.org/wiki/Atlassian) y se destaca por su integración nativa con otras herramientas de Atlassian como Jira y Confluence. Aunque ofrece CI/CD, su funcionalidad es más limitada en comparación con GitHub y GitLab. Bitbucket no es completamente de código abierto, aunque ofrece algunas características de código abierto.
 
+## Gestión de Proyectos con GitHub
 
-
-
-Según Gonçalves-Dosantos, García-Jurado y Costa [-@Goncalves2020]
+En GitHub hay una herramienta de gestión de proyectos que nos ayuda a organizar y automatizar el flujo de trabajo de un proyecto en un tablero de estilo [Kanban](https://es.wikipedia.org/wiki/Kanban). Los proyectos incluyen problemas y solicitudes de extracción, lo que permite realizar un seguimiento del trabajo a realizar. Los tableros de proyectos son una excelente manera de visualizar el progreso del proyecto y las tareas que se pueden usar junto con los problemas y las solicitudes de extracción para realizar un seguimiento del trabajo por realizar. Las herramientas de gestión de proyectos que ofrece GitHub pueden complementarse con herramientas de analítica de datos en R, tales como el paquete ***[ProjectManagement](https://journal.r-project.org/archive/2020/RJ-2020-009/index.html)*** desarrollado por Gonçalves-Dosantos, García-Jurado y Costa [-@Goncalves2020]

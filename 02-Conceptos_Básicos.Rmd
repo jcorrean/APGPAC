@@ -1,0 +1,81 @@
+# Gestión de Proyectos con Analítica de Datos
+
+```{r, echo=FALSE, include=TRUE, message=FALSE, results='asis'}
+authors <- unlist(noquote(yaml::yaml.load_file("01-Prefacio.yml")$default))
+cat(paste(authors, collapse = ", "), "\n") 
+```
+
+```{r, echo=FALSE, include=TRUE, message=FALSE, results='asis'}
+affil <- unlist(noquote(yaml::yaml.load_file("01-Prefacio.yml")$affiliation))
+cat(paste(affil, collapse = ", "), "\n")
+```
+
+
+En la gerencia de proyectos una práctica profesional muy aceptada es el uso de herramientas como [Microsoft Project](https://www.microsoft.com/es-ar/microsoft-365/project/project-management-software). Si Microsoft Project es ampliamente usado en la gerencia de proyectos, ¿Tiene algún sentido buscar otras herramientas? La respuesta corta es un rotundo sí.
+
+## Más allá de los diagramas de Gantt
+
+Cualquier profesional de la gerencia de proyecto reconocerá qué es un diagrama de Gantt y para qué y por qué es muy usado en la gestión de proyectos. Las herramientas especializadas en analítica de datos como R y Python ofrecen paquetes que nos ayudan a visualizar estos diagramas. Veamos un ejemplo sencillo de tareas relacionadas con un proyecto hipotético orientado al lanzamiento de un nuevo producto.
+
+```{r, echo=FALSE, include=TRUE, message=FALSE}
+library(knitr)
+library(broom)
+library(kableExtra)
+library(PlotPrjNetworks)
+project1=data.frame(
+  tarea=c("Investigación de Mercado","Desarrollo de Concepto","Test de Viabilidad",
+         "Diseño Preliminar","Diseño de Proceso","Prototipado","Prueba de Mercado","Diseño Final", "Lanzamiento"),
+  start=c("2015-07-05","2015-07-05","2015-08-05","2015-10-05","2015-10-05","2016-02-18",
+          "2016-03-18","2016-05-18","2016-07-18"),
+  end=c("2015-08-05","2015-08-05","2015-10-05","2016-01-05","2016-02-18","2016-03-18",
+        "2016-05-18","2016-07-18","2016-09-18"))
+
+html_table <- kable(project1, format = "html")%>%
+  kable_styling()
+
+# Print the HTML table
+html_table
+```
+
+Con base en estas tareas y sus correspondientes fechas de inicio (start) y fin (end), podemos visualizar la planificación estimada para este proyecto. 
+
+```{r, echo=FALSE, include=TRUE, message=FALSE}
+library(PlotPrjNetworks)
+project1=data.frame(
+  task=c("Investigación de Mercado","Desarrollo de Concepto","Test de Viabilidad",
+          "Diseño Preliminar","Diseño de Proceso","Prototipado","Prueba de Mercado","Diseño Final", "Lanzamiento"),
+  start=c("2015-07-05","2015-07-05","2015-08-05","2015-10-05","2015-10-05","2016-02-18",
+          "2016-03-18","2016-05-18","2016-07-18"),
+  end=c("2015-08-05","2015-08-05","2015-10-05","2016-01-05","2016-02-18","2016-03-18",
+        "2016-05-18","2016-07-18","2016-09-18"))
+project2=data.frame(
+  from=c(1,2,3,4,5,6,7,8),
+  to=c(2,3,4,5,6,7,8,9),
+  type=c("SS","FS","FS","SS","FS","FS","FS","FS"),
+  delay=c(7,7,7,8,10,10,10,10))
+GanttChart(project1,project2)
+```
+
+En la gestión de proyectos de alta complejidad (casi siempre orientados a la innovación) varios profesionales contribuyen en diversas partes de un proyecto y ello supone que lo planificado raramente se cumple (debido a fallos en la planificación, la ocurrencia de sucesos inesperados, u otras causas). Además, cuando pensamos en proyectos donde el número de colaboradores supera a los cientos o miles de personas, podemos anticipar que su gestión puede volverse fácilmente un caos de no contar con las herramientas adecuadas.
+
+## Linus Torvalds y el sistema Git
+
+[Linud Torvalds](https://es.wikipedia.org/wiki/Linus_Torvalds) fue uno de los pioneros en la gestión de proyectos de alta complejidad al darse cuenta que para desarrollar el kernel del sistema operativo [Linux](https://es.wikipedia.org/wiki/GNU/Linux), debía contar con una herramienta de gestión de proyectos que le facilitara a él y sus colaboradores precisar los cientos o miles de cambios diarios asociados al desarrollo del sistema operativo Linux. El sistema de control de versiones [Git](https://es.wikipedia.org/wiki/Git) fue un gran hito en la era de gestión de proyectos de alta complejidad. Esta fue la principal motivación de Linus Torvalds para crear *Git* <iframe width="100%" height="400" src="https://www.youtube.com/embed/iNFtX2ctExM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+## GitHub, GitLab y BitBucket
+
+GitHub, GitLab y Bitbucket son plataformas de alojamiento de repositorios Git, que son sistemas de control de versiones utilizados para el desarrollo de software. Estas plataformas permiten a los equipos de desarrollo trabajar juntos en proyectos de software, manteniendo un registro de todas las modificaciones realizadas en el código fuente. Las tres herramientas tienen las siguientes semejanzas:
+
+1. ***Repositorios gratuitos***: Todas ofrecen repositorios privados y públicos gratuitos para los usuarios.
+2. ***Almacenamiento de archivos***: Capacidad para almacenar archivos grandes.
+3. ***Integración con herramientas de terceros***: Permiten la integración con otras herramientas de desarrollo y gestión de proyectos.
+4. ***Análisis de proyectos***: Proporcionan análisis de proyectos y gráficos de quema de trabajo
+
+*GitHub* es conocido por su amplia comunidad y una gran cantidad de aplicaciones en su Marketplace, lo que lo hace muy versátil. Sin embargo, no ofrece funcionalidad de integración continua (CI) de forma nativa, requiriendo herramientas de terceros para esta función.
+*GitLab* es una plataforma de código abierto que ofrece una amplia gama de funcionalidades, incluyendo CI/CD integrado, lo que lo hace ideal para el ciclo completo de DevOps. GitLab es el único de los tres que es completamente de código abierto, lo que permite a las empresas alojarlo localmente y mantener su código privado.
+*Bitbucket* Es parte de la línea de productos de [Atlassian](https://es.wikipedia.org/wiki/Atlassian) y se destaca por su integración nativa con otras herramientas de Atlassian como Jira y Confluence. Aunque ofrece CI/CD, su funcionalidad es más limitada en comparación con GitHub y GitLab. Bitbucket no es completamente de código abierto, aunque ofrece algunas características de código abierto.
+
+
+
+
+Según Gonçalves-Dosantos, García-Jurado y Costa [-@Goncalves2020]

@@ -1,5 +1,15 @@
 # Proyecto Tolima
 
+```{r, echo=FALSE, include=TRUE, message=FALSE, results='asis'}
+authors <- unlist(noquote(yaml::yaml.load_file("04-ProyectoTolima.yml")$default))
+cat(paste(authors, collapse = ", "), "\n") 
+```
+
+```{r, echo=FALSE, include=TRUE, message=FALSE, results='asis'}
+affil <- unlist(noquote(yaml::yaml.load_file("04-ProyectoTolima.yml")$affiliation))
+cat(paste(affil, collapse = ", "), "\n")
+```
+
 El proyecto Tolima surge como iniciativa del psicólogo Michael Steven Bonilla, quien se desempeña en Consorcio de Ingeniería ST. Michael Bonilla identificó que el [Ministerio del Interior en Colombia](https://www.mininterior.gov.co/proyectos-para-derechos-humanos-2023-ciclo-2/) presenta el Banco de Proyectos para las Comunidades Dirección de Derechos humanos ciclo II.
 
 ## La librería "FinancialMaths"  
@@ -8,5 +18,27 @@ En R, existe una librería de matemáticas financieras de uso sencillo para prin
 
 ```{r}
 install.packages("FinancialMath")
+library(FinancialMath)
+```
+
+En esta librería vamos a encontrar funciones muy útiles tales como:
+
+1. Análisis de Flujos de Caja
+
+```{r}
+cf.analysis(cf=c(1,1,101),times=c(1,2,3),i=.04,time.d=TRUE)
+```
+
+
+2. Valor Presente Neto (en inglés NPV) para una serie de flujos de caja y ofrece un diagrama de tiempo de los diagramas de flujo. Por ejemplo, supongamos que tenemos lo siguiente:
+
+```{r}
+NPV(cf0=100,cf=c(50,40),times=c(3,5),i=.01)
+```
+
+2. Tabla de Amortización
+
+```{r}
+amort.table(Loan=1000,n=2,i=.005,ic=1,pf=1) 
 ```
 

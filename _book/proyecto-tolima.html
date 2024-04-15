@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2024-04-14" />
+<meta name="date" content="2024-04-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -135,7 +135,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><span style="color: #ECD22D;">Sobre la edición de este libro</span></a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><span style="color: #b31e29;">Sobre la edición de este libro</span></a></li>
 <li class="chapter" data-level="" data-path="prefacio.html"><a href="prefacio.html"><i class="fa fa-check"></i>Prefacio</a>
 <ul>
 <li class="chapter" data-level="" data-path="prefacio.html"><a href="prefacio.html#algunos-hitos-históricos"><i class="fa fa-check"></i>Algunos hitos históricos</a></li>
@@ -188,6 +188,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="proyecto-tolima" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">3</span> Proyecto Tolima<a href="proyecto-tolima.html#proyecto-tolima" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>1Michael Steven Bonilla, 2<a href="https://scholar.google.com/citations?user=fb0nE80AAAAJ&amp;hl=en">Juan C. Correa</a></p>
+<p>1<a href="https://urosario.edu.co/">Universidad del Rosario, Bogotá, Colombia</a>, 2<a href="https://www.criticalcentrality.com/inicio">Critical Centrality Institute, Monterrey, México</a></p>
 <p>El proyecto Tolima surge como iniciativa del psicólogo Michael Steven Bonilla, quien se desempeña en Consorcio de Ingeniería ST. Michael Bonilla identificó que el <a href="https://www.mininterior.gov.co/proyectos-para-derechos-humanos-2023-ciclo-2/">Ministerio del Interior en Colombia</a> presenta el Banco de Proyectos para las Comunidades Dirección de Derechos humanos ciclo II.</p>
 <div id="la-librería-financialmaths" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> La librería “FinancialMaths”<a href="proyecto-tolima.html#la-librería-financialmaths" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -195,6 +197,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="proyecto-tolima.html#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;FinancialMath&quot;</span>)</span></code></pre></div>
 <pre><code>## Installing package into &#39;/home/jcc/R/x86_64-pc-linux-gnu-library/4.3&#39;
 ## (as &#39;lib&#39; is unspecified)</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="proyecto-tolima.html#cb3-1" tabindex="-1"></a><span class="fu">library</span>(FinancialMath)</span></code></pre></div>
+<p>En esta librería vamos a encontrar funciones muy útiles tales como:</p>
+<ol style="list-style-type: decimal">
+<li>Análisis de Flujos de Caja</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="proyecto-tolima.html#cb4-1" tabindex="-1"></a><span class="fu">cf.analysis</span>(<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">101</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="at">i=</span>.<span class="dv">04</span>,<span class="at">time.d=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre><code>##       CF Analysis
+## PV      91.674727
+## MAC D    2.968938
+## MOD D    2.854748
+## MAC C    8.865665
+## MOD C   10.941756</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Valor Presente Neto (en inglés NPV) para una serie de flujos de caja y ofrece un diagrama de tiempo de los diagramas de flujo. Por ejemplo, supongamos que tenemos lo siguiente:</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="proyecto-tolima.html#cb6-1" tabindex="-1"></a><span class="fu">NPV</span>(<span class="at">cf0=</span><span class="dv">100</span>,<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">40</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>),<span class="at">i=</span>.<span class="dv">01</span>)</span></code></pre></div>
+<pre><code>## [1] -13.41187</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Tabla de Amortización</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="proyecto-tolima.html#cb8-1" tabindex="-1"></a><span class="fu">amort.table</span>(<span class="at">Loan=</span><span class="dv">1000</span>,<span class="at">n=</span><span class="dv">2</span>,<span class="at">i=</span>.<span class="dv">005</span>,<span class="at">ic=</span><span class="dv">1</span>,<span class="at">pf=</span><span class="dv">1</span>) </span></code></pre></div>
+<pre><code>## $Schedule
+##   Payment Interest Paid Principal Paid Balance
+## 1  503.75          5.00         498.75  501.25
+## 2  503.75          2.51         501.25    0.00
+## 
+## $Other
+##                 Details
+## Loan           1000.000
+## Total Paid     1007.510
+## Total Interest    7.510
+## Eff Rate          0.005</code></pre>
 
 </div>
 </div>

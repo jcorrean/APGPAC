@@ -22,9 +22,9 @@ link-citations: TRUE
 suppressMessages(library(igraph))
 ```
 
-# <span style="color: #ECD22D;">Sobre la edición de este libro</span> {.unnumbered}
+# <span style="color: #b31e29;">Sobre la edición de este libro</span> {.unnumbered}
 
-Este libro resume las lecciones del curso de "<span style="color: #EC2D3B;">**Analítica para Proyectos**</span>" de la [<span style="color: #EC2D3B;">**Maestría en Estructuración Ágil de Proyectos de Alta Complejidad**</span>](https://urosario.edu.co/en/node/681) de la
+Este libro resume las lecciones del curso de "<span style="color: #b31e29;">**Analítica para Proyectos**</span>" de la [<span style="color: #b31e29;">**Maestría en Estructuración Ágil de Proyectos de Alta Complejidad**</span>](https://urosario.edu.co/en/node/681) de la
 <span style="color: #b31e29;">**Universidad del Rosario**</span> en Bogotá, Colombia.
 
 A excepción de los primeros dos capítulos, el resto del libro está organizado en capítulos escritos por la primera cohorte de estudiantes de nuestra maestría. Desde esta perspectiva, vale la pena preguntarse, ¿por qué involucrar a los estudiantes en escribir capítulos de un libro electrónico como este? La respuesta corta es porque este libro está desarrollado bajo un ecosistema de herramientas desconocidas por los estudiantes y al trabajar con ellas, ellos pudieron "aprender haciendo" usando tecnologías "novedosas" para agilizar proyectos.

@@ -1,3 +1,12 @@
 # Proyecto Tolima
 
 El proyecto Tolima surge como iniciativa del psicólogo Michael Steven Bonilla, quien se desempeña en Consorcio de Ingeniería ST. Michael Bonilla identificó que el [Ministerio del Interior en Colombia](https://www.mininterior.gov.co/proyectos-para-derechos-humanos-2023-ciclo-2/) presenta el Banco de Proyectos para las Comunidades Dirección de Derechos humanos ciclo II.
+
+## La librería "FinancialMaths"  
+
+En R, existe una librería de matemáticas financieras de uso sencillo para principiantes en lenguajes de programación. Esta librería se llama [FinancialMaths](https://www.quantargo.com/help/r/latest/packages/FinancialMath/0.1.1) que se desarrolló en Diciembre de 2016.   
+
+```{r}
+install.packages("FinancialMath")
+```
+

@@ -211,14 +211,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## MAC C    8.865665
 ## MOD C   10.941756</code></pre>
 <ol start="2" style="list-style-type: decimal">
+<li>Tasa Interna de Retorno (en inglés Internal Rate of Return)</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="proyecto-tolima.html#cb6-1" tabindex="-1"></a><span class="fu">IRR</span>(<span class="at">cf0=</span><span class="dv">100</span>,<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">1</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>))</span></code></pre></div>
+<pre><code>## [1] 0.05166628</code></pre>
+<ol start="3" style="list-style-type: decimal">
 <li>Valor Presente Neto (en inglés NPV) para una serie de flujos de caja y ofrece un diagrama de tiempo de los diagramas de flujo. Por ejemplo, supongamos que tenemos lo siguiente:</li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="proyecto-tolima.html#cb6-1" tabindex="-1"></a><span class="fu">NPV</span>(<span class="at">cf0=</span><span class="dv">100</span>,<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">40</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>),<span class="at">i=</span>.<span class="dv">01</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="proyecto-tolima.html#cb8-1" tabindex="-1"></a><span class="fu">NPV</span>(<span class="at">cf0=</span><span class="dv">100</span>,<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">40</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>),<span class="at">i=</span>.<span class="dv">01</span>)</span></code></pre></div>
 <pre><code>## [1] -13.41187</code></pre>
-<ol start="2" style="list-style-type: decimal">
+<ol start="4" style="list-style-type: decimal">
 <li>Tabla de Amortización</li>
 </ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="proyecto-tolima.html#cb8-1" tabindex="-1"></a><span class="fu">amort.table</span>(<span class="at">Loan=</span><span class="dv">1000</span>,<span class="at">n=</span><span class="dv">2</span>,<span class="at">i=</span>.<span class="dv">005</span>,<span class="at">ic=</span><span class="dv">1</span>,<span class="at">pf=</span><span class="dv">1</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="proyecto-tolima.html#cb10-1" tabindex="-1"></a><span class="fu">amort.table</span>(<span class="at">Loan=</span><span class="dv">1000</span>,<span class="at">n=</span><span class="dv">2</span>,<span class="at">i=</span>.<span class="dv">005</span>,<span class="at">ic=</span><span class="dv">1</span>,<span class="at">pf=</span><span class="dv">1</span>) </span></code></pre></div>
 <pre><code>## $Schedule
 ##   Payment Interest Paid Principal Paid Balance
 ## 1  503.75          5.00         498.75  501.25

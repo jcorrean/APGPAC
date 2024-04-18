@@ -1,3 +1,73 @@
+---
+title: "Introducción a la Analítica de Datos para la Gestión de Proyectos de Alta Complejidad"
+author: 
+  - name: Juan C. Correa (Editor)
+email: jcc@criticalcentrality.com
+affiliation: Critical Centrality Institute
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+bookdown::gitbook:
+  css: assets/custom.css
+toc_depth: 4
+documentclass: book
+bibliography: [book.bib,packages.bib]
+biblio-style: apacite
+link-citations: TRUE
+---
+
+# <span style="color: #b31e29;">Sobre la edición de este libro</span> {.unnumbered}
+
+Placeholder
+
+
+
+<!--chapter:end:index.Rmd-->
+
+
+# Prefacio {.unnumbered}
+
+Placeholder
+
+
+## Algunos hitos históricos {.unnumbered}
+## La programación orientada a objetos {.unnumbered}
+## Estándares y Sistemas de Información {.unnumbered}
+## Ciencia aplicada a proyectos {.unnumbered}
+## Sobre el editor de este libro {.unnumbered}
+
+<!--chapter:end:01-Prefacio.Rmd-->
+
+
+# Gestión de Proyectos con Analítica de Datos
+
+Placeholder
+
+
+## Más allá de los diagramas de Gantt
+## Linus Torvalds y el sistema Git
+## GitHub, GitLab y BitBucket
+## Gestión de Proyectos con GitHub
+## Netlify
+
+<!--chapter:end:02-Conceptos_Básicos.Rmd-->
+
+
+# Centralidad de las Habilidades Blandas en la Formación Profesional de Colombia
+
+Placeholder
+
+
+## Situación Problema
+## Agencia Financiadora del Proyecto
+## Contexto del Proyecto
+### Etapa 1: Conceptualización de los datos del proyecto
+### Etapa 2: Recolección de los datos reales del proyecto
+### Etapa 3: Análisis de los Datos
+### Etapa 4: Respuesta a las preguntas de Investigación
+
+<!--chapter:end:03-Primer_Caso.Rmd-->
+
 # Proyecto Tolima
 
 ```{r, echo=FALSE, include=TRUE, message=FALSE, results='asis'}
@@ -85,4 +155,11 @@ oil = quandl.get("NSE/OIL", authtoken="vEjGTysiCFBuN-z5bjGP",
 start_date="1980-01-01",
 end_date="2020-01-01")
 ```
+
+
+<!--chapter:end:04-ProyectoTolima.Rmd-->
+
+`r if (knitr::is_html_output()) '# Referencias {-}'`
+
+<!--chapter:end:10-references.Rmd-->
 

@@ -23,3 +23,4 @@ proyecto-tolima
 la-librería-financialmaths-de-r
 la-librería-financialmaths
 python-dentro-de-r
+fig:chunk

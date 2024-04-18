@@ -65,7 +65,14 @@ install.packages("reticulate")
 library(reticulate)
 ```
 
-Ahora, pasamos a insertar un chunk para Python para invocar las librerías de Python que vamos a usar en el siguiente ejemplo.
+Ahora, pasamos a insertar un chunk para Python para invocar las librerías de Python. 
+
+```{r chunk, echo=FALSE, out.width = '25%', fig.show='hold', fig.cap='Tipos de Chunk para Archivos RMarkdown en RStudio', }
+knitr::include_graphics("Chunk.png")
+```
+
+
+Ahora, entendiendo cómo logramos insertar un chunk de Python en un archivo RMarkdown, ahora vamos a usar en el siguiente ejemplo.
 
 
 ```{python}

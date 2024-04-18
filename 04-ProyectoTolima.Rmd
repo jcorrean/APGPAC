@@ -58,7 +58,7 @@ amort.table(Loan=1000,n=2,i=.005,ic=1,pf=1)
 
 ## Python dentro de R
 
-En las ciencias de datos, además de R, Python es un lenguaje de programación muy utilizado. Afortunadamente Python y R son integrables dentro de RStudio usando la librería reticulate que instalaremos de la misma manera aplicada para instalar otras librerías.
+En las ciencias de datos y analítica de datos, tanto R como Python son lenguajes de programación muy utilizados. Estos lenguajes de programación son integrables dentro de RStudio usando la librería reticulate que instalaremos de la misma manera aplicada para instalar otras librerías.
 
 ```{r}
 install.packages("reticulate")
@@ -66,10 +66,6 @@ library(reticulate)
 ```
 
 Ahora, pasamos a insertar un chunk para Python para invocar las librerías de Python que vamos a usar en el siguiente ejemplo.
-
-```{python}
-pip install quandl
-```
 
 
 ```{python}
@@ -80,9 +76,20 @@ warnings.filterwarnings('ignore')
 plt.style.use('seaborn')
 ```
 
+Ahora, vamos a extraer unos datos de la librería quandl de la siguiente manera.
+
 ```{python}
 oil = quandl.get("NSE/OIL", authtoken="vEjGTysiCFBuN-z5bjGP",
 start_date="1980-01-01",
 end_date="2020-01-01")
+```
+
+```{python}
+plt.figure(figsize=(10, 6))
+plt.plot(oil.Close)
+plt.ylabel('$')
+plt.xlabel('Date')
+plt.savefig('Oil_Price.png')
+plt.show()
 ```
 

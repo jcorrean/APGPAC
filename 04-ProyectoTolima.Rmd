@@ -26,8 +26,10 @@ En esta librería vamos a encontrar funciones muy útiles tales como:
 1. Análisis de Flujos de Caja
 
 ```{r}
-cf.analysis(cf=c(1,1,101),times=c(1,2,3),i=.04,time.d=TRUE)
+cf.analysis(cf=c(1,1,101),times=c(1,2,3),i=.04,time.d=TRUE, plot = TRUE)
 ```
+
+Como parte de los resultados que nos arroja la función anterior, tenemos el valor presente (Present Value), la duración y la convexidad de Macaulay y la duración y la convexidad modificadas para flujos de efectivo determinados. También traza la convexidad y el diagrama de tiempo de los flujos de efectivo.
 
 2. Tasa Interna de Retorno (en inglés Internal Rate of Return)
 ```{r}
@@ -41,7 +43,14 @@ IRR(cf0=100,cf=c(1,1,30,40,50,1),times=c(1,1,3,4,5,6))
 NPV(cf0=100,cf=c(50,40),times=c(3,5),i=.01)
 ```
 
-4. Tabla de Amortización
+4. Valor Temporal del Dinero: Resuelva el valor presente, el valor futuro, el tiempo o la tasa de interés para la acumulación de dinero que genera interés compuesto. También puede trazar el valor de tiempo para cada período.
+
+```{r}
+TVM(pv=10,fv=20,i=.05,ic=2,plot=TRUE)
+```
+
+
+5. Tabla de Amortización
 
 ```{r}
 amort.table(Loan=1000,n=2,i=.005,ic=1,pf=1) 

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Proyecto Tolima | Introducción a la Analítica de Datos para la Gestión de Proyectos de Alta Complejidad</title>
   <meta name="description" content="3 Proyecto Tolima | Introducción a la Analítica de Datos para la Gestión de Proyectos de Alta Complejidad" />
-  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Proyecto Tolima | Introducción a la Analítica de Datos para la Gestión de Proyectos de Alta Complejidad" />
   <meta property="og:type" content="book" />
@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2024-04-15" />
+<meta name="date" content="2024-04-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -202,14 +202,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li>Análisis de Flujos de Caja</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="proyecto-tolima.html#cb4-1" tabindex="-1"></a><span class="fu">cf.analysis</span>(<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">101</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="at">i=</span>.<span class="dv">04</span>,<span class="at">time.d=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="proyecto-tolima.html#cb4-1" tabindex="-1"></a><span class="fu">cf.analysis</span>(<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">101</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="at">i=</span>.<span class="dv">04</span>,<span class="at">time.d=</span><span class="cn">TRUE</span>, <span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##       CF Analysis
 ## PV      91.674727
 ## MAC D    2.968938
 ## MOD D    2.854748
 ## MAC C    8.865665
 ## MOD C   10.941756</code></pre>
+<p>Como parte de los resultados que nos arroja la función anterior, tenemos el valor presente (Present Value), la duración y la convexidad de Macaulay y la duración y la convexidad modificadas para flujos de efectivo determinados. También traza la convexidad y el diagrama de tiempo de los flujos de efectivo.</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Tasa Interna de Retorno (en inglés Internal Rate of Return)</li>
 </ol>
@@ -221,9 +221,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="proyecto-tolima.html#cb8-1" tabindex="-1"></a><span class="fu">NPV</span>(<span class="at">cf0=</span><span class="dv">100</span>,<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">40</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>),<span class="at">i=</span>.<span class="dv">01</span>)</span></code></pre></div>
 <pre><code>## [1] -13.41187</code></pre>
 <ol start="4" style="list-style-type: decimal">
+<li>Valor Temporal del Dinero: Resuelva el valor presente, el valor futuro, el tiempo o la tasa de interés para la acumulación de dinero que genera interés compuesto. También puede trazar el valor de tiempo para cada período.</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="proyecto-tolima.html#cb10-1" tabindex="-1"></a><span class="fu">TVM</span>(<span class="at">pv=</span><span class="dv">10</span>,<span class="at">fv=</span><span class="dv">20</span>,<span class="at">i=</span>.<span class="dv">05</span>,<span class="at">ic=</span><span class="dv">2</span>,<span class="at">plot=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre><code>##                TVM
+## PV       10.000000
+## FV       20.000000
+## Periods  14.035517
+## Eff Rate  0.050625
+## i^(2)     0.050000</code></pre>
+<ol start="5" style="list-style-type: decimal">
 <li>Tabla de Amortización</li>
 </ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="proyecto-tolima.html#cb10-1" tabindex="-1"></a><span class="fu">amort.table</span>(<span class="at">Loan=</span><span class="dv">1000</span>,<span class="at">n=</span><span class="dv">2</span>,<span class="at">i=</span>.<span class="dv">005</span>,<span class="at">ic=</span><span class="dv">1</span>,<span class="at">pf=</span><span class="dv">1</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="proyecto-tolima.html#cb12-1" tabindex="-1"></a><span class="fu">amort.table</span>(<span class="at">Loan=</span><span class="dv">1000</span>,<span class="at">n=</span><span class="dv">2</span>,<span class="at">i=</span>.<span class="dv">005</span>,<span class="at">ic=</span><span class="dv">1</span>,<span class="at">pf=</span><span class="dv">1</span>) </span></code></pre></div>
 <pre><code>## $Schedule
 ##   Payment Interest Paid Principal Paid Balance
 ## 1  503.75          5.00         498.75  501.25

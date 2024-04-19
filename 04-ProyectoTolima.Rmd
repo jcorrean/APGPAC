@@ -23,6 +23,11 @@ library(FinancialMath)
 
 En esta librería vamos a encontrar funciones muy útiles tales como:
 
+```{r, echo=FALSE}
+2 + 2
+```
+
+
 1. Análisis de Flujos de Caja
 
 ```{r}

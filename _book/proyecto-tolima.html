@@ -200,10 +200,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## (as &#39;lib&#39; is unspecified)</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="proyecto-tolima.html#cb3-1" tabindex="-1"></a><span class="fu">library</span>(FinancialMath)</span></code></pre></div>
 <p>En esta librería vamos a encontrar funciones muy útiles tales como:</p>
+<pre><code>## [1] 4</code></pre>
 <ol style="list-style-type: decimal">
 <li>Análisis de Flujos de Caja</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="proyecto-tolima.html#cb4-1" tabindex="-1"></a><span class="fu">cf.analysis</span>(<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">101</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="at">i=</span>.<span class="dv">04</span>,<span class="at">time.d=</span><span class="cn">TRUE</span>, <span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="proyecto-tolima.html#cb5-1" tabindex="-1"></a><span class="fu">cf.analysis</span>(<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">101</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="at">i=</span>.<span class="dv">04</span>,<span class="at">time.d=</span><span class="cn">TRUE</span>, <span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##       CF Analysis
 ## PV      91.674727
 ## MAC D    2.968938
@@ -214,18 +215,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol start="2" style="list-style-type: decimal">
 <li>Tasa Interna de Retorno (en inglés Internal Rate of Return)</li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="proyecto-tolima.html#cb6-1" tabindex="-1"></a><span class="fu">IRR</span>(<span class="at">cf0=</span><span class="dv">100</span>,<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">1</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="proyecto-tolima.html#cb7-1" tabindex="-1"></a><span class="fu">IRR</span>(<span class="at">cf0=</span><span class="dv">100</span>,<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">1</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>))</span></code></pre></div>
 <pre><code>## [1] 0.05166628</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Valor Presente Neto (en inglés NPV) para una serie de flujos de caja y ofrece un diagrama de tiempo de los diagramas de flujo. Por ejemplo, supongamos que tenemos lo siguiente:</li>
 </ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="proyecto-tolima.html#cb8-1" tabindex="-1"></a><span class="fu">NPV</span>(<span class="at">cf0=</span><span class="dv">100</span>,<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">40</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>),<span class="at">i=</span>.<span class="dv">01</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="proyecto-tolima.html#cb9-1" tabindex="-1"></a><span class="fu">NPV</span>(<span class="at">cf0=</span><span class="dv">100</span>,<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">40</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>),<span class="at">i=</span>.<span class="dv">01</span>)</span></code></pre></div>
 <pre><code>## [1] -13.41187</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Valor Temporal del Dinero: Resuelva el valor presente, el valor futuro, el tiempo o la tasa de interés para la acumulación de dinero que genera interés compuesto. También puede trazar el valor de tiempo para cada período.</li>
 </ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="proyecto-tolima.html#cb10-1" tabindex="-1"></a><span class="fu">TVM</span>(<span class="at">pv=</span><span class="dv">10</span>,<span class="at">fv=</span><span class="dv">20</span>,<span class="at">i=</span>.<span class="dv">05</span>,<span class="at">ic=</span><span class="dv">2</span>,<span class="at">plot=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="proyecto-tolima.html#cb11-1" tabindex="-1"></a><span class="fu">TVM</span>(<span class="at">pv=</span><span class="dv">10</span>,<span class="at">fv=</span><span class="dv">20</span>,<span class="at">i=</span>.<span class="dv">05</span>,<span class="at">ic=</span><span class="dv">2</span>,<span class="at">plot=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <pre><code>##                TVM
 ## PV       10.000000
 ## FV       20.000000
@@ -235,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol start="5" style="list-style-type: decimal">
 <li>Tabla de Amortización</li>
 </ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="proyecto-tolima.html#cb12-1" tabindex="-1"></a><span class="fu">amort.table</span>(<span class="at">Loan=</span><span class="dv">1000</span>,<span class="at">n=</span><span class="dv">2</span>,<span class="at">i=</span>.<span class="dv">005</span>,<span class="at">ic=</span><span class="dv">1</span>,<span class="at">pf=</span><span class="dv">1</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="proyecto-tolima.html#cb13-1" tabindex="-1"></a><span class="fu">amort.table</span>(<span class="at">Loan=</span><span class="dv">1000</span>,<span class="at">n=</span><span class="dv">2</span>,<span class="at">i=</span>.<span class="dv">005</span>,<span class="at">ic=</span><span class="dv">1</span>,<span class="at">pf=</span><span class="dv">1</span>) </span></code></pre></div>
 <pre><code>## $Schedule
 ##   Payment Interest Paid Principal Paid Balance
 ## 1  503.75          5.00         498.75  501.25
@@ -251,10 +252,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="python-dentro-de-r" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Python dentro de R<a href="proyecto-tolima.html#python-dentro-de-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>En las ciencias de datos y analítica de datos, tanto R como Python son lenguajes de programación muy utilizados. Estos lenguajes de programación son integrables dentro de RStudio usando la librería reticulate que instalaremos de la misma manera aplicada para instalar otras librerías.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="proyecto-tolima.html#cb14-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;reticulate&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="proyecto-tolima.html#cb15-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;reticulate&quot;</span>)</span></code></pre></div>
 <pre><code>## Installing package into &#39;/home/jcc/R/x86_64-pc-linux-gnu-library/4.3&#39;
 ## (as &#39;lib&#39; is unspecified)</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="proyecto-tolima.html#cb16-1" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="proyecto-tolima.html#cb17-1" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span></code></pre></div>
 <p>Ahora, pasamos a insertar un chunk para Python para invocar las librerías de Python.</p>
 <div class="figure"><span style="display:block;" id="fig:chunk"></span>
 <img src="Chunk.png" alt="Tipos de Chunk para Archivos RMarkdown en RStudio" width="25%" />
@@ -263,22 +264,22 @@ Figure 3.1: Tipos de Chunk para Archivos RMarkdown en RStudio
 </p>
 </div>
 <p>Ahora, entendiendo cómo logramos insertar un chunk de Python en un archivo RMarkdown, ahora vamos a usar en el siguiente ejemplo.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="proyecto-tolima.html#cb17-1" tabindex="-1"></a><span class="im">import</span> quandl</span>
-<span id="cb17-2"><a href="proyecto-tolima.html#cb17-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb17-3"><a href="proyecto-tolima.html#cb17-3" tabindex="-1"></a><span class="im">import</span> warnings</span>
-<span id="cb17-4"><a href="proyecto-tolima.html#cb17-4" tabindex="-1"></a>warnings.filterwarnings(<span class="st">&#39;ignore&#39;</span>)</span>
-<span id="cb17-5"><a href="proyecto-tolima.html#cb17-5" tabindex="-1"></a>plt.style.use(<span class="st">&#39;seaborn&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="proyecto-tolima.html#cb18-1" tabindex="-1"></a><span class="im">import</span> quandl</span>
+<span id="cb18-2"><a href="proyecto-tolima.html#cb18-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb18-3"><a href="proyecto-tolima.html#cb18-3" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb18-4"><a href="proyecto-tolima.html#cb18-4" tabindex="-1"></a>warnings.filterwarnings(<span class="st">&#39;ignore&#39;</span>)</span>
+<span id="cb18-5"><a href="proyecto-tolima.html#cb18-5" tabindex="-1"></a>plt.style.use(<span class="st">&#39;seaborn&#39;</span>)</span></code></pre></div>
 <p>Ahora, vamos a extraer unos datos de la librería quandl de la siguiente manera.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="proyecto-tolima.html#cb18-1" tabindex="-1"></a>oil <span class="op">=</span> quandl.get(<span class="st">&quot;NSE/OIL&quot;</span>, authtoken<span class="op">=</span><span class="st">&quot;vEjGTysiCFBuN-z5bjGP&quot;</span>,</span>
-<span id="cb18-2"><a href="proyecto-tolima.html#cb18-2" tabindex="-1"></a>start_date<span class="op">=</span><span class="st">&quot;1980-01-01&quot;</span>,</span>
-<span id="cb18-3"><a href="proyecto-tolima.html#cb18-3" tabindex="-1"></a>end_date<span class="op">=</span><span class="st">&quot;2020-01-01&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="proyecto-tolima.html#cb19-1" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb19-2"><a href="proyecto-tolima.html#cb19-2" tabindex="-1"></a>plt.plot(oil.Close)</span>
-<span id="cb19-3"><a href="proyecto-tolima.html#cb19-3" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;$&#39;</span>)</span>
-<span id="cb19-4"><a href="proyecto-tolima.html#cb19-4" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Date&#39;</span>)</span>
-<span id="cb19-5"><a href="proyecto-tolima.html#cb19-5" tabindex="-1"></a>plt.savefig(<span class="st">&#39;Oil_Price.png&#39;</span>)</span>
-<span id="cb19-6"><a href="proyecto-tolima.html#cb19-6" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="960" /></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="proyecto-tolima.html#cb19-1" tabindex="-1"></a>oil <span class="op">=</span> quandl.get(<span class="st">&quot;NSE/OIL&quot;</span>, authtoken<span class="op">=</span><span class="st">&quot;vEjGTysiCFBuN-z5bjGP&quot;</span>,</span>
+<span id="cb19-2"><a href="proyecto-tolima.html#cb19-2" tabindex="-1"></a>start_date<span class="op">=</span><span class="st">&quot;1980-01-01&quot;</span>,</span>
+<span id="cb19-3"><a href="proyecto-tolima.html#cb19-3" tabindex="-1"></a>end_date<span class="op">=</span><span class="st">&quot;2020-01-01&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="proyecto-tolima.html#cb20-1" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb20-2"><a href="proyecto-tolima.html#cb20-2" tabindex="-1"></a>plt.plot(oil.Close)</span>
+<span id="cb20-3"><a href="proyecto-tolima.html#cb20-3" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;$&#39;</span>)</span>
+<span id="cb20-4"><a href="proyecto-tolima.html#cb20-4" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Date&#39;</span>)</span>
+<span id="cb20-5"><a href="proyecto-tolima.html#cb20-5" tabindex="-1"></a>plt.savefig(<span class="st">&#39;Oil_Price.png&#39;</span>)</span>
+<span id="cb20-6"><a href="proyecto-tolima.html#cb20-6" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="960" /></p>
 
 </div>
 </div>

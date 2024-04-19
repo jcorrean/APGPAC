@@ -3,8 +3,8 @@
 En las ciencias de datos y analítica de datos, tanto R como Python son lenguajes de programación muy utilizados. Estos lenguajes de programación son integrables dentro de RStudio usando la librería reticulate que instalaremos de la misma manera aplicada para instalar otras librerías.
 
 ```{r}
-install.packages("reticulate")
 library(reticulate)
+virtualenv_create('r-reticulate')
 ```
 
 Ahora, pasamos a insertar un chunk para Python para invocar las librerías de Python. 

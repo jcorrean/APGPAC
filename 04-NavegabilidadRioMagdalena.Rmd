@@ -1,23 +1,22 @@
-# Proyecto Tolima
+# Navegabilidad Rio Magdalena
 
 ```{r, echo=FALSE, include=TRUE, message=FALSE, results='asis'}
-authors <- unlist(noquote(yaml::yaml.load_file("04-ProyectoTolima.yml")$default))
+authors <- unlist(noquote(yaml::yaml.load_file("04-NavegabilidadRioMagdalena.yml")$default))
 cat(paste(authors, collapse = ", "), "\n") 
 ```
 
 ```{r, echo=FALSE, include=TRUE, message=FALSE, results='asis'}
-affil <- unlist(noquote(yaml::yaml.load_file("04-ProyectoTolima.yml")$affiliation))
+affil <- unlist(noquote(yaml::yaml.load_file("04-NavegabilidadRioMagdalena.yml")$affiliation))
 cat(paste(affil, collapse = ", "), "\n")
 ```
 
-El proyecto Tolima surge como iniciativa del psicólogo Michael Steven Bonilla, quien se desempeña en Consorcio de Ingeniería ST. Michael Bonilla identificó que el [Ministerio del Interior en Colombia](https://www.mininterior.gov.co/proyectos-para-derechos-humanos-2023-ciclo-2/) presenta el Banco de Proyectos para las Comunidades Dirección de Derechos humanos ciclo II.
+
 
 ## La librería "FinancialMaths"  
 
 En R, existe una librería de matemáticas financieras de uso sencillo para principiantes en lenguajes de programación. Esta librería se llama [FinancialMaths](https://www.quantargo.com/help/r/latest/packages/FinancialMath/0.1.1) que se desarrolló en Diciembre de 2016.   
 
 ```{r}
-install.packages("FinancialMath")
 library(FinancialMath)
 ```
 
@@ -66,8 +65,11 @@ amort.table(Loan=1000,n=2,i=.005,ic=1,pf=1)
 En las ciencias de datos y analítica de datos, tanto R como Python son lenguajes de programación muy utilizados. Estos lenguajes de programación son integrables dentro de RStudio usando la librería reticulate que instalaremos de la misma manera aplicada para instalar otras librerías.
 
 ```{r}
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
 install.packages("reticulate")
 library(reticulate)
+use_virtualenv("r-reticulate")
+
 ```
 
 Ahora, pasamos a insertar un chunk para Python para invocar las librerías de Python. 

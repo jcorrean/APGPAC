@@ -68,8 +68,6 @@ En las ciencias de datos y analítica de datos, tanto R como Python son lenguaje
 options(repos = c(CRAN = "https://cran.rstudio.com/"))
 install.packages("reticulate")
 library(reticulate)
-use_virtualenv("r-reticulate")
-
 ```
 
 Ahora, pasamos a insertar un chunk para Python para invocar las librerías de Python. 

@@ -4,7 +4,7 @@ En las ciencias de datos y analítica de datos, tanto R como Python son lenguaje
 
 ```{r}
 library(reticulate)
-use_python("C:/Users/USER/anaconda3/python311.dll", required = TRUE)
+#use_python("C:/Users/USER/anaconda3/python311.dll", required = TRUE)
 ```
 
 Ahora, pasamos a insertar un chunk para Python para invocar las librerías de Python. 

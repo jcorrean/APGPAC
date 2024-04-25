@@ -59,8 +59,7 @@ Para observar con detalle cuánto dinero está presupuestado para las 219 licita
 library(knitr)
 library(broom)
 library(kableExtra)
-setwd("Data")
-data <- readxl::read_excel("PAA-2024.xlsx")
+data <- readxl::read_excel("Data/PAA-2024.xlsx")
 data <- data[c(2,10)]
 html_table <- kable(data, format = "html")%>%
   kable_styling()
@@ -69,6 +68,26 @@ html_table <- kable(data, format = "html")%>%
 html_table
 ```
 
+Una breve visualización de datos nos ayuda a entender cómo es la distribución estadística de esos presupuestos por mes (columna 4).
+
+```{r, echo=TRUE, include=TRUE, message=FALSE}
+data <- readxl::read_excel("Data/PAA-2024.xlsx")
+data <- na.omit(data[c(4,10)])
+colnames(data)[1] <- "Mes"
+colnames(data)[2] <- "Valor"
+library(dplyr)
+resumen <- data %>%
+ group_by(Mes) %>%
+ summarize(Presupuesto = sum(Valor, na.rm = TRUE))
+library(ggplot2)
+
+ggplot(resumen, aes(x=reorder(Mes, Presupuesto), y=Presupuesto)) +
+    geom_bar(stat="identity", fill="#131364", alpha=.6, width=.4) +
+    coord_flip() +
+    xlab("") +
+    theme_bw()
+
+```
 
 
 

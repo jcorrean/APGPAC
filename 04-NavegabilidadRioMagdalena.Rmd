@@ -32,7 +32,43 @@ Estos cinco proyectos interrelacionados son indispensables para el desarrollo es
 
 ## Agencias Financiadoras
 
-Dada la magnitud de este proyecto complejo, resulta obvio encontrar que la primera agencia financiadora de su desarrollo sea el gobierno nacional de Colombia. Según reportes de la [Radio Nacional de Colombia](https://www.radionacional.co/actualidad/rio-magdalena-gobierno-confirmo-inversion-para-su-navegabilidad#:~:text=2022%20%2D%2009%3A21-,Gobierno%20confirm%C3%B3%20%242.2%20billones%20de%20inversi%C3%B3n%20para%20obras%20de%20navegabilidad,la%20navegabilidad%20del%20r%C3%ADo%20Magdalena.), el 30 de Noviembre de 2022 se confirmó que el Gobierno Nacional confirmó 2.2 
+Dada la magnitud de este proyecto complejo, resulta obvio encontrar que la primera agencia financiadora de su desarrollo sea el gobierno nacional de Colombia. Según reportes de la [Radio Nacional de Colombia](https://www.radionacional.co/actualidad/rio-magdalena-gobierno-confirmo-inversion-para-su-navegabilidad#:~:text=2022%20%2D%2009%3A21-,Gobierno%20confirm%C3%B3%20%242.2%20billones%20de%20inversi%C3%B3n%20para%20obras%20de%20navegabilidad,la%20navegabilidad%20del%20r%C3%ADo%20Magdalena.), el 30 de Noviembre de 2022 se confirmó que el Gobierno Nacional confirmó 2.2 billones de pesos colombianos para realizar obras que mejoren la navegabilidad del río Magdalena. 
+
+Con el propósito de aprender cómo implementar la evaluación financiera de proyectos de desarrollo de alta complejidad, acá vamos a usar los datos públicos del plan de adquisiciones de [Cormagdalena](https://cormagdalena.gov.co/contratacion/#plan-adquisiciones). 
+
+Cormagdalena es una corporación de carácter público con participación de entidades privadas que está orientada a garantizar "la protección y gestión integral del río Magdalena como un bien público a su cargo, que en su conjunto constituye un sistema multidimensional, con el fin de contribuir al aumento del desarrollo competitivo del país, al mejoramiento de la calidad de vida de las comunidades ribereñas y a la protección del derecho de todos los colombianos a gozar de un ambiente sano".
+
+## Datos de Cormagdalena
+
+Al explorar los datos relacionados con el plan de Adquisiciones de Cormagdalena, nos encontramos una serie de 219 licitaciones públicas orientadas a contratar los servicios o productos de proveedores locales. 
+
+```{r, echo=TRUE, include=TRUE, message=FALSE}
+library(readxl)
+PAA_2024 <- read_excel("Data/PAA-2024.xlsx")
+```
+
+Esta tabla de datos cuenta con un total de 19 columnas (variables) resumidas así:
+
+```{r, echo=TRUE, include=TRUE, message=FALSE}
+variable.names(PAA_2024)
+```
+
+Para observar con detalle cuánto dinero está presupuestado para las 219 licitaciones públicas, solo falta concentrarse en las columna 2 ("Descripción") y la columna 10 ("Valor estimado en la vigencia actual"). Las cifras están en pesos colombianos.   
+
+```{r, echo=TRUE, include=TRUE, message=FALSE}
+library(knitr)
+library(broom)
+library(kableExtra)
+setwd("Data")
+data <- readxl::read_excel("PAA-2024.xlsx")
+data <- data[c(2,10)]
+html_table <- kable(data, format = "html")%>%
+  kable_styling()
+
+# Print the HTML table
+html_table
+```
+
 
 
 

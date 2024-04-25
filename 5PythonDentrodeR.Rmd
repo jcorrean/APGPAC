@@ -18,6 +18,7 @@ Ahora, entendiendo cómo logramos insertar un chunk de Python en un archivo RMar
 
 
 ```{python}
+pip install quandl
 import quandl
 import matplotlib.pyplot as plt
 import warnings

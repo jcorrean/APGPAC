@@ -40,7 +40,7 @@ Cormagdalena es una corporación de carácter público con participación de ent
 
 ## Datos de Cormagdalena
 
-Al explorar los datos relacionados con el plan de Adquisiciones de Cormagdalena, nos encontramos una serie de 219 licitaciones públicas orientadas a contratar los servicios o productos de proveedores locales. 
+Al explorar los datos relacionados con el plan de Adquisiciones de Cormagdalena para el año 2024, nos encontramos una serie de 219 licitaciones públicas orientadas a contratar los servicios o productos de proveedores locales. 
 
 ```{r, echo=TRUE, include=TRUE, message=FALSE}
 library(readxl)

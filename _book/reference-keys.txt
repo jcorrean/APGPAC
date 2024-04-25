@@ -26,3 +26,6 @@ python-dentro-de-r
 fig:chunk
 navegabilidad-rio-magdalena
 python-dentro-de-r-1
+situación-problema-1
+agencias-financiadoras
+datos-de-cormagdalena

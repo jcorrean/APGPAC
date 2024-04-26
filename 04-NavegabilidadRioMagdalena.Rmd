@@ -87,6 +87,53 @@ ggplot(resumen, aes(x=reorder(Mes, Presupuesto), y=Presupuesto)) +
 
 ```
 
+Para determinar a cuanto asciende el valor de inversión de todas las licitaciones, basta con traer el "valor" y sumar los valores de esa columna 
+```{r}
+data <- readxl::read_excel("Data/PAA-2024.xlsx")
+data <- na.omit(data[c(9)])
+valor_total_inversion <- sum(data$`Valor total estimado`, na.rm = TRUE)
+print(valor_total_inversion)
+```
+
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/g3kOgIuhpiE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+Para observar los correos de los responsables de las licitaciones, se debe concentrar en traer las columnas 2 ("descripción") la columna 7 ("modalidad de selección") la columna 14 ("ubicación") la columna 15("Nombre del responsable") y la columna 17(correo electrónico del responsable")
+
+```{r}
+library(knitr)
+library(broom)
+library(kableExtra)
+data <- readxl::read_excel("Data/PAA-2024.xlsx")
+data <- data[c(2,7,14,15,17)]
+html_table <- kable(data, format = "html")%>%
+  kable_styling()
+
+# Print the HTML table
+html_table
+```
+
+al ya determinar las columnas con las que vamos a trabajar se debe aclarar los datos de los responsables  encargados en las licitaciones con sus debidos correos 
+```{r}
+data <- readxl::read_excel("Data/PAA-2024.xlsx")
+names(data)
+library(dplyr)
+datos_responsables <- data %>%
+ select(Nombre_del_responsable = `Nombre del responsable`,
+         Correo_responsable = `Correo electrónico del responsable`,
+         Ubicacion = `Ubicación`)
+head(datos_responsables)
+write.csv(datos_responsables, file = "datos_responsables.csv", row.names = FALSE)
+```
+Al ya tener los datos especificos sobre lo que vamos a trabajar, debemos filtrar las ubicaciones de los responsables de  Bogotá y Barrancabermeja
+
+```{r}
+bogota_utf8 <- iconv("Bogotá", to = "UTF-8")
+datos_responsables_filtrados <- datos_responsables %>%
+ filter(Ubicacion %in% c(bogota_utf8, "Barrancabermeja"))
+head(datos_responsables_filtrados)
+write.csv(datos_responsables_filtrados, file = "datos_responsables_filtrados.csv", row.names = FALSE)
+```
+
 
 
 ## La librería "FinancialMaths"  

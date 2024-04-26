@@ -2040,17 +2040,3829 @@ NA
 <span id="cb5-14"><a href="navegabilidad-rio-magdalena.html#cb5-14" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
 <span id="cb5-15"><a href="navegabilidad-rio-magdalena.html#cb5-15" tabindex="-1"></a>    <span class="fu">theme_bw</span>()</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Para determinar a cuanto asciende el valor de inversión de todas las licitaciones, basta con traer el “valor” y sumar los valores de esa columna</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="navegabilidad-rio-magdalena.html#cb6-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">&quot;Data/PAA-2024.xlsx&quot;</span>)</span>
+<span id="cb6-2"><a href="navegabilidad-rio-magdalena.html#cb6-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(data[<span class="fu">c</span>(<span class="dv">9</span>)])</span>
+<span id="cb6-3"><a href="navegabilidad-rio-magdalena.html#cb6-3" tabindex="-1"></a>valor_total_inversion <span class="ot">&lt;-</span> <span class="fu">sum</span>(data<span class="sc">$</span><span class="st">`</span><span class="at">Valor total estimado</span><span class="st">`</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-4"><a href="navegabilidad-rio-magdalena.html#cb6-4" tabindex="-1"></a><span class="fu">print</span>(valor_total_inversion)</span></code></pre></div>
+<pre><code>## [1] 109255896208</code></pre>
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/g3kOgIuhpiE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+<p>Para observar los correos de los responsables de las licitaciones, se debe concentrar en traer las columnas 2 (“descripción”) la columna 7 (“modalidad de selección”) la columna 14 (“ubicación”) la columna 15(“Nombre del responsable”) y la columna 17(correo electrónico del responsable”)</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="navegabilidad-rio-magdalena.html#cb8-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb8-2"><a href="navegabilidad-rio-magdalena.html#cb8-2" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb8-3"><a href="navegabilidad-rio-magdalena.html#cb8-3" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb8-4"><a href="navegabilidad-rio-magdalena.html#cb8-4" tabindex="-1"></a>data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">&quot;Data/PAA-2024.xlsx&quot;</span>)</span>
+<span id="cb8-5"><a href="navegabilidad-rio-magdalena.html#cb8-5" tabindex="-1"></a>data <span class="ot">&lt;-</span> data[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">7</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">17</span>)]</span>
+<span id="cb8-6"><a href="navegabilidad-rio-magdalena.html#cb8-6" tabindex="-1"></a>html_table <span class="ot">&lt;-</span> <span class="fu">kable</span>(data, <span class="at">format =</span> <span class="st">&quot;html&quot;</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="navegabilidad-rio-magdalena.html#cb8-7" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span>
+<span id="cb8-8"><a href="navegabilidad-rio-magdalena.html#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="navegabilidad-rio-magdalena.html#cb8-9" tabindex="-1"></a><span class="co"># Print the HTML table</span></span>
+<span id="cb8-10"><a href="navegabilidad-rio-magdalena.html#cb8-10" tabindex="-1"></a>html_table</span></code></pre></div>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Descripción
+</th>
+<th style="text-align:left;">
+Modalidad de selección
+</th>
+<th style="text-align:left;">
+Ubicación
+</th>
+<th style="text-align:left;">
+Nombre del responsable
+</th>
+<th style="text-align:left;">
+Correo electrónico del responsable
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+3-CONTRATAR EL SERVICIO INTEGRAL DE ASEO Y CAFETERIA PARA LA CORPORACIÓN AUTONOMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA - CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Seléccion abreviada - acuerdo marco
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4-CONTRATAR EL SERVICIO INTEGRAL DE ASEO Y CAFETERIA PARA LA CORPORACIÓN AUTONOMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA - CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Seléccion abreviada - acuerdo marco
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5-CONTRATAR EL SERVICIO DE MANTENIMIENTO PREVENTIVO Y CORRECTIVO, INCLUIDOS REPUESTOS, PARA LOS AUTOMOVILES DE LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA - CORMAGDALENA EN LA CIUDAD DE BARRANQUILLA
+</td>
+<td style="text-align:left;">
+Seléccion abreviada - acuerdo marco
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6-ADQUISICIÓN E IMPLEMENTACIÓN SOLUCIÓN TECNOLOGICA MODELO INTEGRADO DE PLANEACIÓN Y GESTIÓN - MIPG, PARA LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RÍO GRANDE DE LA MAGDALENA - CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+María Paula Guerrero Chalela
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.guerrero@cormagdalena.gov.co" class="email">maria.guerrero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7-RENOVACIÓN LICENCIA SUITE VISION
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+María Paula Guerrero Chalela
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.guerrero@cormagdalena.gov.co" class="email">maria.guerrero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+8-REALIZAR LA INTERVENTORÍA ADMINISTRATIVA, TÉCNICA, FINANCIERA, CONTABLE Y JURÍDICA PARA LOS SIGUIENTES CONTRATOS DE CONCESIÓN PORTUARIA - GRUPO 1
+</td>
+<td style="text-align:left;">
+Concurso de méritos abierto
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Paula Guerrero Chalela
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.guerrero@cormagdalena.gov.co" class="email">maria.guerrero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9-REALIZAR LA INTERVENTORÍA ADMINISTRATIVA, TÉCNICA, FINANCIERA, CONTABLE Y JURÍDICA PARA LOS SIGUIENTES CONTRATOS DE CONCESIÓN PORTUARIA - GRUPO 2
+</td>
+<td style="text-align:left;">
+Concurso de méritos abierto
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Paula Guerrero Chalela
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.guerrero@cormagdalena.gov.co" class="email">maria.guerrero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10-REALIZAR EL AVALUO DEL BIEN CONCESIONADO PARA EL PROCESO DE TERMINACION Y REVERSION DE LA CONCESION PORTUARIA
+</td>
+<td style="text-align:left;">
+Mínima cuantía
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Paula Guerrero Chalela
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.guerrero@cormagdalena.gov.co" class="email">maria.guerrero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+11-ADQUISICIÓN DE SOFTWARE PARA LA ORGANIZACIÓN, INTEGRACIÓN, PLANIFICACIÓN, ANÁLISIS Y SEGUIMIENTO DE LA ACTIVIDAD PORTUARIA Y/O NO PORTUARIA DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Concurso de méritos abierto
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Paula Guerrero Chalela
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.guerrero@cormagdalena.gov.co" class="email">maria.guerrero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12-PRESTAR EL SERVICIO DE DIFUSIÓN DE CONTENIDOS VISUALES, AUDITIVOS Y AUDIOVISUALES DE CORMAGDALENA, EN FORMATOS DE ALTA CALIDAD, PARA SU EMISIÓN EN DIFERENTES PLATAFORMAS Y TECNOLOGÍAS A TRAVÉS DEL SISTEMA DE MEDIOS PÚBLICOS.
+</td>
+<td style="text-align:left;">
+Contratación régimen especial
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+Oriana Carbono
+</td>
+<td style="text-align:left;">
+<a href="mailto:oriana.carbono@cormagdalena.gov.co" class="email">oriana.carbono@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+13-CONTRATAR LOS SERVICIOS DE OPERACIÓN LOGÍSTICA PARA LA ORGANIZACIÓN Y EJECUCIÓN DE EVENTOS QUE REQUIERA LA ENTIDAD CONTRIBUYENDO A LA CONSOLIDACIÓN Y FORTALECIMIENTO DE LA IMAGEN INSTITUCIONAL DE LA CORPORACIÓN
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+Diana Carolina Delgado
+</td>
+<td style="text-align:left;">
+<a href="mailto:diana.delgado@cormagdalena.gov.co" class="email">diana.delgado@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+14-SERVICIO DE DESCONTAMINACIÓN DE LAS ORILLAS DE LA RIBERA DEL RIO MAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+Diana Carolina Delgado
+</td>
+<td style="text-align:left;">
+<a href="mailto:diana.delgado@cormagdalena.gov.co" class="email">diana.delgado@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+15-ARRENDAMIENTO INCLUIDA LA ADMINISTRACIÓN DE INMUEBLE DESTINADO AL FUNCIONAMIENTO DE LA OFICINA DE GESTIÓN Y ENLACE DE LA CORPORACIÓN AUTONOMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA CORMAGDALENA EN LA CIUDAD DE BOGOTÁ D.C
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+Diana Carolina Delgado
+</td>
+<td style="text-align:left;">
+<a href="mailto:diana.delgado@cormagdalena.gov.co" class="email">diana.delgado@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+16-CONSULTORIA DEL ESTADO ACTUAL DEL AREA DE SISTEMAS Y TECNOLOGIAS PARA LA CORPORACIÓN AUTONMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA (CORMAGDALENA)
+</td>
+<td style="text-align:left;">
+Concurso de méritos abierto
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+17-CONTRATAR LA SUSCRIPCIÓN DE LICENCIAS DEL SOFTWARE ADOBE CREATIVE CLOUD (TODAS LAS APLICACIONES) PARA CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Mínima cuantía
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+18-CONTRATAR LA SUSCRIPCIÓN DE LICENCIAS DE MICROSOFT OFFICE 365 E3 OPEN, LICENCIA DE MICROSOFT PROJECT ONLINE PROFESSIONAL, POWER BI Y LICENCIAS DE WINDOWS SERVER 2022 ESTÁNDAR
+</td>
+<td style="text-align:left;">
+Contratación régimen especial
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+19-ADQUISICION DE LICENCIAS ANTIVIRUS KASPERSKY ENDPOINT SECURITY CLOUD PRO, CON SOPORTE Y ACTUALIZACIÓN PARA LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RÍO GRANDE DE LA MAGDALENA – CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20-ADQUISICION DE UN FIREWALL (CORTAFUEGOS) Y RENOVACIÓN DE LICENCIAS DEL SOFTWARE DE SEGURIDAD PERIMETRAL PARA LA RED, SERVIDORES Y EQUIPOS DE COMPUTO DE LA CORPORACION – CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+21-CONTRATAR EL SERVICIO DE CERTIFICADOS DE FIRMAS DIGITALES Y CERTIFICADO DE SEGURIDAD SSL PARA CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+22-CONTRATAR BAJO LA MODALIDAD DE SERVICIO (SaaS - SOFTWARE AS A SERVICE), EL SISTEMA INTEGRAL QUE CONTEMPLA EL SISTEMA ADMINISTRATIVO Y FINANCIERO, EL SISTEMA DE GESTION DOCUMENTAL Y EL SISTEMA DE RECURSOS HUMANOS PARA LA CORPORACION AUTONOMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA “CORMAGDALENA”
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+23-MIGRACIÓN Y RENOVACIÓN DEL HOSTING DEL SITIO WEB DE LA ENTIDAD Y ACTUALIZACIÓN DEL GESTOR DE CONTENIDOS INCLUYE MEJORAS Y AFINAMIENTOS DEL PORTAL WEB DE ACUERDO A LOS LINEAMIENTOS DE GOBIERNO EN LINEA
+</td>
+<td style="text-align:left;">
+Mínima cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+24-MANTENIMIENTO PREVENTIVO Y CORRECTIVO DEL SISTEMA DE SEGURIDAD CCTV EN LA SEDE PRINCIPAL DE BARRANCABERMEJA DE LA CORPORACIÓN CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Mínima cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+25-ADQUISICIÓN, INSTALACIÓN, CONFIGURACIÓN Y PUESTA EN FUNCIONAMIENTO DE EQUIPOS SWITCHES CORE ADMINISTRABLES PARA LAS SEDES DE BARRANCABERMEJA, BOGOTA, BARRANQUILLA
+</td>
+<td style="text-align:left;">
+Mínima cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+26-CONTRATAR LA PRESTACIÓN DE SERVICIOS DE INTERNET Y ENLACES WAN PARA LA RED CORPORATIVA VOZ Y DATOS PARA LAS SEDES DE LA CORPORACION CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación régimen especial
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+27-PRESTACIÓN DE SERVICIOS DE MANTENIMIENTO PREVENTIVO Y CORRECTIVO DE EQUIPOS DE POTENCIA UBICADOS EN LAS SEDES DE LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA - CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Mínima cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+28-ACTUALIZACIÓN, ADECUACIÓN Y MANTENIMIENTO DE LA INFRAESTRUCTURA TECNOLÓGICA DE LAS SEDES BARRANCABERMEJA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+29-CONTRATAR LA ADQUISICIÓN DE EQUIPOS TECNOLÓGICOS, PORTÁTILES, EQUIPOS DE CÓMPUTO, ESTACIONES DE TRABAJO, PERIFÉRICOS DE TECNOLOGÍA, CÁMARA WEB, DISCOS DUROS DE ESTADO SÓLIDO, PARA EL FORTALECIMIENTO DE LA CORPORACIÓN AUTÓNOMA DEL RIO GRANDE DE LA MAGDALENA CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Licitación pública
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+30-RENOVACION DEL BLOQUE DEL POOL DE DIRECCIONAMIENTO IPV-6 Y MEMBRESIA ASN ANTE LA LACNIC CON SOPORTE ESPECIALIZADO PARA LA VINCULACION DE EQUIPAMIENTO NUEVO PARA LA INFRAESTRUCTURA DE RED DE DATOS DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Mínima cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+31-RENOVACION DEL LICENCIAMIENTO DE LA INFRAESTRUCTURA DE COMUNICACIONES UNIFICADAS DE VOZ Y DATOS 3CX PROFESIONAL Y AFINAMIENTO DE LA ESTRUCTURA ACTUAL PARA LAS SEDES DE BARRANCABERMEJA, BARRANQUILLA Y BOGOTA DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Mínima cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+32-ADQUISICIÓN DE COMPONENTES TECNOLOGICOS DE VIDEOCONFERENCIA PARA LA ADECUACION DE LA SALA DE JUNTAS BARRANCABERMEJA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+33-OPERACIÓN DE LOS EQUIPOS DE DRAGADO DE CORMAGDALENA Y EL SUMINISTRO DE EQUIPOS DE APOYO PARA LA EJECUCIÓN DE ACTIVIDADES DE DRAGADO EN EL CAUCE DEL RÍO MAGDALENA
+</td>
+<td style="text-align:left;">
+Licitación pública
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+34-SUMINISTRO DE COMBUSTIBLES, ADITIVOS PARA COMBUSTIBLES, LUBRICANTES Y ANTICORROSIVOS PARA LOS EQUIPOS DE DRAGADO Y EQUIPOS DE APOYO DE CORMAGDALENA, PARA EL MANTENIMIENTO DEL CANAL NAVEGABLE DEL RÍO MAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+35-MANTENIMIENTO DEL CANAL NAVEGABLE MEDIANTE DRAGADO HIDRAULICO EN EL BRAZO MOMPOX UBICADO EN EL RIO MAGDALENA
+</td>
+<td style="text-align:left;">
+Licitación pública
+</td>
+<td style="text-align:left;">
+Bolívar - Mompós
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+36-INTERVENTORÍA AL MANTENIMIENTO DEL CANAL NAVEGABLE MEDIANTE DRAGADO HIDRÁULICO EN EL BRAZO MOMPOX UBICADO EN EL RIO MAGDALENA
+</td>
+<td style="text-align:left;">
+Concurso de méritos abierto
+</td>
+<td style="text-align:left;">
+Bolívar - Mompós
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+37-MANTENIMIENTO MEDIANTE DRAGADO HIDRAULICO DEL CANAL NAVEGABLE DEL RÍO MAGDALENA ENTRE LOS MUNICIPIOS DE BARRANCABERMEJA (SANTANDER) Y PUERTO SALGAR (CUNDINAMARCA)
+</td>
+<td style="text-align:left;">
+Licitación pública
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+38-INTERVENTORÍA AL MANTENIMIENTO MEDIANTE DRAGADO HIDRAULICO DEL CANAL NAVEGABLE DEL RÍO MAGDALENA ENTRE LOS MUNICIPIOS DE BARRANCABERMEJA (SANTANDER) Y PUERTO SALGAR (CUNDINAMARCA)
+</td>
+<td style="text-align:left;">
+Concurso de méritos abierto
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+39-REALIZACION DE LOS ESTUDIOS Y DISEÑOS PARA LAS OBRAS DE ENCAUZAMIENTO Y OPTIMIZACIÓN DE VOLUMENES DE DRAGADO DEL RIO MAGDALENA
+</td>
+<td style="text-align:left;">
+Concurso de méritos abierto
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+40-INTERVENTORIA A LOS ESTUDIOS Y DISEÑOS PARA LAS OBRAS DE ENCAUZAMIENTO Y OPTIMIZACIÓN DE VOLUMENES DE DRAGADO DEL RIO MAGDALENA
+</td>
+<td style="text-align:left;">
+Concurso de méritos abierto
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+41-ELABORACIÓN DE LOS ESTÚDIOS TÉCNICOS PRELIMINARES, DISEÑO, FABRICACIÓN, ENSAMBLE, INSTALACIÓN Y PUESTA EN FUNCIONAMIENTO DE ARTEFACTOS NAVALES FLOTANTES (EMBARCADEROS FLUVIALES) EN LOS DIFERENTES PUNTOS GEOGRÁFICOS DE LA RIBERA DEL RÍO MAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Bolívar - Cartagena
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+42-Implementación de estrategias de mitigación de la contaminación del río Magdalena en las playas del municipio de Puerto Colombia, en cumplimiento de la ley 2065 de 2020.
+</td>
+<td style="text-align:left;">
+Contratación régimen especial
+</td>
+<td style="text-align:left;">
+Atlántico - Puerto Colombia
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+43-Contratación de servicios de gestión para la fase operativa del proyecto agrupado de reducción de emisiones por deforestación y degradación forestal - REDD en el Parque Natural Regional Corredor Biológico PNN Puracé - PNN Cueva de los Guácharos- ID: PL 1765, vigencia 2024.
+</td>
+<td style="text-align:left;">
+Concurso de méritos abierto
+</td>
+<td style="text-align:left;">
+Huila - San Agustín
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+44-Mantenimiento anual de la cuenta Verra
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+45-Pago por costo de verificación de Verra
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+46-Pago de la emisión de los certificados de reducciones de emisiones de carbono
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Huila - San Agustín
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+47-Contratar consultoría y acompañamiento técnico especializado para la consolidacióndel Sistema de Soporte de Decisiones - SSD en la cuenca Magdalena - Cauca e integración del Plan Maestro de Manejo Integral y Uso Sostenible de la Cuenca del Río Magdalena - PMMIUS, observatorio de Cuenca -OBMA y Productos geográficos de la entidad.
+</td>
+<td style="text-align:left;">
+Concurso de méritos abierto
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+48-Contratar la adquisición del servidor y licencia Windows Services para la consolidación del Sistema de Soporte de Decisiones - SSD en la cuenca Magdalena - Cauca e integración del Plan Maestro de Manejo Integral y Uso Sostenible de la Cuenca del Río Magdalena - PMMIUS, observatorio de Cuenca -OBMA y Productos geográficos de la entidad
+</td>
+<td style="text-align:left;">
+Mínima cuantía
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+49-Seguimiento y operación de plantaciones forestales en el marco del programa forestal de Cormagdalena
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Magdalena - Plato
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+50-Contratación de una consultoría para la elaboración de una caja de herramientas con el diseño de alternativas de Soluciones Basadas en la Naturaleza para mitigar, reducir y prevenir procesos erosivos y de inundación en los Municipios Ribereños de la cuenca baja del Río Magdalena.
+</td>
+<td style="text-align:left;">
+Concurso de méritos abierto
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+51-Repoblamiento ictiológico y restauración ambiental en áreas de importancia pesquera ubicados en jurisdicción de Cormagdalena
+</td>
+<td style="text-align:left;">
+Contratación régimen especial
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+52-Transferencia de Ley 161- 94 - al municipio de Barrancabermeja en la vigencia 2022, por concepto de la descontaminación ambiental de que trata el parágrafo 1° del artículo 17 de la ley 161 de 1994
+</td>
+<td style="text-align:left;">
+Contratación régimen especial
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Quevedo
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+53-ADQUISICIÓN DE SEGURO DE VEHÍCULO AÉREO NO TRIPULADO QUE AMPARE LOS BIENES E INTERESES PATRIMONIALES DE CORMAGDALENA Y AQUELLOS DE LOS QUE LLEGAREN A SER LEGALMENTE RESPONSABLES
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+54-CONTRATAR LA ADQUISICIÓN DE LAS PÓLIZAS DE SEGURO REQUERIDAS PARA AMPARAR Y PROTEGER LOS ACTIVOS E INTERESES PATRIMONIALES BIENES PROPIOS Y DE AQUELLOS POR LOS CUALES ES O LLEGARE A SER LEGALMENTE RESPONSABLE LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RÍO GRANDE DE LA MAGDALENA, DENTRO DEL TERRITORIO NACIONAL
+</td>
+<td style="text-align:left;">
+Licitación pública
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+55-ADQUISICIÓN DE LOS SEGUROS OBLIGATORIOS DE ACCIDENTES DE TRÁNSITO (SOAT) Y DE AUTOMÓVILES PARA LOS VEHÍCULOS QUE CONFORMAN EL PARQUE AUTOMOTOR DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+56-PRESTACIÓN DEL SERVICIO DE ASEO Y CAFETERÍA INCLUIDO INSUMOS PARA LAS OFICINAS DE LA CORPORACIÓN AUTONOMA REGIONAL DEL RÍO GRANDE DE LA MAGDALENA-CORMAGDALENA - BARRANCABERMEJA
+</td>
+<td style="text-align:left;">
+Seléccion abreviada - acuerdo marco
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+57-PRESTACIÓN DEL SERVICIO DE ASEO Y CAFETERÍA INCLUIDO INSUMOS PARA LAS OFICINAS DE LA CORPORACIÓN AUTONOMA REGIONAL DEL RÍO GRANDE DE LA MAGDALENA-CORMAGDALENA - BARRANCABERMEJA (VF)
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+58-PRESTACIÓN DEL SERVICIO DE ASEO Y CAFETERÍA INCLUIDO INSUMOS PARA LAS OFICINAS DE LA CORPORACIÓN AUTONOMA REGIONAL DEL RÍO GRANDE DE LA MAGDALENA-CORMAGDALENA - BOGOTÁ
+</td>
+<td style="text-align:left;">
+Seléccion abreviada - acuerdo marco
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+59-PRESTACIÓN DEL SERVICIO DE ASEO Y CAFETERÍA INCLUIDO INSUMOS PARA LAS OFICINAS DE LA CORPORACIÓN AUTONOMA REGIONAL DEL RÍO GRANDE DE LA MAGDALENA-CORMAGDALENA - BOGOTÁ (VF)
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+60-CONTRATAR EL SERVICIO DE MANTENIMIENTO PREVENTIVO Y CORRECTIVO Y REVISIÓN TÉCNICO - MECÁNICA, PARA EL PARQUE AUTOMOTOR DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+61-SUMINISTRO DE COMBUSTIBLE PARA EL PARQUE AUTOMOTOR Y OTROS EQUIPOS DE COMBUSTIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Seléccion abreviada - acuerdo marco
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+62-SUMINISTRO DE TINTAS Y TONERS PARA LAS IMPRESORAS DE LA CORPORACIÓN AUTONOMA REGIONAL DEL RÍO GRANDE DE LA MAGDALENA-CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Mínima cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+63-CONTRATAR LOS SERVICIOS DE VIGILANCIA Y SEGURIDAD PRIVADA PARA CORMAGDALENA (VF)
+</td>
+<td style="text-align:left;">
+Licitación pública
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+64-ADQUISICIÓN DE UN VEHICULO TIPO CAMIONETA PARA CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+65-ADQUISICIÓN DE MUEBLES Y ENSERES PARA LAS SEDES DE LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA - CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+66-ADQUISICIÓN DE PAPELERÍA Y UTILES DE OFICINA DE LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA - CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Mínima cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+67-CONTRATAR EL INTERMEDIARIO DE SEGUROS PARA EL ACOMPAÑAMIENTO ESTRUCTURACIÓN Y ASESORÍA EN EL MANEJO INTEGRAL DEL PROGRAMA DE SEGUROS QUE GARANTICE EL CUBRIMIENTO DE LOS RIESGOS DE LOS ACTIVOS E INTERESES DE PROPIEDAD Y A CARGO DE LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RÍO GRANDE DE LA MAGDALENA - CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Concurso de méritos abierto
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+68-ARRENDAMIENTO DE INMUEBLE DESTINADO AL FUNCIONAMIENTO DE LA OFICINA SECCIONAL NEIVA DE LA CORPORACIÓN AUTONOMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA - CORMAGDALENA.-
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Huila - Neiva
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+69-ARRENDAMIENTO DE INMUEBLE DESTINADO AL FUNCIONAMIENTO DE LA OFICINA SECCIONAL NEIVA DE LA CORPORACIÓN AUTONOMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA - CORMAGDALENA.- (VF)
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Huila - Neiva
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+70-EJECUCIÓN DE ACTIVIDADES DEL PLAN DE BIENESTAR SOCIAL 2024 PARA LOS SERVIDORES PÚBLICOS DE LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RÍO GRANDE DE LA MAGDALENA- CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+71-EJECUCIÓN DEL PLAN INSTITUCIONAL DE CAPACITACIÓN VIGENCIA 2024, DIRIGIDOS A LOS SERVIDORES PÚBLICOS DE LA CORPORACIÓN AUTÓNOMA DEL RIO GRANDE DE LA MAGDALENA - CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Mínima cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+72-CONTRATAR EL SUMINISTRO DE DOTACIÓN PARA LOS SERVIDORES PÚBLICOS DE LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RÍO GRANDE DE LA MAGDALENA PARA LA VIGENCIA 2024
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+73-CONTRATAR EL SERVICIO DE EVALUACIONES MEDICAS OCUPACIONALES Y PROFESIOGRAMA, PARA LOS SERVIDORES PUBLICOS DE LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA VIGENCIA 2024
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+74-CONTRATAR EL SERVICIO DE MANTENIMIENTO, RECARGA Y ADQUISICIÓN DE EXTINTORES DE PROPIEDAD DE LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RÍO GRANDE DE LA MAGDALENA- CORMAGDALENA”
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+75-CONTRATAR LA ADQUISICIÓN DE ELEMENTOS DE SEGURIDAD PARA USO EN LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA - CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Mínima cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+76-CONTRATAR EL DIAGNOSTICO DE RIESGO PSICOSOCIAL DE LOS SERVIDORES PUBLICOS DE CORMAGDALENA DE ACUERDO A LA RESOLUCIÓN No. 2646 DE 2008 Y DEMAS NORMAS QUE LA REGULAN PARA LA VIGENCIA 2024
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+77-CONTRATAR EL SERVICIO DE AUDITORIA DEL SISTEMA DE GESTIÓN DE SEGURIDAD Y SALUD EN EL TRABAJO PARA LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA- CORMAGDALENA PARA LA VIGENCIA 2024
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+78-CONTRATAR EL SISTEMA DE INDUCCIÓN Y REINDUCCIÓN DIGITAL EN CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+79-CONTRATAR LA PRESTACIÓN DE SERVICIOS DE MENSAJERÍA QUE INCLUYA RECOLECCION, DEVOLUCION, ADMISIÓN, CURSO, ENTREGA DE CORRESPONDENCIA Y DEMAS ENVIOS POSTALES DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+80-SUMINISTRO DE TIQUETES AÉREOS NACIONALES E INTERNACIONALES REQUERIDOS POR LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RÍO GRANDE DE LA MAGDALENA
+</td>
+<td style="text-align:left;">
+Licitación pública
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+81-MANTENIMIENTO DEL EDIFICIO CORMAGDALENA EN LAS OFICINAS DEL PUERTO FLUVIAL YUMA EN BARRANCABERMEJA SANTANDER FASE 3
+</td>
+<td style="text-align:left;">
+Licitación pública
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+82-ADQUISICIÓN DE EQUIPOS DE MEDICIONES HIDRAULICAS Y DE LA CALIDAD DEL AGUA PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+83-ADQUISICIÓN DE EQUIPOS TOPOGRÁFICOS PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+84-ADQUISICIÓN DE EQUIPOS UAV Y TECNOLOGÍA COMPUTACIONAL PARA LEVANTAMIENTOS Y PROCESAMIENTO DE INFORMACIÓN FOTOGRAMÉTRICA Y TOPOGRÁFICA DE SENSORES REMOTOS DE GRAN FORMATO PARA EL FORTALECIMIENTO DE CAPACIDAD TÉCNICA PARA LA GENERACIÓN DE INFORMACIÓN DEL CIIC Y EL DESARROLLO DEL PLAN DE MONITOREO DEL RIO MAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+85-ADQUISICIÓN DE EMBARCACIONES PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Licitación pública
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+86-MANTENIMIENTO EQUIPOS DE MEDICIÓN E INVESTIGACIÓN PARA EL FORTALECIMIENTO DE LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+87-ADQUISICIÓN E INSTALACIÓN DE SISTEMA DE VISUALIZACIÓN PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+88-ADQUISICIÓN DE COMPUTADOR DE CAMPO RUGERIZADO PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Mínima cuantía
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+89-ADQUISICIÓN DE LICENCIAS DE ARCGIS PARA EL FORTALECIMIENTO DE LAS HERRAMIENTAS SIG EN EL MARCO DE LA INTEGRACIÓN ESTRATÉGICA DEL SISTEMA DE SOPORTE DE DECISIONES (SSD) EN LA CUENCA MAGDALENA - CAUCA Y DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Seléccion abreviada - acuerdo marco
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+90-ADQUISICIÓN DE LICENCIAS DE PROCESAMIENTO DE IMAGENES SATELITALES PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+91-SUSCRIPCIÓN Y RENOVACIÓN DE LICENCIAS AUTOCAD CON SOPORTES Y ACTUALIZACIONES PARA LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RÍO GRANDE DE LA MAGDALENA - CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+92-ADQUISICION Y ACTUALIZACIÓN DE LICENCIAS DE SOFTWARE HYPACK PARA FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA.
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+93-ACTUALIZACIÓN DE LICENCIAS DEL SOFTWARE “CARIS ONBOARD” Y “HIPS &amp; SIPS” Y ADQUISICIÓN DE LICENCIA “MIRA AI” DE TELEDYNE CARIS PARA PROCESAMIENTO DE DATOS BATIMÉTRICOS PARA FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+94-ACTUALIZACION DE LICENCIAS DE SOFTWARE GLOBAL MAPPER PARA EL FORTALECIEMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA.
+</td>
+<td style="text-align:left;">
+Mínima cuantía
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+95-PRESTAR SERVICIOS PROFESIONALES PARA EL DESARROLLO DE MODELACION HIDROLOGICA DEL RIO MAGDALENA EN EL PROYECTO DE INVESTIGACIÓN, DESARROLLO E INNOVACIÓN Y EN LAS ACTIVIDADES TÉCNICAS REQUERIDAS PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+96-PRESTAR SERVICIOS PROFESIONALES PARA LA CONSTRUCCION DE MODELOS Y ANALISIS DE DATOS BASADOS EN METODOLOGIA DATA SCIENCE DEL RIO MAGDALENA EN EL PROYECTO DE INVESTIGACIÓN, DESARROLLO E INNOVACIÓN Y EN LAS ACTIVIDADES TÉCNICAS REQUERIDAS PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+97-PRESTAR SERVICIOS PROFESIONALES ESPECIALISTA PARA ASESORAR EN EL DESARROLLO DE MODELOS HIDROLOGICOS DEL RIO MAGDALENA EN EL PROYECTO DE INVESTIGACIÓN, DESARROLLO E INNOVACIÓN Y EN LAS ACTIVIDADES TÉCNICAS REQUERIDAS PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+98-PRESTAR SERVICIOS PROFESIONALES PARA LA ESTRUCTURACION DE BASES DE DATOS EN EL PROYECTO DE INVESTIGACIÓN, DESARROLLO E INNOVACIÓN Y EN LAS ACTIVIDADES TÉCNICAS REQUERIDAS PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+99-PRESTAR SERVICIOS PROFESIONALES PARA EL DESARROLLO DE APLICATIVOS SIG EN EL PROYECTO DE INVESTIGACIÓN, DESARROLLO E INNOVACIÓN Y EN LAS ACTIVIDADES TÉCNICAS REQUERIDAS PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+100-PRESTAR SERVICIOS PROFESIONALES PARA EL DESARROLLO DE INTERFFAZ EN EL PROYECTO DE INVESTIGACIÓN, DESARROLLO E INNOVACIÓN Y EN LAS ACTIVIDADES TÉCNICAS REQUERIDAS PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+101-ADQUISICIÓN DE SERVICIOS DE CLOUD COMPUTING Y HOST PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA 
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+102-ADQUISICIÓN E INSTALACIÓN DE EQUIPOS DE MONITOREO HIDROLOGICO CONTINUO CON TECNOLOGÍA DE TRANSMISIÓN DE DATOS PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+103-CONTRATAR LA ADQUISICIÓN DE EQUIPOS TECNOLÓGICOS, PORTÁTILES, EQUIPOS DE CÓMPUTO, ESTACIONES DE TRABAJO, PERIFÉRICOS DE TECNOLOGÍA, CÁMARA WEB, DISCOS DUROS DE ESTADO SÓLIDO, PARA EL FORTALECIMIENTO DE LA CORPORACIÓN AUTÓNOMA DEL RIO GRANDE DE LA MAGDALENA CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Licitación pública
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+104-CONTRATAR EL SUMINISTRO DE COMBUSTIBLE DE LAS EMBARCACIONES ADSCRITAS A LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RÍO GRANDE DE LA MAGDALENA - CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Seléccion abreviada - acuerdo marco
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+105-PRESTAR LOS SERVICIOS DE VALORACIÓN DE MUEBLES E INMUEBLES PROPIEDAD DE CORMAGADALENA EN EL TERRITORIO NACIONAL
+</td>
+<td style="text-align:left;">
+Licitación pública
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+106-PRESTACIÓN DE SERVICIOS DE MANTENIMIENTO PREVENTIVO Y CORRECTIVO EQUIPOS DE POTENCIA UBICADOS EN BARRANCABERMEJA DE PROPIEDAD DE LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA - CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Selección abreviada menor cuantía
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+107-PRESTAR LOS SERVICIOS PROFESIONALES DE UN ABOGADO PARA FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA ASESORA JURÍDICA Y OTROS TEMAS TRANSVERSALES DE LA ENTIDAD
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+108-PRESTACIÓN DE SERVICIOS PROFESIONALES ESPECIALIZADO DE UN ABOGADO PARA FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA ASESORA JURÍDICA EN ASUNTOS CONTRACTUALES Y OTROS TEMAS TRANSVERSALES DE LA ENTIDAD
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+109-PRESTACIÓN DE SERVICIOS PROFESIONALES ESPECIALIZADO DE ABOGADO PARA FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA ASESORA JURÍDICA EN ASUNTOS CONTRACTUALES Y OTROS TEMAS TRANSVERSALES DE LA ENTIDAD
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+110-PRESTACIÓN DE SERVICIOS PROFESIONALES DE UNABOGADO PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA ASESORA JURÍDICA EN ASUNTOS CONTRACTUALES Y OTROS TEMAS TRANSVERSALES DE LA ENTIDAD
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+111-PRESTAR LOS SERVICIOS PROFESIONALES DE UN ABOGADO PARA EL FORTALECIMIENTO DE LA OFICINA ASESORA JURÍDICA Y OTROS TEMAS TRANSVERSALES
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+112-PRESTACIÓN DE SERVICIOS PROFESIONALES DE ABOGADO PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA LA OFICINA ASESORA JURÍDICA EN ASUNTOS CONTRACTUALES Y OTROS TEMAS TRANSVERSALES DE LA ENTIDAD
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+113-PRESTACIÓN DE SERVICIOS PROFESIONALES DE ABOGADO PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA ASESORA JURÍDICA EN ASUNTOS CONTRACTUALES Y OTROS TEMAS TRANSVERSALES A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+114-PRESTACIÓN DE SERVICIOS PROFESIONALES ESPECIALIZADOS DE CARÁCTER FINANCIERO PARA EL FORTALECIMIENTO DE LA SUBDIRECCIÓN DE GESTIÓN COMERCIAL DE CORMAGDALENA EN LOS TEMAS DE ACTIVIDAD PORTUARIA Y NO PORTUARIA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+María Paula Guerrero Chalela
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.guerrero@cormagdalena.gov.co" class="email">maria.guerrero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+115-PRESTACIÓN DE SERVICIOS PROFESIONALES DE ABOGADO PARA FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL DE CORMAGDALENA EN LOS TRAMITES Y PROCESOS A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+116-PRESTAR LOS SERVICIOS PROFESIONALES DE UN ABOGADO PARA EL FORTALECIMIENTO INSTITUCIONAL SECRETARIA GENERAL Y OTROS TEMAS TRANSVERSALES DE LA ENTIDAD
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+117-PRESTAR SUS SERVICIOS PROFESIONALES DE UN ABOGADO PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL Y OTROS TEMAS TRANSVERSALES DE LA ENTIDAD
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+118-PRESTAR SERVICIOS PROFESIONALES COMO ABOGADO PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL EN LOS TRAMITES Y PROCESOS QUE SE ENCUENTREN A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+119-PRESTACIÓN DE SERVICIOS PROFESIONALES ESPECIALIZADO PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA GESTIÓN EN LOS PROCESOS Y TRÁMITES A CARGO DE LA OFICINA ASESORA JURÍDICA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+120-PRESTACIÓN DE SERVICIOS PROFESIONALES DE UN ABOGADO PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA ASESORA JURÍDICA EN LA GESTIÓN, CONSOLIDACIÓN, PROCESAMIENTO Y MANEJO INTEGRAL DE LA INFORMACIÓN EN LOS TRAMITES Y PROCESOS A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+121-PRESTACIÓN DE SERVICIOS PROFESIONALES COMO ABOGADO PARA FORTALECER LA GESTIÓN DE LA SUBDIRECCIÓN DE GESTIÓN COMERCIAL EN TEMAS RELACIONADOS CON ACTIVIDADES PORTUARIAS Y NO PORTUARIAS
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Paula Guerrero Chalela
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.guerrero@cormagdalena.gov.co" class="email">maria.guerrero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+122-PRESTACION DE SERVICIOS PROFESIONALES PARA BRINDAR APOYO A LA SUBDIRECCIÓN DE GESTIÓN COMERCIAL EN LOS ASPECTOS TÉCNICOS RELACIONADOS CON LA ACTIVIDAD PORTUARIA Y NO PORTUARIA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Paula Guerrero Chalela
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.guerrero@cormagdalena.gov.co" class="email">maria.guerrero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+123-PRESTACIÓN DE SERVICIOS PROFESIONALES COMO ABOGADO PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL EN LOS TRAMITES Y PROCESOS CONTRACTUALES QUE SE ENCUENTREN A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+124-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL EN TEMAS CONTABLE Y OTROS TEMAS TRANSVERSALES A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+125-PRESTAR SUS SERVICIOS PROFESIONALES ESPECIALIZADOS DE ASESORIA FINANCIERA Y PRESUPUESTAL PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL EN LOS TRAMITES Y PROCESOS QUE SE ENCUENTREN A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+126-PRESTAR SUS SERVICIOS DE APOYO A LA GESTIÓN PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL EN LOS TRAMITES Y PROCESOS A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+127-PRESTAR SUS SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL RELACIONADAS CON LA INFRAESTRUCTURA FÍSICA DE LA ENTIDAD
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+128-PRESTAR SUS SERVICIOS DE APOYO A LA GESTIÓN PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA DIRECCIÓN EJECUTIVA EN TEMAS FINANCIEROS Y DEMÁS TRAMITES Y PROCESOS A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+129-PRESTAR SUS SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL EN ACTIVIDADES RELACIONADAS CON EL MANEJO DEL RECURSO HUMANO, DESARROLLO DE COMPETENCIAS Y OTROS TEMAS TRANSVERSALES
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+130-PRESTACION DE SERVICIO PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA DIRECCION EJECUTIVA EN LOS TRAMITES Y PROCESOS QUE SE ENCUENTREN A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Alvaro Jose Redondo Castillo
+</td>
+<td style="text-align:left;">
+<a href="mailto:alvaro.redondo@cormagdalena.gov.co" class="email">alvaro.redondo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+131-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL EN ASUNTOS CONTABLES Y OTROS TEMAS TRANSVERSALES A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+132-PRESTACIÓN DE SERVICIOS DE APOYO A LA GESTIÓN PARA EL FORTALECIMIENTO INSTITUCIONAL OFICINA DE SECCIONAL BARRANQUILLA COMO TÉCNICO EN MANTENIMIENTO Y REPARACIÓN DE COMPUTADORES Y DE APOYO INTEGRAL A LAS ACTIVIDADES DE SOPORTE TECNOLÓGICO A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+133-PRESTACIÓN DE SERVICIOS DE APOYO A LA GESTIÓN EN EL DESARROLLO DEL PROYECTO DE LA RECUPERACIÓN DE LA NAVEGACIÓN DE LA SUBDIRECCION DE DESARROLLO SOSTENIBLE Y NAVEGACION
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+134-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA SECCIONAL DE BARRANQUILLA EN EL ÁREA FINANCIERA Y DEMÁS TRAMITES Y PROCESOS A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+135-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA FORTALECER LA GESTIÓN DE LA SUBDIRECCIÓN DE GESTIÓN COMERCIAL EN TEMAS RELACIONADOS CON ACTIVIDADES PORTUARIAS Y NO PORTUARIAS
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Paula Guerrero Chalela
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.guerrero@cormagdalena.gov.co" class="email">maria.guerrero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+136-PRESTACION DE SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA DE GESTIÓN Y ENLACE EN ASUNTOS ADMINISTRATIVOS, LOGISTICOS, FINANCIEROS Y COMERCIALES
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Diana Carolina Delgado Florez
+</td>
+<td style="text-align:left;">
+<a href="mailto:diana.delgado@cormagdalena.gov.co" class="email">diana.delgado@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+137-PRESTACIÓN DE SERVICIOS PROFESIONALES DE ASESORÍA TÉCNICA, PRESUPUESTAL Y FINANCIERA QUE SE REQUIERA PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA ASESORA DE PLANEACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Paula Guerrero Chalela
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.guerrero@cormagdalena.gov.co" class="email">maria.guerrero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+138-PRESTACIÓN DE SERVICIOS PROFESIONALES ESPECIALIZADOS EN GESTIÓN PÚBLICA PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA DIRECCIÓN EJECUTIVA EN LOS TRAMITES Y PROCESOS QUE SE ENCUENTREN A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+139-PRESTACIÓN DE SERVICIOS PROFESIONALES ESPECIALIZADOS COMO ABOGADO EL FORTALECIMIENTO INSTITUCIONAL A LA SECRETARIA GENERAL Y OTROS TEMAS TRANSVERSALES DE LA ENIDAD
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+140-PRESTACIÓN DE SERVICIOS DE APOYO COMO CONDUCTOR PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA SECCIONAL BARRANQUILLA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+141-PRESTACIÓN DE SERVICIOS DE APOYO COMO CONDUCTOR PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA GESTIÓN Y ENLACE
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+Diana Carolina Delgado Florez
+</td>
+<td style="text-align:left;">
+<a href="mailto:diana.delgado@cormagdalena.gov.co" class="email">diana.delgado@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+142-PRESTACION DE SERVICIOS EN CONOCIMIENTOS HIDROGRAFICOS PARA LA GESTION Y ADMINISTRACION DE DRAGADOS, PROYECCION DE CANALES DE NAVEGACION Y ANALISIS DE LA EVOLUCION Y CONDICIONES GEOMORFOLOGICAS DE SUBSUELO DEL RIO DE MAGDALENA, EN EL PROYECTO DE INVESTIGACION, DESARROLLO EN INNOVACION.
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+143-PRESTACION DE SERVICIOS PARA LA ELABORACION Y REALIZACION DE LEVANTAMIENTOS HIDROGRAFICOS CON TECNOLOGIA MULTIHAZ Y MONOHAZ, GENERACION DE ANALISIS BATIMETRICOS DE NAVEGACION Y DINAMICA SEDIMENTARIA EN EL RIO MAGADALENA, EN EL PROYECTO DE INVESTIGACION, DESARROLLO E INNOVACION.
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+144-PRESTAR SERVICIOS PROFESIONALES DE ASESORÍA A LA SUBDIRECCIÓN DE DESARROLLO SOSTENIBLE Y NAVEGACIÓN EN LA COORDINACIÓN Y SEGUIMIENTO DE LAS GESTIONES EN DESARROLLO DEL PROYECTO MEDIO AMBIENTE Y RECURSOS NATURALES RENOVABLES
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+145-PRESTAR SUS SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL EN ASUNTOS DE ACTIVOS FIJOS E INVENTARIOS Y OTROS TEMAS TRANSVERSALES A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+146-PRESTAR SUS SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL EN EL DESARROLLO, MANTENIMIENTO, MEJORA Y USO ADECUADO DE LOS HARDWARE Y SOFTWARE
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+147-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA DIRECCIÓN EJECUTIVA EN ASUNTOS ADMINISTRATIVOS, DE LOGISTÍCA Y OTROS TEMAS TRANSVERSALES A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+Alvaro Jose Redondo Castillo
+</td>
+<td style="text-align:left;">
+<a href="mailto:alvaro.redondo@cormagdalena.gov.co" class="email">alvaro.redondo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+148-PRESTAR SUS SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL EN ASUNTOS DE ARCHIVO Y GESTIÓN DOCUMENTAL
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+149-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL EN ASUNTOS FINANCIEROS, CONTABLES Y OTROS TEMAS TRANSVERSALES A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+150-PRESTACIÓN DE SERVICIOS PROFESIONALES JURIDICOS PARA EL FORTALECIMIENTO INSTITUCIONALA DE LA OFICINA ASESORA DE PLANEACIÓN EN CUMPLIMIENTO DE SUS FUNCIONES DE SEGUIMIENTO Y CONTROL DE LAS ACTIVIDADES DE CORMAGDALENA COMO ENTIDAD DINAMIZADORA DE LA INSTANCIA DE DECISIÓN DE LOS MUNICIPIOS RIBEREÑOS
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Paula Guerrero Chalela
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.guerrero@cormagdalena.gov.co" class="email">maria.guerrero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+151-PRESTAR SUS SERVICIOS DE APOYO A LA GESTIÓN PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA ASESORA DE PLANEACIÓN EN LOS TRAMITES Y PROCESOS A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Paula Guerrero Chalela
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.guerrero@cormagdalena.gov.co" class="email">maria.guerrero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+152-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA FORTALECER LA ESTRUCTURACIÓN, EJECUCIÓN Y SEGUIMIENTO DEL PROYECTO DE RECUPERACIÓN DE LA NAVEGACIÓN A CARGO DE LA SUBDIRECCION DE DESARROLLO SOSTENIBLE Y NAVEGACION
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+153-PRESTAR SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL DE CORMAGDALENA EN EL ÁREA DE SISTEMAS
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Bolívar - Magangué
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+154-PRESTAR SERVICIOS PROFESIONALES ESPECIALIZADOS DE LA GESTIÓN DEL RECURSO HÍDRICO E HIDROLOGÍA EN EL PROYECTO DE INVESTIGACIÓN, DESARROLLO E INNOVACIÓN Y EN LAS ACTIVIDADES TÉCNICAS REQUERIDAS PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+155-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA APOYAR LAS ACTIVIDADES ASOCIADAS AL PROYECTO MEDIO AMBIENTE Y RECURSOS NATURALES RENOVABLES DE LA SUBDIRECIÒN DE DESARROLLO SOSTENIBLE Y NAVEGACIÒN
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Tolima - Honda
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+156-PRESTACION DE SERVICIOS PROFESIONALES COMO ABOGADO PARA APOYAR EL SEGUIMIENTO DE LOS ASPECTOS JURIDICOS EN EL MARCO DEL PROYECTO RECUPERACION DE LA NAVEGACION
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+157-PRESTAR LOS SERVICIOS DE APOYO A LA GESTIÓN PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL COMO TÉCNICO EN MANTENIMIENTO Y REPARACIÓN DE COMPUTADORES, Y OTROS TEMAS TRANSVERSALES A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+158-PRESTACION DE SERVICIOS PROFESIONALES DE UN INGENIERO CIVIL EN EL AREA DE RECURSOS HIDRICOS, PARA EL MONITOREO, SEGUIMIENTO Y TOMA DE DECISIONES RELACIONADAS CON EL RIO MAGDALENA, EN EL PROYECTO DE INVESTIGACION, DESARROLLO EN INNOVACION
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+159-PRESTAR SUS SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL EN ASUNTOS DE TALENTO HUMANO Y OTROS TEMAS TRANSVERSALES A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+160-PRESTAR SUS SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL EN TEMAS CONTABLES, LOS PROCESOS DE NÓMINA DE LA ENTIDAD Y OTROS TEMAS TRANSVERSALES
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+161-PRESTAR SUS SERVICIOS PROFESIONALES COMO ABOGADO PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA ASESORA JURÍDICA EN LOS TRÁMITES Y PROCESOS A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+162-PRESTAR SUS SERVICIOS DE APOYO A LA GESTIÓN PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA DE GESTIÓN Y ENLACE EN LOS TRAMITES Y PROCESOS A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Diana Carolina Delgado Florez
+</td>
+<td style="text-align:left;">
+<a href="mailto:diana.delgado@cormagdalena.gov.co" class="email">diana.delgado@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+163-PRESTACIÓN DE SERVICIOS PROFESIONALES A LA SUBDIRECCIÓN DE DESARROLLO SOSTENIBLE Y NAVEGACIÓN, EN EL SEGUIMIENTO A LOS ASPECTOS ADMINISTRATIVOS Y CONTABLES EN EL MARCO DEL PROYECTO RECUPERACIÓN DE LA NAVEGACIÓN
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+164-PRESTACION DE SERVICIOS DE APOYO COMO CONDUCTOR Y MENSAJERO PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA SECCIONAL DE BARRANQUILLA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+165-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA DE CONTROL INTERNO EN ASUNTOS FINANCIEROS, ENTES DE CONTROL, Y DEMÁS TRAMITES QUE SE ENCUENTREN A SU CARGO.
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Freddy Quintero Morales
+</td>
+<td style="text-align:left;">
+<a href="mailto:freddy.quintero@cormagdalena.gov.co" class="email">freddy.quintero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+166-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA DE GESTIÓN Y ENLACE EN ASUNTOS FINANCIEROS, ADMINISTRATIVOS Y OTROS TEMAS TRANSVERSALES DE LA ENTIDAD.
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Diana Carolina Delgado Florez
+</td>
+<td style="text-align:left;">
+<a href="mailto:diana.delgado@cormagdalena.gov.co" class="email">diana.delgado@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+167-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA DE CONTROL INTERNO EN EL SEGUIMIENTO Y EVALUACIÓN DE PROCESOS Y PROCEDIMIENTOS ASIGNADOS
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Freddy Quintero Morales
+</td>
+<td style="text-align:left;">
+<a href="mailto:freddy.quintero@cormagdalena.gov.co" class="email">freddy.quintero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+168-PRESTAR SERVICIOS DE APOYO COMO OPERADOR DE LA DRAGA CORMAGDALENA 1, EN LAS ACTIVIDADES DE RECUPERACIÓN DE LA NAVEGACIÓN EN EL RÍO MAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+169-PRESTAR SERVICIOS DE APOYO COMO OPERADOR DE LA DRAGA CORMAGDALENA 1, EN LAS ACTIVIDADES DE RECUPERACIÓN DE LA NAVEGACIÓN EN EL RÍO MAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+170-PRESTAR SERVICIOS DE APOYO COMO MAQUINISTA DE LA DRAGA CORMAGDALENA 1, EN LAS ACTIVIDADES DE RECUPERACIÓN DE LA NAVEGACIÓN EN EL RIO MAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+171-PRESTAR SERVICIOS DE APOYO COMO MAQUINISTA DE LA DRAGA CORMAGDALENA 1, EN LAS ACTIVIDADES DE RECUPERACIÓN DE LA NAVEGACIÓN EN EL RIO MAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+172-PRESTAR SERVICIOS DE APOYO COMO MARINERO EN LA OPERACIÓN DE LA DRAGA CORMAGDALENA 1, EN LAS ACTIVIDADES DE RECUPERACIÓN DE LA NAVEGACIÓN EN EL RÍO MAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+173-PRESTAR SERVICIOS DE APOYO COMO MARINERO EN LA OPERACIÓN DE LA DRAGA CORMAGDALENA 1, EN LAS ACTIVIDADES DE RECUPERACIÓN DE LA NAVEGACIÓN EN EL RÍO MAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+174-PRESTAR SERVICIOS DE APOYO COMO MARINERO EN LA OPERACIÓN DE LA DRAGA CORMAGDALENA 1, EN LAS ACTIVIDADES DE RECUPERACIÓN DE LA NAVEGACIÓN EN EL RÍO MAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+175-PRESTAR SERVICIOS DE APOYO COMO MARINERO EN LA OPERACIÓN DE LA DRAGA CORMAGDALENA 1, EN LAS ACTIVIDADES DE RECUPERACIÓN DE LA NAVEGACIÓN EN EL RÍO MAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+176-PRESTAR SERVICIOS DE APOYO COMO MARINERO EN LA OPERACIÓN DE LA DRAGA CORMAGDALENA 1, EN LAS ACTIVIDADES DE RECUPERACIÓN DE LA NAVEGACIÓN EN EL RÍO MAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+177-PRESTAR SERVICIOS DE APOYO COMO MARINERO EN LA OPERACIÓN DE LA DRAGA CORMAGDALENA 1, EN LAS ACTIVIDADES DE RECUPERACIÓN DE LA NAVEGACIÓN EN EL RÍO MAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+178-PRESTAR SERVICIOS DE APOYO COMO MARINERO EN LA OPERACIÓN DE LA DRAGA CORMAGDALENA 1, EN LAS ACTIVIDADES DE RECUPERACIÓN DE LA NAVEGACIÓN EN EL RÍO MAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+179-PRESTAR SERVICIOS DE APOYO COMO MARINERO EN LA OPERACIÓN DE LA DRAGA CORMAGDALENA 1, EN LAS ACTIVIDADES DE RECUPERACIÓN DE LA NAVEGACIÓN EN EL RÍO MAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+180-PRESTAR SERVICIOS DE APOYO COMO PILOTO DE BATIMETRIAS PARA LA OPERACIÓN DE LA DRAGA CORMAGDALENA 1, EN LAS ACTIVIDADES DE RECUPERACIÓN DE LA NAVEGACIÓN EN EL RÍO MAGDALEN
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+181-PRESTACIÓN DE SERVICIOS DE APOYO A LA GESTIÓN PARA LA RECUPERACIÓN DE LA NAVEGACIÓN COMO PILOTO DE EMBARCACIÓN FLUVIAL DE LA CORPORACIÓN AUTÓNOMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA-CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+182-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA ASESORÍA Y APOYO A LA INSTANCIA DE DECISIÓN DE LOS MUNICIPIOS RIBEREÑOS DEL RIO GRANDE DE LA MAGDALENA Y CANAL DEL DIQUE EN CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Paula Guerrero Chalela
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.guerrero@cormagdalena.gov.co" class="email">maria.guerrero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+183-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA EL DESARROLLO DEL PROYECTO DE IMAGEN INSTITUCIONAL DE CORMAGDALENA Y GESTIÓN DE ASUNTOS TRANSVERSALES A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+Diana Carolina Delgado Florez
+</td>
+<td style="text-align:left;">
+<a href="mailto:diana.delgado@cormagdalena.gov.co" class="email">diana.delgado@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+184-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA BRINDAR APOYO A LA CORPORACIÓN EN ASPECTOS RELACIONADOS CON LA EJECUCIÓN DEL PROYECTO DE IMAGEN INSTITUCIONAL Y OTROS TEMAS TRANSVERSALES A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+185-PRESTAR SUS SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA SECRETARIA GENERAL EN EL MANEJO DE LOS RECURSOS FÍSICOS, FINANCIEROS Y HUMANOS
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+186-PRESTAR SERVICIOS DE APOYO EN EL LEVANTAMIENTO BATIMÉTRICO PARA EL MANTENIMIENTO DEL CANAL NAVEGABLE EN EL RIO MAGDALENA EN EL MARCO DEL PROYECTO RECUPERACIÓN DE LA NAVEGACIÓN
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+187-PRESTAR SERVICIOS DE APOYO EN EL LEVANTAMIENTO BATIMÉTRICO PARA EL MANTENIMIENTO DEL CANAL NAVEGABLE EN EL RIO MAGDALENA EN EL MARCO DEL PROYECTO RECUPERACIÓN DE LA NAVEGACIÓN
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1-ARRIENDO CELDAS DE AMARRE DE LAS EMBARCACIONES FLUVIALES ASIGNADAS A LA OFICINA SECCIONAL BARRANQUILLA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2-ARRENDAMIENTO DE INMUEBLE DESTINADO AL FUNCIONAMIENTO DE LA OFICINA SECCIONAL BARRANQUILLA DE LA CORPORACIÓN AUTONOMA REGIONAL DEL RIO GRANDE DE LA MAGDALENA CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+188-PRESTACIÓN DE SERVICIOS PROFESIONALES DE ASESORIA PARA EL FORTALECIMIENTO INSTITUCONAL DE LA OFICINA ASESORA DE PLANEACION PARA LA FORMULACIÓN, EJECUCIÓN, SEGUIMIENTO Y GESTIÓN DE PLANES, PROGAMAS Y PROYECTOS DE INVERSIÓN.
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+MARIA PAULA GUERRERO CHALELA
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.guerrero@cormagdalena.gov.co" class="email">maria.guerrero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+189-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL EN EL SEGUIMIENTO Y EVALUACIÓN DE LA GESTIÓN CORPORATIVA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+MARIA PAULA GUERRERO CHALELA
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.guerrero@cormagdalena.gov.co" class="email">maria.guerrero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+190-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA ASESORA DE PLANEACIÓN EN LA GESTIÓN, FORMULACIÓN, SEGUIMIENTO Y CONTROL DE LOS PROYECTOS DE INVERSIÓN Y ENLACE INTERINSTITUCIONAL PARA LA OFICINA ASESORA DE PLANEACIÓN
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+MARIA PAULA GUERRERO CHALELA
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.guerrero@cormagdalena.gov.co" class="email">maria.guerrero@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+191-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE LA OFICINA ASESORA JURÍDICA EN ASUNTOS ADMINISTRATIVOS, MANEJO DE HERRAMIENTAS, BASES DE DATOS Y OTROS PROCESOS A SU CARGO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Estela Paez Better
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+192-PRESTACIÓN DE SERVICIOS PROFESIONALES DE UN ABOGADO ESPECIALIZADO PARA ADELANTAR LAS GESTIONES PRECONTRACTUALES Y DEMAS LABORES JURIDICAS QUE SE REQUIERAN PARA EL FORTALECIMEINTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+193-PRESTAR SERVICIOS PARA EL FORTALECIMIENTO DEL PROYECTO IMAGEN INSTITUCIONAL EN EL ÁREA DE COMUNICACIONES
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+194-PRESTAR SUS SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO DE LA SECRETARIA GENERAL EN LA GESTIÓN FINANCIERA, ADMINISTRATIVA Y DE CARTERA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Alavaro Jose Redondo
+</td>
+<td style="text-align:left;">
+<a href="mailto:alvaro.redondo@cormagdalena.gov.co" class="email">alvaro.redondo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+195-PRESTAR SUS SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO DE LA SECRETARIA GENERAL EN TEMAS TRANSVERSALES EN EL ÁREA DE PRESUPUESTO, CONTABILIDA Y TESORERIA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Alavaro Jose Redondo
+</td>
+<td style="text-align:left;">
+<a href="mailto:alvaro.redondo@cormagdalena.gov.co" class="email">alvaro.redondo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+196-PRESTAR SUS SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO DE LA SECRETARIA GENERAL EN TODA LA GESTIÓN RELACIONADA CON EL ÁREA DE PRESUPUESTO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Alavaro Jose Redondo
+</td>
+<td style="text-align:left;">
+<a href="mailto:alvaro.redondo@cormagdalena.gov.co" class="email">alvaro.redondo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+197-PRESTAR SUS SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO DE LA SECRETARIA GENERAL EN ASUNTOS FINANCIEROS, ADMINISTRATIVOS Y CONTABLES
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Alavaro Jose Redondo
+</td>
+<td style="text-align:left;">
+<a href="mailto:alvaro.redondo@cormagdalena.gov.co" class="email">alvaro.redondo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+198-PRESTAR SUS SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO DE LA SECRETARIA GENERAL COMO ADMINISTRADOR DE LAS SEDES DE BARRANCABERMEJA, NEIVA, HONDA Y MAGANGUE
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Alavaro Jose Redondo
+</td>
+<td style="text-align:left;">
+<a href="mailto:alvaro.redondo@cormagdalena.gov.co" class="email">alvaro.redondo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+199-PRESTAR SERVICIOS PROFESIONALES ESPECIALIZADOS EN MATERIA DE DEFENSA, REPRESENTACIÓN JUDICIAL Y PROCEDIMIENTOS ADMINISTRATIVOS A CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+MARIA ESTELA PAEZ BETTER
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.paez@cormagdalena.gov.co" class="email">maria.paez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+200-PRESTACION DE SERVICIOS PROFESIONALES EN INGENIERIA CON CONOCIMIENTOS EN RECURSOS HIDRICOS Y PROGRAMACIÓN COMPUTACIONAL PARA EL ESTUDIO Y ANÁLISIS DE CONDICIONES HIDROLÓGICAS Y SEDIMENTOLOGICAS DEL RIO MAGDALENA PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACION DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+201-PRESTACION DE SERVICIOS PROFESIONALES PARA EL SEGUIMIENTO EN LOS PROCESOS INTEGRALES ENCAMINADOS A LOGRAR EL FORTALECIMIENTO INSTITUCIONAL DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+202-PRESTACIÓN DE SERVICIOS PROFESIONALES DE UN ABOGADO ESPECIALIZADO PARA ADELANTAR LAS LABORES JURIDICAS QUE SE REQUIERAN PARA EL FORTALECIMEINTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patria Suárez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+203-PRESTACION DE SERVICIOS PROFESIONALES PARA LA EJECUCIÓN DE ACTIVIDADES DE INVESTIGACIÓN Y DE ANÁLISIS HIDRÁULICO GEOGRÁFICO Y AMBIENTAL DEL RIO MAGDALENA PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACION DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+204-PRESTACIÓN DE SERVICIOS DE APOYO A LA GESTIÓN COMO PATRON DE YATE Y MOTORISTA DE EMBARCACIONES FLUVIALES PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+205-PRESTACIÓN DE SERVICIOS PROFESIONALES DE COMUNICADOR SOCIAL PARA EL FORTALECIMIENTO DE LA IMAGEN INSTITUCIONAL DE LA CORPORACIÓN AUTONOMA DEL RIO GRANDE DE LA MAGDALENA – CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+206-PRESTACIÓN DE SERVICIOS PARA LA OBTENCIÓN, PROCESAMIENTO Y ANALISIS DE INFORMACIÓN GEOMORFOLÓGICA Y BATIMETRICA PARA EL FORTALECIMIENTO CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+207-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA EL MANEJO DE SISTEMAS DE INFORMACIÓN GEOGRÁFICA ORIENTADOS AL ESTUDIO DE LAS CONDICIONES FÍSICAS Y TERRITORIALES DEL RÍO MAGDALENA PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+208-PRESTACIÓN DE SERVICIOS PROFESIONALES EN COMUNICACIÓN SOCIAL PARA EL FORTALECIMIENTO DE LA IMAGEN INSTITUCIONAL A LA DIRECCIÓN EJECUTIVA DE LA CORPORACIÓN Y SU POSICIONAMIENTO
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+209-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA EL FORTALECIMIENTO INSTITUCIONAL EN EL ÁREA FINANCIERA Y CONTABLE PARA TRAMITES Y PROCESOS A CARGO DE LA OFICINA SECCIONAL BARRANQUILLA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+210-PRESTACIÓN DE SERVICIOS DE APOYO A LA GESTIÓN COMO PATRON DE YATE Y MOTORISTA DE EMBARCACIONES FLUVIALES PARA EL FORTALECIMIENTO DEL CENTRO DE INVESTIGACIÓN DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+211-PRESTACIÓN DE SERVICIOS ASISTENCIALES PARA EL FORTALECIMIENTO INSTITUCIONAL DE CORMAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+María Patricia Suarez Leiva
+</td>
+<td style="text-align:left;">
+<a href="mailto:maria.suarez@cormagdalena.gov.co" class="email">maria.suarez@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+212-PRESTACIÓN DE SERVICIOS PROFESIONALES DE UN ADMINISTRADOR DE EMPRESAS. PARA EL DESARROLLO DEL PROYECTO FORTALECIMIENTO INSTITUCIONAL QUE REQUIERA LA OFICINA DE GESTIÓN Y ENLACE
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Diana Carolina Delgado Florez
+</td>
+<td style="text-align:left;">
+<a href="mailto:diana.delgado@cormagdalena.gov.co" class="email">diana.delgado@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+213-PRESTACIÓN DE SERVICIOS PROFESIONALES DE UN ADMINISTRADOR DE EMPRESAS PARA EL DESARROLL0 DE LAS ACTIVIDADES DEL PROYECTO DE FORTALECIMIENTO INSTITUCIONAL DE LA CORPORACIÓN.
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Atlántico - Barranquilla
+</td>
+<td style="text-align:left;">
+Diana Carolina Delgado Florez
+</td>
+<td style="text-align:left;">
+<a href="mailto:diana.delgado@cormagdalena.gov.co" class="email">diana.delgado@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+214-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA APOYAR LAS ACTIVIDADES ASOCIADAS AL PROYECTO MEDIO AMBIENTE Y RECURSOS NATURALES RENOVABLES DE LA SUBDIRECCIÓN DE DESARROLLO SOSTENIBLE Y NAVEGACIÓN
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+215-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA APOYAR LAS ACTIVIDADES ASOCIADAS AL PROYECTO MEDIO AMBIENTE Y RECURSOS NATURALES RENOVABLES DE LA SUBDIRECIÒN DE DESARROLLO SOSTENIBLE Y NAVEGACIÒN
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+216-PRESTACIÓN DE SERVICIOS PROFESIONALES DE APOYO JURÍDICO PARA LA ESTRUCTURACIÓN Y FORTALECIMIENTO DE ACTIVIDADES ASOCIADAS AL PROYECTO DE RECUPERACIÓN DE LA NAVEGACIÓN
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+217-PRESTACIÓN DE SERVICIOS PROFESIONALES PARA APOYAR LA VISUALIZACIÓN DE LA INFORMACIÓN DE BATIMETRÍAS EN LOS REMOLCADORES EN EL PROYECTO DE RECUPERACIÓN DE LA NAVEGACIÓN
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+218-PRESTAR SERVICIOS PROFESIONALES COMO INGENIERA AMBIENTAL Y HSE PARA APOYAR LAS ACTIVIDADES DE RECUPERACIÓN DE LA NAVEGACIÓN EN EL RÍO MAGDALENA
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Santander - Barrancabermeja
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+219-PRESTACIÓN DE SERVICIOS PROFESIONALES COMO ABOGADO APOYANDO LOS ASPECTOS JURIDICOS DEL PROYECTO RECUPERACIÓN DE LA NAVEGACIÓN A CARGO DE LA SUBDIRECCION DE DESARROLLO SOSTENIBLE Y NAVEGACION
+</td>
+<td style="text-align:left;">
+Contratación directa.
+</td>
+<td style="text-align:left;">
+Distrito Capital de Bogotá - Bogotá
+</td>
+<td style="text-align:left;">
+Nubia Isabel Quevedo Angel
+</td>
+<td style="text-align:left;">
+<a href="mailto:nubia.quevedo@cormagdalena.gov.co" class="email">nubia.quevedo@cormagdalena.gov.co</a>
+</td>
+</tr>
+</tbody>
+</table>
+<p>al ya determinar las columnas con las que vamos a trabajar se debe aclarar los datos de los responsables encargados en las licitaciones con sus debidos correos</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="navegabilidad-rio-magdalena.html#cb9-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">&quot;Data/PAA-2024.xlsx&quot;</span>)</span>
+<span id="cb9-2"><a href="navegabilidad-rio-magdalena.html#cb9-2" tabindex="-1"></a><span class="fu">names</span>(data)</span></code></pre></div>
+<pre><code>##  [1] &quot;Código UNSPSC (cada código separado por ;)&quot;                                                                                                                                                             
+##  [2] &quot;Descripción&quot;                                                                                                                                                                                            
+##  [3] &quot;Fecha estimada de inicio de proceso de selección (mes)&quot;                                                                                                                                                 
+##  [4] &quot;Fecha estimada de presentación de ofertas (mes)&quot;                                                                                                                                                        
+##  [5] &quot;Duración del contrato (número)&quot;                                                                                                                                                                         
+##  [6] &quot;Duración del contrato (intervalo: días, meses, años)&quot;                                                                                                                                                   
+##  [7] &quot;Modalidad de selección&quot;                                                                                                                                                                                 
+##  [8] &quot;Fuente de los recursos&quot;                                                                                                                                                                                 
+##  [9] &quot;Valor total estimado&quot;                                                                                                                                                                                   
+## [10] &quot;Valor estimado en la vigencia actual&quot;                                                                                                                                                                   
+## [11] &quot;¿Se requieren vigencias futuras?&quot;                                                                                                                                                                       
+## [12] &quot;Estado de solicitud de vigencias futuras&quot;                                                                                                                                                               
+## [13] &quot;Unidad de contratación (referencia)&quot;                                                                                                                                                                    
+## [14] &quot;Ubicación&quot;                                                                                                                                                                                              
+## [15] &quot;Nombre del responsable&quot;                                                                                                                                                                                 
+## [16] &quot;Teléfono del responsable&quot;                                                                                                                                                                               
+## [17] &quot;Correo electrónico del responsable&quot;                                                                                                                                                                     
+## [18] &quot;¿Debe cumplir con invertir mínimo el 30% de los recursos del presupuesto destinados a comprar alimentos, cumpliendo con lo establecido en la Ley 2046 de 2020, reglamentada por el Decreto 248 de 2021?&quot;
+## [19] &quot;¿El contrato incluye el suministro de bienes y servicios distintos a alimentos?&quot;</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="navegabilidad-rio-magdalena.html#cb11-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb11-2"><a href="navegabilidad-rio-magdalena.html#cb11-2" tabindex="-1"></a>datos_responsables <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="navegabilidad-rio-magdalena.html#cb11-3" tabindex="-1"></a> <span class="fu">select</span>(<span class="at">Nombre_del_responsable =</span> <span class="st">`</span><span class="at">Nombre del responsable</span><span class="st">`</span>,</span>
+<span id="cb11-4"><a href="navegabilidad-rio-magdalena.html#cb11-4" tabindex="-1"></a>         <span class="at">Correo_responsable =</span> <span class="st">`</span><span class="at">Correo electrónico del responsable</span><span class="st">`</span>,</span>
+<span id="cb11-5"><a href="navegabilidad-rio-magdalena.html#cb11-5" tabindex="-1"></a>         <span class="at">Ubicacion =</span> <span class="st">`</span><span class="at">Ubicación</span><span class="st">`</span>)</span>
+<span id="cb11-6"><a href="navegabilidad-rio-magdalena.html#cb11-6" tabindex="-1"></a><span class="fu">head</span>(datos_responsables)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 3
+##   Nombre_del_responsable       Correo_responsable                 Ubicacion     
+##   &lt;chr&gt;                        &lt;chr&gt;                              &lt;chr&gt;         
+## 1 María Patria Suárez Leiva    maria.suarez@cormagdalena.gov.co   Atlántico - B…
+## 2 María Patria Suárez Leiva    maria.suarez@cormagdalena.gov.co   Atlántico - B…
+## 3 María Estela Paez Better     maria.paez@cormagdalena.gov.co     Atlántico - B…
+## 4 María Paula Guerrero Chalela maria.guerrero@cormagdalena.gov.co Distrito Capi…
+## 5 María Paula Guerrero Chalela maria.guerrero@cormagdalena.gov.co Distrito Capi…
+## 6 María Paula Guerrero Chalela maria.guerrero@cormagdalena.gov.co Atlántico - B…</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="navegabilidad-rio-magdalena.html#cb13-1" tabindex="-1"></a><span class="fu">write.csv</span>(datos_responsables, <span class="at">file =</span> <span class="st">&quot;datos_responsables.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p>Al ya tener los datos especificos sobre lo que vamos a trabajar, debemos filtrar las ubicaciones de los responsables de Bogotá y Barrancabermeja</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="navegabilidad-rio-magdalena.html#cb14-1" tabindex="-1"></a>bogota_utf8 <span class="ot">&lt;-</span> <span class="fu">iconv</span>(<span class="st">&quot;Bogotá&quot;</span>, <span class="at">to =</span> <span class="st">&quot;UTF-8&quot;</span>)</span>
+<span id="cb14-2"><a href="navegabilidad-rio-magdalena.html#cb14-2" tabindex="-1"></a>datos_responsables_filtrados <span class="ot">&lt;-</span> datos_responsables <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="navegabilidad-rio-magdalena.html#cb14-3" tabindex="-1"></a> <span class="fu">filter</span>(Ubicacion <span class="sc">%in%</span> <span class="fu">c</span>(bogota_utf8, <span class="st">&quot;Barrancabermeja&quot;</span>))</span>
+<span id="cb14-4"><a href="navegabilidad-rio-magdalena.html#cb14-4" tabindex="-1"></a><span class="fu">head</span>(datos_responsables_filtrados)</span></code></pre></div>
+<pre><code>## # A tibble: 0 × 3
+## # ℹ 3 variables: Nombre_del_responsable &lt;chr&gt;, Correo_responsable &lt;chr&gt;,
+## #   Ubicacion &lt;chr&gt;</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="navegabilidad-rio-magdalena.html#cb16-1" tabindex="-1"></a><span class="fu">write.csv</span>(datos_responsables_filtrados, <span class="at">file =</span> <span class="st">&quot;datos_responsables_filtrados.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 </div>
 <div id="la-librería-financialmaths" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> La librería “FinancialMaths”<a href="navegabilidad-rio-magdalena.html#la-librería-financialmaths" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>En R, existe una librería de matemáticas financieras de uso sencillo para principiantes en lenguajes de programación. Esta librería se llama <a href="https://www.quantargo.com/help/r/latest/packages/FinancialMath/0.1.1">FinancialMaths</a> que se desarrolló en Diciembre de 2016.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="navegabilidad-rio-magdalena.html#cb6-1" tabindex="-1"></a><span class="fu">library</span>(FinancialMath)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="navegabilidad-rio-magdalena.html#cb17-1" tabindex="-1"></a><span class="fu">library</span>(FinancialMath)</span></code></pre></div>
 <p>En esta librería vamos a encontrar funciones muy útiles tales como:</p>
 <pre><code>## [1] 4</code></pre>
 <ol style="list-style-type: decimal">
 <li>Análisis de Flujos de Caja</li>
 </ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="navegabilidad-rio-magdalena.html#cb8-1" tabindex="-1"></a><span class="fu">cf.analysis</span>(<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">101</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="at">i=</span>.<span class="dv">04</span>,<span class="at">time.d=</span><span class="cn">TRUE</span>, <span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="navegabilidad-rio-magdalena.html#cb19-1" tabindex="-1"></a><span class="fu">cf.analysis</span>(<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">101</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="at">i=</span>.<span class="dv">04</span>,<span class="at">time.d=</span><span class="cn">TRUE</span>, <span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##       CF Analysis
 ## PV      91.674727
 ## MAC D    2.968938
@@ -2061,18 +5873,18 @@ NA
 <ol start="2" style="list-style-type: decimal">
 <li>Tasa Interna de Retorno (en inglés Internal Rate of Return)</li>
 </ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="navegabilidad-rio-magdalena.html#cb10-1" tabindex="-1"></a><span class="fu">IRR</span>(<span class="at">cf0=</span><span class="dv">100</span>,<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">1</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="navegabilidad-rio-magdalena.html#cb21-1" tabindex="-1"></a><span class="fu">IRR</span>(<span class="at">cf0=</span><span class="dv">100</span>,<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">1</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>))</span></code></pre></div>
 <pre><code>## [1] 0.05166628</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Valor Presente Neto (en inglés NPV) para una serie de flujos de caja y ofrece un diagrama de tiempo de los diagramas de flujo. Por ejemplo, supongamos que tenemos lo siguiente:</li>
 </ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="navegabilidad-rio-magdalena.html#cb12-1" tabindex="-1"></a><span class="fu">NPV</span>(<span class="at">cf0=</span><span class="dv">100</span>,<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">40</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>),<span class="at">i=</span>.<span class="dv">01</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="navegabilidad-rio-magdalena.html#cb23-1" tabindex="-1"></a><span class="fu">NPV</span>(<span class="at">cf0=</span><span class="dv">100</span>,<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">40</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>),<span class="at">i=</span>.<span class="dv">01</span>)</span></code></pre></div>
 <pre><code>## [1] -13.41187</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Valor Temporal del Dinero: Resuelva el valor presente, el valor futuro, el tiempo o la tasa de interés para la acumulación de dinero que genera interés compuesto. También puede trazar el valor de tiempo para cada período.</li>
 </ol>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="navegabilidad-rio-magdalena.html#cb14-1" tabindex="-1"></a><span class="fu">TVM</span>(<span class="at">pv=</span><span class="dv">10</span>,<span class="at">fv=</span><span class="dv">20</span>,<span class="at">i=</span>.<span class="dv">05</span>,<span class="at">ic=</span><span class="dv">2</span>,<span class="at">plot=</span><span class="cn">TRUE</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="navegabilidad-rio-magdalena.html#cb25-1" tabindex="-1"></a><span class="fu">TVM</span>(<span class="at">pv=</span><span class="dv">10</span>,<span class="at">fv=</span><span class="dv">20</span>,<span class="at">i=</span>.<span class="dv">05</span>,<span class="at">ic=</span><span class="dv">2</span>,<span class="at">plot=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <pre><code>##                TVM
 ## PV       10.000000
 ## FV       20.000000
@@ -2082,7 +5894,7 @@ NA
 <ol start="5" style="list-style-type: decimal">
 <li>Tabla de Amortización</li>
 </ol>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="navegabilidad-rio-magdalena.html#cb16-1" tabindex="-1"></a><span class="fu">amort.table</span>(<span class="at">Loan=</span><span class="dv">1000</span>,<span class="at">n=</span><span class="dv">2</span>,<span class="at">i=</span>.<span class="dv">005</span>,<span class="at">ic=</span><span class="dv">1</span>,<span class="at">pf=</span><span class="dv">1</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="navegabilidad-rio-magdalena.html#cb27-1" tabindex="-1"></a><span class="fu">amort.table</span>(<span class="at">Loan=</span><span class="dv">1000</span>,<span class="at">n=</span><span class="dv">2</span>,<span class="at">i=</span>.<span class="dv">005</span>,<span class="at">ic=</span><span class="dv">1</span>,<span class="at">pf=</span><span class="dv">1</span>) </span></code></pre></div>
 <pre><code>## $Schedule
 ##   Payment Interest Paid Principal Paid Balance
 ## 1  503.75          5.00         498.75  501.25

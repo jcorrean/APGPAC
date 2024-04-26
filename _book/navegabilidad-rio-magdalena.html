@@ -224,9 +224,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">3.3</span> Datos de Cormagdalena<a href="navegabilidad-rio-magdalena.html#datos-de-cormagdalena" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Al explorar los datos relacionados con el plan de Adquisiciones de Cormagdalena para el año 2024, nos encontramos una serie de 219 licitaciones públicas orientadas a contratar los servicios o productos de proveedores locales.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="navegabilidad-rio-magdalena.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb1-2"><a href="navegabilidad-rio-magdalena.html#cb1-2" tabindex="-1"></a>PAA_2024 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;Data/PAA-2024.xlsx&quot;</span>)</span></code></pre></div>
+<span id="cb1-2"><a href="navegabilidad-rio-magdalena.html#cb1-2" tabindex="-1"></a>PAA_2024 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;Data/PAA-2024.xlsx&quot;</span>)</span>
+<span id="cb1-3"><a href="navegabilidad-rio-magdalena.html#cb1-3" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-4"><a href="navegabilidad-rio-magdalena.html#cb1-4" tabindex="-1"></a>correosBogota <span class="ot">&lt;-</span> <span class="fu">filter</span>(PAA_2024, <span class="fu">grepl</span>(<span class="st">&#39;Bogotá&#39;</span>, Ubicación))</span>
+<span id="cb1-5"><a href="navegabilidad-rio-magdalena.html#cb1-5" tabindex="-1"></a>correosBarrancabermeja <span class="ot">&lt;-</span> <span class="fu">filter</span>(PAA_2024, <span class="fu">grepl</span>(<span class="st">&#39;Barrancabermeja&#39;</span>, Ubicación))</span>
+<span id="cb1-6"><a href="navegabilidad-rio-magdalena.html#cb1-6" tabindex="-1"></a><span class="fu">unique</span>(correosBogota<span class="sc">$</span><span class="st">`</span><span class="at">Nombre del responsable</span><span class="st">`</span>)</span></code></pre></div>
+<pre><code>##  [1] &quot;María Paula Guerrero Chalela&quot;  &quot;Oriana Carbono&quot;               
+##  [3] &quot;Diana Carolina Delgado&quot;        &quot;María Estela Paez Better&quot;     
+##  [5] &quot;Nubia Quevedo&quot;                 &quot;Diana Carolina Delgado Florez&quot;
+##  [7] &quot;Nubia Isabel Quevedo Angel&quot;    &quot;Alvaro Jose Redondo Castillo&quot; 
+##  [9] &quot;MARIA PAULA GUERRERO CHALELA&quot;  &quot;María Patricia Suarez Leiva&quot;</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="navegabilidad-rio-magdalena.html#cb3-1" tabindex="-1"></a><span class="fu">unique</span>(correosBarrancabermeja<span class="sc">$</span><span class="st">`</span><span class="at">Nombre del responsable</span><span class="st">`</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;María Estela Paez Better&quot;   &quot;Nubia Quevedo&quot;             
+## [3] &quot;Nubia Isabel Quevedo Angel&quot; &quot;Alavaro  Jose Redondo&quot;</code></pre>
 <p>Esta tabla de datos cuenta con un total de 19 columnas (variables) resumidas así:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="navegabilidad-rio-magdalena.html#cb2-1" tabindex="-1"></a><span class="fu">variable.names</span>(PAA_2024)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="navegabilidad-rio-magdalena.html#cb5-1" tabindex="-1"></a><span class="fu">variable.names</span>(PAA_2024)</span></code></pre></div>
 <pre><code>##  [1] &quot;Código UNSPSC (cada código separado por ;)&quot;                                                                                                                                                             
 ##  [2] &quot;Descripción&quot;                                                                                                                                                                                            
 ##  [3] &quot;Fecha estimada de inicio de proceso de selección (mes)&quot;                                                                                                                                                 
@@ -247,16 +259,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [18] &quot;¿Debe cumplir con invertir mínimo el 30% de los recursos del presupuesto destinados a comprar alimentos, cumpliendo con lo establecido en la Ley 2046 de 2020, reglamentada por el Decreto 248 de 2021?&quot;
 ## [19] &quot;¿El contrato incluye el suministro de bienes y servicios distintos a alimentos?&quot;</code></pre>
 <p>Para observar con detalle cuánto dinero está presupuestado para las 219 licitaciones públicas, solo falta concentrarse en las columna 2 (“Descripción”) y la columna 10 (“Valor estimado en la vigencia actual”). Las cifras están en pesos colombianos.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="navegabilidad-rio-magdalena.html#cb4-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb4-2"><a href="navegabilidad-rio-magdalena.html#cb4-2" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
-<span id="cb4-3"><a href="navegabilidad-rio-magdalena.html#cb4-3" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb4-4"><a href="navegabilidad-rio-magdalena.html#cb4-4" tabindex="-1"></a>data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">&quot;Data/PAA-2024.xlsx&quot;</span>)</span>
-<span id="cb4-5"><a href="navegabilidad-rio-magdalena.html#cb4-5" tabindex="-1"></a>data <span class="ot">&lt;-</span> data[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">10</span>)]</span>
-<span id="cb4-6"><a href="navegabilidad-rio-magdalena.html#cb4-6" tabindex="-1"></a>html_table <span class="ot">&lt;-</span> <span class="fu">kable</span>(data, <span class="at">format =</span> <span class="st">&quot;html&quot;</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb4-7"><a href="navegabilidad-rio-magdalena.html#cb4-7" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span>
-<span id="cb4-8"><a href="navegabilidad-rio-magdalena.html#cb4-8" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="navegabilidad-rio-magdalena.html#cb4-9" tabindex="-1"></a><span class="co"># Print the HTML table</span></span>
-<span id="cb4-10"><a href="navegabilidad-rio-magdalena.html#cb4-10" tabindex="-1"></a>html_table</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="navegabilidad-rio-magdalena.html#cb7-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb7-2"><a href="navegabilidad-rio-magdalena.html#cb7-2" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb7-3"><a href="navegabilidad-rio-magdalena.html#cb7-3" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb7-4"><a href="navegabilidad-rio-magdalena.html#cb7-4" tabindex="-1"></a>data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">&quot;Data/PAA-2024.xlsx&quot;</span>)</span>
+<span id="cb7-5"><a href="navegabilidad-rio-magdalena.html#cb7-5" tabindex="-1"></a>data <span class="ot">&lt;-</span> data[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">10</span>)]</span>
+<span id="cb7-6"><a href="navegabilidad-rio-magdalena.html#cb7-6" tabindex="-1"></a>html_table <span class="ot">&lt;-</span> <span class="fu">kable</span>(data, <span class="at">format =</span> <span class="st">&quot;html&quot;</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb7-7"><a href="navegabilidad-rio-magdalena.html#cb7-7" tabindex="-1"></a>  <span class="fu">kable_styling</span>()</span>
+<span id="cb7-8"><a href="navegabilidad-rio-magdalena.html#cb7-8" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="navegabilidad-rio-magdalena.html#cb7-9" tabindex="-1"></a><span class="co"># Print the HTML table</span></span>
+<span id="cb7-10"><a href="navegabilidad-rio-magdalena.html#cb7-10" tabindex="-1"></a>html_table</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -2024,33 +2036,36 @@ NA
 </tbody>
 </table>
 <p>Una breve visualización de datos nos ayuda a entender cómo es la distribución estadística de esos presupuestos por mes (columna 4).</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="navegabilidad-rio-magdalena.html#cb5-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">&quot;Data/PAA-2024.xlsx&quot;</span>)</span>
-<span id="cb5-2"><a href="navegabilidad-rio-magdalena.html#cb5-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(data[<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">10</span>)])</span>
-<span id="cb5-3"><a href="navegabilidad-rio-magdalena.html#cb5-3" tabindex="-1"></a><span class="fu">colnames</span>(data)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Mes&quot;</span></span>
-<span id="cb5-4"><a href="navegabilidad-rio-magdalena.html#cb5-4" tabindex="-1"></a><span class="fu">colnames</span>(data)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Valor&quot;</span></span>
-<span id="cb5-5"><a href="navegabilidad-rio-magdalena.html#cb5-5" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb5-6"><a href="navegabilidad-rio-magdalena.html#cb5-6" tabindex="-1"></a>resumen <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb5-7"><a href="navegabilidad-rio-magdalena.html#cb5-7" tabindex="-1"></a> <span class="fu">group_by</span>(Mes) <span class="sc">%&gt;%</span></span>
-<span id="cb5-8"><a href="navegabilidad-rio-magdalena.html#cb5-8" tabindex="-1"></a> <span class="fu">summarize</span>(<span class="at">Presupuesto =</span> <span class="fu">sum</span>(Valor, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb5-9"><a href="navegabilidad-rio-magdalena.html#cb5-9" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb5-10"><a href="navegabilidad-rio-magdalena.html#cb5-10" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="navegabilidad-rio-magdalena.html#cb5-11" tabindex="-1"></a><span class="fu">ggplot</span>(resumen, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Mes, Presupuesto), <span class="at">y=</span>Presupuesto)) <span class="sc">+</span></span>
-<span id="cb5-12"><a href="navegabilidad-rio-magdalena.html#cb5-12" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>, <span class="at">fill=</span><span class="st">&quot;#131364&quot;</span>, <span class="at">alpha=</span>.<span class="dv">6</span>, <span class="at">width=</span>.<span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb5-13"><a href="navegabilidad-rio-magdalena.html#cb5-13" tabindex="-1"></a>    <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb5-14"><a href="navegabilidad-rio-magdalena.html#cb5-14" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
-<span id="cb5-15"><a href="navegabilidad-rio-magdalena.html#cb5-15" tabindex="-1"></a>    <span class="fu">theme_bw</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="navegabilidad-rio-magdalena.html#cb8-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">&quot;Data/PAA-2024.xlsx&quot;</span>)</span>
+<span id="cb8-2"><a href="navegabilidad-rio-magdalena.html#cb8-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(data[<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">10</span>)])</span>
+<span id="cb8-3"><a href="navegabilidad-rio-magdalena.html#cb8-3" tabindex="-1"></a><span class="fu">colnames</span>(data)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Mes&quot;</span></span>
+<span id="cb8-4"><a href="navegabilidad-rio-magdalena.html#cb8-4" tabindex="-1"></a><span class="fu">colnames</span>(data)[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Valor&quot;</span></span>
+<span id="cb8-5"><a href="navegabilidad-rio-magdalena.html#cb8-5" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb8-6"><a href="navegabilidad-rio-magdalena.html#cb8-6" tabindex="-1"></a>resumen <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="navegabilidad-rio-magdalena.html#cb8-7" tabindex="-1"></a> <span class="fu">group_by</span>(Mes) <span class="sc">%&gt;%</span></span>
+<span id="cb8-8"><a href="navegabilidad-rio-magdalena.html#cb8-8" tabindex="-1"></a> <span class="fu">summarize</span>(<span class="at">Presupuesto =</span> <span class="fu">sum</span>(Valor, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb8-9"><a href="navegabilidad-rio-magdalena.html#cb8-9" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="navegabilidad-rio-magdalena.html#cb8-10" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="navegabilidad-rio-magdalena.html#cb8-11" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="navegabilidad-rio-magdalena.html#cb8-12" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb8-13"><a href="navegabilidad-rio-magdalena.html#cb8-13" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="navegabilidad-rio-magdalena.html#cb8-14" tabindex="-1"></a><span class="fu">ggplot</span>(resumen, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Mes, Presupuesto), <span class="at">y=</span>Presupuesto)) <span class="sc">+</span></span>
+<span id="cb8-15"><a href="navegabilidad-rio-magdalena.html#cb8-15" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>, <span class="at">fill=</span><span class="st">&quot;#131364&quot;</span>, <span class="at">alpha=</span>.<span class="dv">6</span>, <span class="at">width=</span>.<span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb8-16"><a href="navegabilidad-rio-magdalena.html#cb8-16" tabindex="-1"></a>    <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb8-17"><a href="navegabilidad-rio-magdalena.html#cb8-17" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb8-18"><a href="navegabilidad-rio-magdalena.html#cb8-18" tabindex="-1"></a>    <span class="fu">theme_bw</span>()</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 <div id="la-librería-financialmaths" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> La librería “FinancialMaths”<a href="navegabilidad-rio-magdalena.html#la-librería-financialmaths" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>En R, existe una librería de matemáticas financieras de uso sencillo para principiantes en lenguajes de programación. Esta librería se llama <a href="https://www.quantargo.com/help/r/latest/packages/FinancialMath/0.1.1">FinancialMaths</a> que se desarrolló en Diciembre de 2016.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="navegabilidad-rio-magdalena.html#cb6-1" tabindex="-1"></a><span class="fu">library</span>(FinancialMath)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="navegabilidad-rio-magdalena.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(FinancialMath)</span></code></pre></div>
 <p>En esta librería vamos a encontrar funciones muy útiles tales como:</p>
 <pre><code>## [1] 4</code></pre>
 <ol style="list-style-type: decimal">
 <li>Análisis de Flujos de Caja</li>
 </ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="navegabilidad-rio-magdalena.html#cb8-1" tabindex="-1"></a><span class="fu">cf.analysis</span>(<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">101</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="at">i=</span>.<span class="dv">04</span>,<span class="at">time.d=</span><span class="cn">TRUE</span>, <span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="navegabilidad-rio-magdalena.html#cb11-1" tabindex="-1"></a><span class="fu">cf.analysis</span>(<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">101</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="at">i=</span>.<span class="dv">04</span>,<span class="at">time.d=</span><span class="cn">TRUE</span>, <span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##       CF Analysis
 ## PV      91.674727
 ## MAC D    2.968938
@@ -2061,17 +2076,17 @@ NA
 <ol start="2" style="list-style-type: decimal">
 <li>Tasa Interna de Retorno (en inglés Internal Rate of Return)</li>
 </ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="navegabilidad-rio-magdalena.html#cb10-1" tabindex="-1"></a><span class="fu">IRR</span>(<span class="at">cf0=</span><span class="dv">100</span>,<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">1</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="navegabilidad-rio-magdalena.html#cb13-1" tabindex="-1"></a><span class="fu">IRR</span>(<span class="at">cf0=</span><span class="dv">100</span>,<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">1</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>))</span></code></pre></div>
 <pre><code>## [1] 0.05166628</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Valor Presente Neto (en inglés NPV) para una serie de flujos de caja y ofrece un diagrama de tiempo de los diagramas de flujo. Por ejemplo, supongamos que tenemos lo siguiente:</li>
 </ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="navegabilidad-rio-magdalena.html#cb12-1" tabindex="-1"></a><span class="fu">NPV</span>(<span class="at">cf0=</span><span class="dv">100</span>,<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">40</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>),<span class="at">i=</span>.<span class="dv">01</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="navegabilidad-rio-magdalena.html#cb15-1" tabindex="-1"></a><span class="fu">NPV</span>(<span class="at">cf0=</span><span class="dv">100</span>,<span class="at">cf=</span><span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">40</span>),<span class="at">times=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>),<span class="at">i=</span>.<span class="dv">01</span>)</span></code></pre></div>
 <pre><code>## [1] -13.41187</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Valor Temporal del Dinero: Resuelva el valor presente, el valor futuro, el tiempo o la tasa de interés para la acumulación de dinero que genera interés compuesto. También puede trazar el valor de tiempo para cada período.</li>
 </ol>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="navegabilidad-rio-magdalena.html#cb14-1" tabindex="-1"></a><span class="fu">TVM</span>(<span class="at">pv=</span><span class="dv">10</span>,<span class="at">fv=</span><span class="dv">20</span>,<span class="at">i=</span>.<span class="dv">05</span>,<span class="at">ic=</span><span class="dv">2</span>,<span class="at">plot=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="navegabilidad-rio-magdalena.html#cb17-1" tabindex="-1"></a><span class="fu">TVM</span>(<span class="at">pv=</span><span class="dv">10</span>,<span class="at">fv=</span><span class="dv">20</span>,<span class="at">i=</span>.<span class="dv">05</span>,<span class="at">ic=</span><span class="dv">2</span>,<span class="at">plot=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <pre><code>##                TVM
 ## PV       10.000000
@@ -2082,7 +2097,7 @@ NA
 <ol start="5" style="list-style-type: decimal">
 <li>Tabla de Amortización</li>
 </ol>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="navegabilidad-rio-magdalena.html#cb16-1" tabindex="-1"></a><span class="fu">amort.table</span>(<span class="at">Loan=</span><span class="dv">1000</span>,<span class="at">n=</span><span class="dv">2</span>,<span class="at">i=</span>.<span class="dv">005</span>,<span class="at">ic=</span><span class="dv">1</span>,<span class="at">pf=</span><span class="dv">1</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="navegabilidad-rio-magdalena.html#cb19-1" tabindex="-1"></a><span class="fu">amort.table</span>(<span class="at">Loan=</span><span class="dv">1000</span>,<span class="at">n=</span><span class="dv">2</span>,<span class="at">i=</span>.<span class="dv">005</span>,<span class="at">ic=</span><span class="dv">1</span>,<span class="at">pf=</span><span class="dv">1</span>) </span></code></pre></div>
 <pre><code>## $Schedule
 ##   Payment Interest Paid Principal Paid Balance
 ## 1  503.75          5.00         498.75  501.25

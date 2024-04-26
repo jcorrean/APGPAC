@@ -43,6 +43,11 @@ Al explorar los datos relacionados con el plan de Adquisiciones de Cormagdalena 
 ```{r, echo=TRUE, include=TRUE, message=FALSE}
 library(readxl)
 PAA_2024 <- read_excel("Data/PAA-2024.xlsx")
+library(dplyr)
+correosBogota <- filter(PAA_2024, grepl('Bogotá', Ubicación))
+correosBarrancabermeja <- filter(PAA_2024, grepl('Barrancabermeja', Ubicación))
+unique(correosBogota$`Nombre del responsable`)
+unique(correosBarrancabermeja$`Nombre del responsable`)
 ```
 
 Esta tabla de datos cuenta con un total de 19 columnas (variables) resumidas así:
@@ -77,6 +82,9 @@ library(dplyr)
 resumen <- data %>%
  group_by(Mes) %>%
  summarize(Presupuesto = sum(Valor, na.rm = TRUE))
+
+
+
 library(ggplot2)
 
 ggplot(resumen, aes(x=reorder(Mes, Presupuesto), y=Presupuesto)) +

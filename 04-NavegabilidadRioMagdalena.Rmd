@@ -48,9 +48,8 @@ correosBogota <- filter(PAA_2024, grepl('Bogotá', Ubicación))
 correosBarrancabermeja <- filter(PAA_2024, grepl('Barrancabermeja', Ubicación))
 unique(correosBogota$`Correo electrónico del responsable`)
 unique(correosBarrancabermeja$`Correo electrónico del responsable`)
-
-
 ```
+
 ```{r}
 table(correosBogota$`Modalidad de selección`)
 ```

@@ -146,6 +146,73 @@ head(datos_responsables_filtrados)
 write.csv(datos_responsables_filtrados, file = "datos_responsables_filtrados.csv", row.names = FALSE)
 ```
 
+Para poder llegar a identificar y esclarecer quienes son las personas responsables por cada ciudad se debe tener encuenta varios factores.
+Se debe traer los datos únicos de las variables "Nombre del responsable" y "ubicación"
+Se procede a modificar las mayusculas que se presentan en `Nombre del responsable` y se modifican con "tolower" para volver todos los nombres en minuscula.
+Posterior se toman valores unicos en este caso, que no se llegue a repetir ningún nombre, para ello se le pide a unique que los agrupe. 
+
+```{r}
+library(readxl)
+PAA_2024 <- read_excel("Data/PAA-2024.xlsx")
+unique(PAA_2024$`Nombre del responsable`)
+PAA_2024$`Nombre del responsable` <- tolower(PAA_2024$`Nombre del responsable`)
+obtener_iniciales <- function(nombre) {
+  iniciales <- sapply(strsplit(nombre, " "), function(x) paste(substr(x, 1, 1), collapse = ""))
+ return(iniciales)
+}
+PAA_2024$`Nombre del responsable` <- sapply(PAA_2024$`Nombre del responsable`, obtener_iniciales)
+unique(PAA_2024$`Nombre del responsable`)
+unique(PAA_2024$Ubicación)
+variable.names(PAA_2024)
+```
+
+Al tener las dos variables claras se procede a crear "Responsable_Ubicacion", donde se da claridad en las ciudades debido a que se encuentra en la misma columna con los departamentos, para esto se sustituye por medio del comando `sub`.
+en la variable `Nombre del responsable` ya los nombres se encuentran agrupados en minuscula, pero al presentarse valores diferentes en este caso la tilde en maria, con el comando `gsub` se precisa que se remplace la vocal "i" por la "í" para que se pueda agrupar todos las maría <- maria y agrupando así todas las variables presentadas por nombres y ciudades.
+
+```{r}
+library(readxl)
+Responsable_Ubicacion <- na.omit(PAA_2024[c(14,15)])
+
+Responsable_Ubicacion$Ubicación <- sub(".*- ", "", Responsable_Ubicacion$Ubicación)
+Responsable_Ubicacion$`Nombre del responsable` <- gsub("i", "í", Responsable_Ubicacion$`Nombre del responsable`)
+
+unique(Responsable_Ubicacion$`Nombre del responsable`)
+unique(Responsable_Ubicacion$Ubicación)
+
+```
+
+Para establecer una representación gráfica de la relación entre los responsables de las licitaciones y las ciudades a las que licitan, se utiliza 'graph.data.frame' sobre la tabla 'Responsable_Ubicacion' previamente creada. Este enfoque se centra en las ciudades con mayor volumen de licitaciones y en los individuos con mayor responsabilidad en la administración de estas. El propósito es examinar la correlación entre el número de licitaciones por ciudad y la gestión de los responsables.
+
+```{r}
+library(igraph)
+bn2 <- graph.data.frame(Responsable_Ubicacion,directed=FALSE)
+bipartite.mapping(bn2)
+V(bn2)$type <- bipartite_mapping(bn2)$type
+V(bn2)$color <- ifelse(V(bn2)$type, "red", "green")
+V(bn2)$shape <- ifelse(V(bn2)$type, "circle", "square")
+V(bn2)$size <- sqrt(igraph::betweenness(bn2))
+E(bn2)$color <- "lightgrey"
+plot(bn2, layout = layout_in_circle)
+
+bn2.pr <- bipartite.projection(bn2)
+Responsables <- bn2.pr$proj2
+Ciudades <- bn2.pr$proj1
+
+ciudades_especificas <- c("Bogotá", "Barrancabermeja", "Barranquilla")
+nodos_ciudades_especificas <- V(Ciudades)[V(Ciudades)$name %in% ciudades_especificas]
+
+subgrafo_ciudades_especificas <- subgraph.edges(bn2, E(bn2)[V(bn2)$name %in% names(nodos_ciudades_especificas)]) 
+
+plot(subgrafo_ciudades_especificas, layout = layout_in_circle)
+
+Importantes1 <- degree(Responsables)
+Importantes2 <- degree(Ciudades)
+```
+
+
+```{r}
+
+```
 
 
 ## La librería "FinancialMaths"  

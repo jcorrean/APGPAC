@@ -1,30 +1,29 @@
-## Python dentro de R
+# Python dentro de R
 
 En las ciencias de datos y analítica de datos, tanto R como Python son lenguajes de programación muy utilizados. Estos lenguajes de programación son integrables dentro de RStudio usando la librería reticulate que instalaremos de la misma manera aplicada para instalar otras librerías.
 
+
 ```{r}
-library(reticulate)
-#use_python("C:/Users/USER/anaconda3/python311.dll", required = TRUE)
+library(reticulate) 
 ```
 
 Ahora, pasamos a insertar un chunk para Python para invocar las librerías de Python. 
 
-```{r chunk, echo=FALSE, out.width = '25%', fig.show='hold', fig.cap='Tipos de Chunk para Archivos RMarkdown en RStudio', }
+```{r, echo=FALSE, out.width = '25%', fig.show='hold', fig.cap='Tipos de Chunk para Archivos RMarkdown en RStudio', }
 knitr::include_graphics("Chunk.png")
 ```
 
 
 Ahora, entendiendo cómo logramos insertar un chunk de Python en un archivo RMarkdown, ahora vamos a usar en el siguiente ejemplo.
 
-
 ```{python}
-pip install quandl
-import quandl
-import matplotlib.pyplot as plt
-import warnings
-warnings.filterwarnings('ignore')
-plt.style.use('seaborn')
+pip install quandl 
+import quandl 
+import matplotlib.pyplot as plt 
+import warnings warnings.filterwarnings('ignore') plt.style.use('seaborn')
 ```
+
+
 
 Ahora, vamos a extraer unos datos de la librería quandl de la siguiente manera.
 

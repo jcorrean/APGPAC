@@ -3,6 +3,7 @@
 Nuestro planeta enfrenta problemas de gran complejidad (e.g., calentamiento global, migraciones sociales forzadas por guerras o desastres naturales). En el presente, esos problemas afectan el desempeño actual de las industrias que dependen de la explotación de recursos naturales. De continuar estos problemas sin ser mitigados, ellos crecerán a tal punto de amenazar seriamente la supervivencia futura del ser humano.
 
 AQUI ESTOY METIENDO UN CAMBIO
+EL PROFESOR JUAN ES SÚPER PACIENTE
 
 Debido a lo anterior, es razonable esperar que las innovaciones en fusión nuclear con dispositivos como el [tokamak](https://es.wikipedia.org/wiki/Tokamak), la inteligencia artificial, la edición genética con tecnología [CRISPR](https://es.wikipedia.org/wiki/CRISPR), la impresión 3D, y la [minería espacial](https://es.wikipedia.org/wiki/Miner%C3%ADa_de_asteroides), sean el "As bajo la manga" que garantice la vida sostenible dentro y fuera de nuestro planeta.
 

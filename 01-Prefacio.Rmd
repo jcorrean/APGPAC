@@ -5,20 +5,6 @@ Aquí estoy poniendo un cambio :) (ya no es Daniela, es Rosalia jaja)
 
 Nuestro planeta enfrenta problemas de gran complejidad (e.g., calentamiento global, migraciones sociales forzadas por guerras o desastres naturales). En el presente, esos problemas afectan el desempeño actual de las industrias que dependen de la explotación de recursos naturales. De continuar estos problemas sin ser mitigados, ellos crecerán a tal punto de amenazar seriamente la supervivencia futura del ser humano.
 
-AQUI ESTOY METIENDO UN CAMBIO
-EL PROFESOR JUAN ES SÚPER PACIENTE
-<<<<<<< HEAD
-
-AQUI VA UN NUEVO CAMBIO
-
-
-
-=======
-UNA FRASE CORTA
->>>>>>> ae07513aefa87dd927c708057ace472294cf3388
-PRÁCTICA EN R PARA VER CAMBIOS
->>>>>>> 3388c13611d8f1364a3f16771b95b0c79bc1d10d
-
 Debido a lo anterior, es razonable esperar que las innovaciones en fusión nuclear con dispositivos como el [tokamak](https://es.wikipedia.org/wiki/Tokamak), la inteligencia artificial, la edición genética con tecnología [CRISPR](https://es.wikipedia.org/wiki/CRISPR), la impresión 3D, y la [minería espacial](https://es.wikipedia.org/wiki/Miner%C3%ADa_de_asteroides), sean el "As bajo la manga" que garantice la vida sostenible dentro y fuera de nuestro planeta.
 
 Las soluciones que usan "enfoques simples" están perdiendo eficacia versus las soluciones de "enfoques complejos". La complejidad de estas soluciones se ve en la gestión de procesos productivos de plantas industriales, de aeropuertos con gran tráfico aéreo, de represas hidroeléctricas, o de plataformas de comercio electrónico. En todas estas instancias, la combinación de tecnología con talento humano ha logrado que lo impensable (e.g., viajar grandes distancias) se convierta en realidades posibles (e.g., el uso de cohetes espaciales para hacer turismo fuera de la tierra) o realidades cotidianas (e.g., abordando aviones transcontinentales).

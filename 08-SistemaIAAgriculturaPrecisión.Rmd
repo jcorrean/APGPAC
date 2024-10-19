@@ -36,12 +36,15 @@ Los fondos para la financiación de los proyectos por parte del FONDOCYT se entr
 4) Posibilidad de ajustes: En casos donde se requiera la adquisición de equipos necesarios y se proyecte un exceso en el presupuesto anual aprobado, el MESCyT puede autorizar una dispensa, siempre que la petición esté debidamente justificada.
 
 ## Datos relevantes del proyecto
+<<<<<<< Updated upstream
 ```{r}
 library(readxl)
 PrecipitacionRD <- read_excel("Data/PrecipitacionRD.xlsx")
 hist(PrecipitacionRD$`PRECIPITACION EN MILIMETRO`)
 ```
 
+=======
+>>>>>>> Stashed changes
 ```{r}
 library(readxl)
 library(ggplot2)
@@ -57,6 +60,7 @@ ggplot(PrecipitacionRD, aes(x = FECHA, y = PRECIPITACION)) + geom_line(color = "
   )
 
 View(PrecipitacionRD)
+
 ```
 
 ## Monto financiado

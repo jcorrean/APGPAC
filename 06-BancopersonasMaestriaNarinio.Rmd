@@ -98,9 +98,11 @@ El periodo de subsanación de los requisitos exigidos en el presente documento s
 
 -   En caso de que el candidato suba alguno de los documentos sin su respectiva firma, tendrá la posibilidad de subsanarlo de acuerdo con la actividad período de subsanación de requisitos en el numeral 17. Cronograma.
 
-| Nota: |
-|----|
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Nota:                                                                                                                                                                                      |
++============================================================================================================================================================================================+
 | El Ministerio de Ciencia, Tecnología e Innovación podrá solicitar en cualquier momento, información y documentación adicional, complementaria o aclaraciones de los documentos entregados. |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 [Condiciones inhabilitantes:]{.underline}
 

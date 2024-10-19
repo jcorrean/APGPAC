@@ -178,4 +178,8 @@ Investigadores_Reconocidos_por_convocatoria_20241018$ano_extr <- format(Investig
 Investigadores2021 <- Investigadores_Reconocidos_por_convocatoria_20241018 %>% filter(.,ano_extr=="2021")
 
 Consolidado <- data.frame(table(Investigadores2021$NME_CLASIFICACION_PR))
+colnames(Investigadores2021)[8] <- "Areas"
+Areas <- dplyr::filter(Investigadores2021, grepl('Ciencias Agrícolas|Ciencias Naturales', Areas))
+ConAreas <- data.frame(table(Areas$Areas))
+
 ```

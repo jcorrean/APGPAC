@@ -8,3 +8,11 @@
 
 
 ## Datos relevantes del proyecto 
+
+```{r, message==FALSE}
+library(readxl)
+Investigadores <- read_excel("Data/Investigadores_Reconocidos_por_convocatoria_20241018.xlsx")
+library(dplyr)
+pie(table(Investigadores$NME_NIV_FORM_PR))
+```
+

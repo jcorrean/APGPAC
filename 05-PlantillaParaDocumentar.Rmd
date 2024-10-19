@@ -1,0 +1,7 @@
+# Plantilla para documentar
+Aquí vamos a explicar brevemente de qué se trata el proyecto.
+## Contexto del Proyecto 
+Aqui viene la descripción del proyecto
+## Agencia Financiadora del Proyecto
+La agencia financiadora de este proyecto es la gobernación del departamento del cauca. La financiación se va a dar en tres entre
+

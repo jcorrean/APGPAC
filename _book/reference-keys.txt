@@ -29,3 +29,5 @@ python-dentro-de-r-1
 situación-problema-1
 agencias-financiadoras
 datos-de-cormagdalena
+nombre-del-proyecto
+plantilla-para-documentar

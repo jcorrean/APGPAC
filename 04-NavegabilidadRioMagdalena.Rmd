@@ -12,6 +12,7 @@ cat(paste(affil, collapse = ", "), "\n")
 
 ## Situación Problema
 
+
 El río Magdalena es una de las más importantes arterias fluviales de Colombia. Si Colombia desarrolla la infraestructura necesaria para el transporte fluvial del Magdalena, el país podría con el transporte nacional más seguro, barato y funcional, que reemplazaría con eficacia las rutas de tráfico terrestre llena de transporte de carga que resultan difíciles de mantener. <iframe width="100%" height="400" src="https://www.youtube.com/embed/TukNK6bDn7s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Según el gobernador del departamento del Atlántico, [Eduardo Verano de la Rosa](https://www.larepublica.co/analisis/eduardo-verano-de-la-rosa-500119/retos-del-rio-magdalena-3509151#:~:text=La%20navegabilidad%20del%20Rio%20Magdalena,vez%20m%C3%A1s%20dif%C3%ADciles%20de%20mantener.) (2022), para lograr la navegabilidad del río magdalena se necesitan ejecutar los siguientes cinco proyectos:

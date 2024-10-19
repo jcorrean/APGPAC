@@ -37,6 +37,7 @@ Los fondos para la financiación de los proyectos por parte del FONDOCYT se entr
 
 ## Datos relevantes del proyecto
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ```{r}
 library(readxl)
 PrecipitacionRD <- read_excel("Data/PrecipitacionRD.xlsx")
@@ -45,12 +46,16 @@ library(tidyr)
 Lluvias <- PrecipitacionRD %>% unite(Fecha, MES, AÑO)
 colnames(Lluvias)[2] <- "Precipitacion"
 ```
+=======
+>>>>>>> Stashed changes
 
-<<<<<<< HEAD
 El problema de las precipitaciones en República Dominicana se observa a continuación. Entre 2018 y 2024, las precipitaciones han estado por debajo de los 350 milímetros a excepción de dos ocasiones que han excedido los 400 milímetros.  
 
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
 ```{r}
 library(readxl)
 library(ggplot2)

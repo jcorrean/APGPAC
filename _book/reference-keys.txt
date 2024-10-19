@@ -31,3 +31,23 @@ agencias-financiadoras
 datos-de-cormagdalena
 nombre-del-proyecto
 plantilla-para-documentar
+<<<<<<< HEAD
+=======
+contexto-del-proyecto-1
+agencia-financiadora-del-proyecto-1
+datos-relevantes-del-proyecto
+activación-economía-montería-córdoba
+situación-problema-2
+agencia-financiadora-del-proyecto-2
+datos-relevantes-del-proyecto-1
+monto-financiado
+sectores-económicos-de-la-convocatoria
+fechas-importantes
+requisitos-para-aplicar
+sistema-de-ia-para-agricultura-de-precisión-en-el-cultivo-de-arroz-en-la-provincia-de-san-francisco-de-macorís-rep.-dom.
+situación-problema-3
+agencia-financiadora
+datos-relevantes-del-proyecto-2
+monto-financiado-1
+sectores-económicos
+>>>>>>> 5d2b018e74a5e4c314ec32349ae0ee074472e890

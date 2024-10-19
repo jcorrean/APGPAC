@@ -31,6 +31,8 @@ agencias-financiadoras
 datos-de-cormagdalena
 nombre-del-proyecto
 plantilla-para-documentar
+<<<<<<< HEAD
+=======
 contexto-del-proyecto-1
 agencia-financiadora-del-proyecto-1
 datos-relevantes-del-proyecto
@@ -48,3 +50,4 @@ agencia-financiadora
 datos-relevantes-del-proyecto-2
 monto-financiado-1
 sectores-económicos
+>>>>>>> 5d2b018e74a5e4c314ec32349ae0ee074472e890

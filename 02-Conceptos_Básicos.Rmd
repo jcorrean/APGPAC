@@ -1,5 +1,6 @@
 # Gestión de Proyectos con Analítica de Datos
 
+
 ```{r, echo=FALSE, include=TRUE, message=FALSE, results='asis'}
 authors <- unlist(noquote(yaml::yaml.load_file("01-Prefacio.yml")$default))
 cat(paste(authors, collapse = ", "), "\n") 
@@ -17,18 +18,41 @@ En la gerencia de proyectos una práctica profesional muy aceptada es el uso de 
 
 Cualquier profesional de la gerencia de proyecto reconocerá qué es un diagrama de Gantt y para qué y por qué es muy usado en la gestión de proyectos. Las herramientas especializadas en analítica de datos como R y Python ofrecen paquetes que nos ayudan a visualizar estos diagramas. Veamos un ejemplo sencillo de tareas relacionadas con un proyecto hipotético orientado al lanzamiento de un nuevo producto.
 
+
+
 ```{r, echo=FALSE, include=TRUE, message=FALSE}
 library(knitr)
 library(broom)
 library(kableExtra)
 library(PlotPrjNetworks)
 project1=data.frame(
-  tarea=c("Investigación de Mercado","Desarrollo de Concepto","Test de Viabilidad",
-         "Diseño Preliminar","Diseño de Proceso","Prototipado","Prueba de Mercado","Diseño Final", "Lanzamiento"),
-  start=c("2015-07-05","2015-07-05","2015-08-05","2015-10-05","2015-10-05","2016-02-18",
-          "2016-03-18","2016-05-18","2016-07-18"),
-  end=c("2015-08-05","2015-08-05","2015-10-05","2016-01-05","2016-02-18","2016-03-18",
-        "2016-05-18","2016-07-18","2016-09-18"))
+tarea=c("Investigación de Mercado",
+        "Desarrollo de Concepto",
+        "Test de Viabilidad",
+         "Diseño Preliminar",
+        "Diseño de Proceso",
+        "Prototipado",
+        "Prueba de Mercado",
+        "Diseño Final", 
+        "Lanzamiento"),
+start=c("2015-07-05",
+        "2015-07-05",
+        "2015-08-05",
+        "2015-10-05",
+        "2015-10-05",
+        "2016-02-18",
+        "2016-03-18",
+        "2016-05-18",
+        "2016-07-18"),
+end=c("2015-08-05",
+      "2015-08-05",
+      "2015-10-05",
+      "2016-01-05",
+      "2016-02-18",
+      "2016-03-18",
+      "2016-05-18",
+      "2016-07-18",
+      "2016-09-18"))
 
 html_table <- kable(project1, format = "html")%>%
   kable_styling()
@@ -42,12 +66,36 @@ Con base en estas tareas y sus correspondientes fechas de inicio (start) y fin (
 ```{r, echo=FALSE, include=TRUE, message=FALSE}
 library(PlotPrjNetworks)
 project1=data.frame(
-  task=c("Investigación de Mercado","Desarrollo de Concepto","Test de Viabilidad",
-          "Diseño Preliminar","Diseño de Proceso","Prototipado","Prueba de Mercado","Diseño Final", "Lanzamiento"),
-  start=c("2015-07-05","2015-07-05","2015-08-05","2015-10-05","2015-10-05","2016-02-18",
-          "2016-03-18","2016-05-18","2016-07-18"),
-  end=c("2015-08-05","2015-08-05","2015-10-05","2016-01-05","2016-02-18","2016-03-18",
-        "2016-05-18","2016-07-18","2016-09-18"))
+  task=c("Investigación de Mercado",
+         "Desarrollo de Concepto",
+         "Test de Viabilidad",
+          "Diseño Preliminar",
+         "Diseño de Proceso",
+         "Prototipado",
+         "Prueba de Mercado",
+         "Diseño Final", 
+         "Lanzamiento",
+         "Interpretación de Resultados"),
+  start=c("2015-07-05",
+          "2015-07-05",
+          "2015-08-05",
+          "2015-10-05",
+          "2015-10-05",
+          "2016-02-18",
+          "2016-03-18",
+          "2016-05-18",
+          "2016-07-18",
+          "2016-09-18"),
+  end=c("2015-08-05",
+        "2015-08-05",
+        "2015-10-05",
+        "2016-01-05",
+        "2016-02-18",
+        "2016-03-18",
+        "2016-05-18",
+        "2016-07-18",
+        "2016-09-18",
+        "2016-11-18"))
 project2=data.frame(
   from=c(1,2,3,4,5,6,7,8),
   to=c(2,3,4,5,6,7,8,9),

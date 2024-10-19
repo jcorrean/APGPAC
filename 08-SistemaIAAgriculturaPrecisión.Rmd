@@ -37,7 +37,7 @@ Los fondos para la financiación de los proyectos por parte del FONDOCYT se entr
 
 ## Datos relevantes del proyecto
 
-El problema de las precipitaciones en República Dominicana se observa a continuación. Entre 2018 y 2024, las precipitaciones han estado por debajo de los 350 milímetros a excepción de dos ocasiones que han excedido los 400 milímetros. 
+El problema de las precipitaciones en República Dominicana se observa a continuación. Entre 2018 y 2024, las precipitaciones han estado por debajo de los 350 milímetros a excepción de dos ocasiones que han excedido los 400 milímetros.  
 
 ```{r}
 library(readxl)

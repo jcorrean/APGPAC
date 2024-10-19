@@ -170,16 +170,34 @@ Para realizar el análisis y selección de los posibles candidatos, utilizamos l
 
 Para llegar al número de posibles candidatos realizamos los siguientes pasos:
 
-1.  Tomamos únicamente los registros relacionados con el año 2021 para reducir la muestra, con el siguiente código:
+1.  Tomamos únicamente los registros relacionados con el año 2021 para reducir la muestra, utiliiando el siguiente código:
 
 Investigadores2021 \<- Investigadores_Reconocidos_por_convocatoria_20241018 %\>% filter(.,ano_extr=="2021")
 
-Pasamos de más de 77 registros a 21.094 registros. Dividimos esa última muestra entre las diferentes cateogrías de investigadores, con el siguiente código:
+2.  Pasamos de más de 77 mil registros a 21.094 registros. Dividimos esa última muestra entre las diferentes cateogorías de investigadores, utilizando el siguiente código:
 
 Consolidado \<- data.frame(table(Investigadores2021\$NME_CLASIFICACION_PR))
 
 ![](images/consolidado.png)
 
+3.  Con la base de 21.094 registros empezamos a filtar por las áreas de conocimiento que aplican para la convocatoria, reduciendo la muestra a 15.908 registros, utilizando el siguiente código:
+
+Areas \<- dplyr::filter(Investigadores2021,grepl('Ciencias Agrícolas\|Ciencias Naturales',Areas))
+
+4.  Los 15.908 registros los clasificamos entre las diferentes áreas de conocimiento, utilizando el siguiente código:
+
+ConsolidadoAreas \<- data.frame(table(Areas\$Areas))
+
+![](images/consolidado%20áreas.png)
+
+5.  Para seguir reduciendo la muestra, aplicamos el filtro de nivel de formación de los registrados. Dejando una nueva muestra de 14.121, utilizando el siguiente código:
+
+Nivelformación \<- dplyr::filter(Areas,grepl('Doctorado\|Especialización\|Maestría/Magister\|Pregrado/Universitaro',Nivelformación))
+
+![](images/nivel de formación.png)
+
+
+[**CÓDIGOS UTILIZADOS:**]{.underline}
 
 ```{r}
 library(readxl)
@@ -197,6 +215,7 @@ Investigadores2021 <- Investigadores_Reconocidos_por_convocatoria_20241018 %>% f
 
 Consolidado <- data.frame(table(Investigadores2021$NME_CLASIFICACION_PR))  
 colnames(Investigadores2021)[8] <- "Areas"
-Areas <- dplyr::filter(Investigadores2021, grepl('Ciencias Agrícolas|Ciencias Naturales|Ciencias Sociales|Ingeniería y Tecnología', Areas))
-ConAreas <- data.frame(table(Investigadores2021$Areas))
+Areas <- dplyr::filter(Investigadores2021,grepl("Ciencias Agrícolas|Ciencias Naturales",Areas))
+ConsolidadoAreas <- data.frame(table(Areas$Areas))
+Nivelformación <- dplyr::filter(Areas,grepl('Doctorado|Especialización|Maestría/Magister|Pregrado/Universitaro',Nivelformación))
 ```

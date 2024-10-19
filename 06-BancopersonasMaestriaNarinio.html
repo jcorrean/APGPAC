@@ -756,15 +756,33 @@ sobre las siguientes variables:</p>
 siguientes pasos:</p>
 <ol style="list-style-type: decimal">
 <li>Tomamos únicamente los registros relacionados con el año 2021 para
-reducir la muestra, con el siguiente código: Investigadores2021 &lt;-
-Investigadores_Reconocidos_por_convocatoria_20241018 %&gt;%
-filter(.,ano_extr==“2021”)</li>
+reducir la muestra, utiliiando el siguiente código:</li>
 </ol>
-<p>Pasamos de más de 77 registros a 21.094 registros. Dividimos esa
-última muestra entre las diferentes cateogrías de investigadores, con el
-siguiente código:<br />
-Consolidado &lt;-
+<p>Investigadores2021 &lt;-
+Investigadores_Reconocidos_por_convocatoria_20241018 %&gt;%
+filter(.,ano_extr==“2021”)</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Pasamos de más de 77 mil registros a 21.094 registros. Dividimos esa
+última muestra entre las diferentes cateogorías de investigadores,
+utilizando el siguiente código:</li>
+</ol>
+<p>Consolidado &lt;-
 data.frame(table(Investigadores2021$NME_CLASIFICACION_PR))</p>
+<p><img role="img" src="data:image/png;base64,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" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Con la base de 21.094 registros empezamos a filtar por las áreas de
+conocimiento que aplican para la convocatoria, reduciendo la muestra a
+15.908 registros, utilizando el siguiente código:</li>
+</ol>
+<p>Areas &lt;- dplyr::filter(Investigadores2021,grepl(‘Ciencias
+Agrícolas|Ciencias Naturales’,Areas))</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Los 15.908 registros los clasificamos entre las diferentes áreas de
+conocimiento, utilizando el siguiente código:</li>
+</ol>
+<p>ConsolidadoAreas &lt;- data.frame(table(Areas$Areas))</p>
+<p>PONER IMAGÉN DE CUADRO QUE ME ERROR</p>
+<p>CÓDIGOS UTILIZADOS:</p>
 <pre class="r"><code>library(readxl)
 Investigadores_Reconocidos_por_convocatoria_20241018 &lt;- read_excel(&quot;Data/Investigadores_Reconocidos_por_convocatoria_20241018.xlsx&quot;)
 View(Investigadores_Reconocidos_por_convocatoria_20241018)
@@ -818,10 +836,10 @@ variable.names(Investigadores_Reconocidos_por_convocatoria_20241018)</code></pre
 Investigadores_Reconocidos_por_convocatoria_20241018$ano_extr &lt;- format(Investigadores_Reconocidos_por_convocatoria_20241018$ANO_CONVO, &quot;%Y&quot;)
 Investigadores2021 &lt;- Investigadores_Reconocidos_por_convocatoria_20241018 %&gt;% filter(.,ano_extr==&quot;2021&quot;)
 
-Consolidado &lt;- data.frame(table(Investigadores2021$NME_CLASIFICACION_PR))
+Consolidado &lt;- data.frame(table(Investigadores2021$NME_CLASIFICACION_PR))  
 colnames(Investigadores2021)[8] &lt;- &quot;Areas&quot;
-Areas &lt;- dplyr::filter(Investigadores2021, grepl(&#39;Ciencias Agrícolas|Ciencias Naturales&#39;, Areas))
-ConAreas &lt;- data.frame(table(Areas$Areas))</code></pre>
+Areas &lt;- dplyr::filter(Investigadores2021,grepl(&#39;Ciencias Agrícolas|Ciencias Naturales&#39;,Areas))
+ConsolidadoAreas &lt;- data.frame(table(Areas$Areas))</code></pre>
 </div>
 </div>
 <div class="footnotes footnotes-end-of-document">

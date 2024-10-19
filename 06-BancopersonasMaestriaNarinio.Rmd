@@ -1,13 +1,50 @@
 # Nombre del Proyecto
 
+Convocatoria para la formación de docentes en maestrías de investigación científica en el pacífico nariñense
 
-## contexto del proyecto
+## Contexto del Proyecto
 
+Conformar un banco de candidatos elegibles con el fin de otorgar apoyos económicos a nivel de maestría de investigación a docentes que trabajen o acrediten haber trabajado en el último año (previo a la apertura de la presente convocatoria), como docentes en establecimientos educativos de las Subregiones: Pacífico Sur (Francisco Pizarro y Tumaco), Telembí (Barbacoas, Magüí y Roberto Payán) y Sanquianga (El Charco, La Tola, Mosquera, Olaya Herrera y Santa Bárbara) del departamento de Nariño, para fomentar la investigación en el marco de la Política de Investigación e Innovación Orientada por Misiones, contribuyendo al cierre de brechas en materia de ciencia, tecnología e innovación. Estas personas deben estar interesados en cursar un programa de maestría ofertado por La Universidad Santiago de Cali para el desarrollo de un proyecto de investigación, en el marco de las Misiones de la Política de Investigación e Innovación del Ministerio de Ciencia, Tecnología e Innovación.
 
 ## Agencia Financiadora del Proyecto
 
+Los recursos para el proyecto del Ministerio de Ciencia Tecnología e Innovación fueron asignados por el CDR GLOGAL Nro. 19842 – 2024 por un valor de NUEVE MIL TRESCIENTOS MILLONES PESOS M/CTE (\$ 9.300.000.000).
 
-## Datos relevantes del proyecto 
+Estos recursos están distribuidos en los procesos de seguimiento financieros y académicos, verificación y evaluación y; el recurso destinado para los candidatos que resulten elegibles y financiables para el apoyo económico en la presente convocatoria.
+
+La disponibilidad de recursos para la presente convocatoria, los candidatos que resulten elegibles y financiables recibirán un apoyo económico por un valor de hasta CIENTO DIECISIETE MILLONES SETECIENTOS CINCO MIL OCHOCIENTOS VEINTISÉIS PESOS M/CTE (\$ 117.705.826).
+
+El monto total del apoyo económico a otorgar a cada beneficiario dependerá de la duración oficial establecida por la Institución de Educación Superior para el programa de maestría. La financiación se otorgará exclusivamente para los rubros definidos de la siguiente manera:
+
+-   Hasta un valor máximo de TREINTA Y CUATRO MILLONES NOVECIENTOS CINCO MIL OCHOCIENTOS VEINTISÉIS M/CTE (\$ 34.905.826) para matrícula por el periodo de duración del programa o hasta agotar el recurso de este rubro.
+
+-   Hasta TRESCIENTOS MIL PESOS M/CTE (\$ 300.000) para el costo de inscripción a la universidad.
+
+-   Hasta DIEZ MILLONES QUINIENTOS MIL PESOS M/CTE (\$10.500.000) para apoyo al proyecto de investigación y apoyo bibliográfico.
+
+-   Hasta SETENTA Y DOS MILLONES DE PESOS M/CTE (\$72.000.000) asociados a la asignación mensual de hasta TRES MILLONES DE PESOS M/CTE (\$3.000.000) a cada beneficiario por [^06-bancopersonasmaestrianarinio-1] (alimentación y alojamiento) y transporte durante el tiempo oficial previsto por la Universidad Santiago de Cali [^06-bancopersonasmaestrianarinio-2].
+
+[^06-bancopersonasmaestrianarinio-1]: El costo de sostenimiento este asignado únicamente para los gastos de alimentación y alojamiento, así como los costos asociados a su desplazamiento desde la localidad de origen, hasta la ciudad de Cali, que permita al candidato asistir a la Universidad para dar alcance a los requisitos del programa académico cuando el programa de maestría lo requiera.
+
+[^06-bancopersonasmaestrianarinio-2]: Este beneficio económico no aplica para los programas académicos disponibles en modalidad virtual.
+
+## Datos relevantes del proyecto
+
+Las Misiones de la Política de Investigación e Innovación del Ministerio de Ciencia, Tecnología e Innovación:
+
+1.  Bioeconomía, ecosistemas naturales, territorios sostenibles: Potenciar el desarrollo territorial sostenible mediante el conocimiento, conservación y aprovechamiento de la biodiversidad y sus servicios ecosistémicos.
+
+2.  Derecho a la alimentación: Producir y disponer alimentos y agua de manera eficiente, soberana, autónoma y equitativa, por medio de la investigación y la innovación.
+
+3.  Energía eficiente, sostenible y asequible: Garantizar el acceso y uso de energías seguras y sostenibles para todos los colombianos, a través del desarrollo, adopción y adaptación de tecnologías para la transición energética.
+
+4.  Soberanía sanitaria y bienestar social: Garantizar la disponibilidad de conocimiento, tecnologías y servicios innovadores para la salud y el bienestar de toda la población colombiana.
+
+5.  Ciencia para la paz y la ciudadanía: Poner fin a todas las formas de violencia en Colombia y comprender las diversas causas de violencia como base para construir soluciones tecnológicas y sociales que fomenten y fortalezcan la convivencia pacífica en condiciones de equidad y justicia social.
+
+Maestrías a elegir entre los candidatos seleccionados:
+
+![](cuadro maestrías.png)
 
 ```{r, message==FALSE}
 library(readxl)
@@ -15,4 +52,3 @@ Investigadores <- read_excel("Data/Investigadores_Reconocidos_por_convocatoria_2
 library(dplyr)
 pie(table(Investigadores$NME_NIV_FORM_PR))
 ```
-

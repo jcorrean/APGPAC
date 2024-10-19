@@ -12,9 +12,13 @@ El proyecto propuesto, un Sistema de IA para Agricultura de Precisión enfocado 
 
 La agencia financiadora de este proyecto es el FONDOCYT (Fondo Nacional de Innovación y Desarrollo Científico y Tecnológico) de República Dominicana.
 
-Descripción: Es un fondo de incentivo a la investigación científica y tecnológica.
+**Descripción:**  
+Es un fondo de incentivo a la investigación científica y tecnológica. El objetivo principal es fomentar la generación de nuevos conocimientos, el desarrollo de tecnologías innovadoras y la aplicación de la ciencia a la solución de problemas nacionales.  
 
-A Quién va dirigido el servicio: Instituciones de Investigación como son Universidades, Centros de Investigación e Instituciones especializadas a nivel superior, así como empresas siempre y cuando venga a consorciada con Instituciones de Educación Superior o Centros.
+A través de la financiación de proyectos de investigación de alta calidad, el FONDOCYT busca contribuir al avance del conocimiento científico, tecnológico y social de la República Dominicana y, en última instancia, promover el desarrollo socioeconómico sostenible del país. 
+
+**A quién va dirigido el servicio:**  
+Instituciones de Investigación como son Universidades, Centros de Investigación e Instituciones especializadas a nivel superior, así como empresas siempre y cuando venga a consorciada con Instituciones de Educación Superior o Centros.
 
 
 Los fondos para la financiación de los proyectos por parte del FONDOCYT se entregarán de la siguiente manera:
@@ -23,19 +27,33 @@ Los fondos para la financiación de los proyectos por parte del FONDOCYT se entr
 
 2) Modalidades de transferencia:
 
-- Gastos corrientes: Estos pueden ser transferidos en su totalidad o en parcialidades, dependiendo de lo acordado en el contrato del proyecto y de la disponibilidad de los fondos.
+   - Gastos corrientes: Estos pueden ser transferidos en su totalidad o en parcialidades, dependiendo de lo acordado en el contrato del proyecto y de la disponibilidad de los fondos.
 
-- Gastos de capital: Se pueden transferir de manera completa o parcial según lo estipulado en el contrato del proyecto y la disponibilidad de recursos del FONDOCYT.
+   - Gastos de capital: Se pueden transferir de manera completa o parcial según lo estipulado en el contrato del proyecto y la disponibilidad de recursos del FONDOCYT.
 
 3) Condiciones específicas: La organización beneficiaria debe abrir una cuenta bancaria o contable exclusiva para los proyectos financiados, la cual debe ser auditada.
 
 4) Posibilidad de ajustes: En casos donde se requiera la adquisición de equipos necesarios y se proyecte un exceso en el presupuesto anual aprobado, el MESCyT puede autorizar una dispensa, siempre que la petición esté debidamente justificada.
 
 ## Datos relevantes del proyecto
+
+El problema de las precipitaciones en República Dominicana se observa a continuación. Entre 2018 y 2024, las precipitaciones han estado por debajo de los 350 milímetros a excepción de dos ocasiones que han excedido los 400 milímetros. 
+
 ```{r}
 library(readxl)
+library(ggplot2)
 PrecipitacionRD <- read_excel("Data/PrecipitacionRD.xlsx")
-hist(PrecipitacionRD$`PRECIPITACION EN MILIMETRO`)
+
+ggplot(PrecipitacionRD, aes(x = FECHA, y = PRECIPITACION)) + geom_line(color = "blue") +
+  labs(title = "Precipitación en San Francisco de Macorís", x = "Fecha", y = "Precipitación en milímetros") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, margin = margin(b = 20)),
+    plot.margin = margin(t = 20, r = 10, b = 10, l = 10),
+    axis.title.y = element_text(margin = margin(r = 20))
+  )
+
+View(PrecipitacionRD)
 ```
 
 ## Monto financiado

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Navegabilidad Rio Magdalena | Introducción a la Analítica de Datos para la Gestión de Proyectos de Alta Complejidad</title>
   <meta name="description" content="3 Navegabilidad Rio Magdalena | Introducción a la Analítica de Datos para la Gestión de Proyectos de Alta Complejidad" />
-  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Navegabilidad Rio Magdalena | Introducción a la Analítica de Datos para la Gestión de Proyectos de Alta Complejidad" />
   <meta property="og:type" content="book" />
@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2024-10-18" />
+<meta name="date" content="2024-04-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -59,7 +59,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -69,7 +69,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -176,8 +176,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="navegabilidad-rio-magdalena.html"><a href="navegabilidad-rio-magdalena.html#la-librería-financialmaths"><i class="fa fa-check"></i><b>3.4</b> La librería “FinancialMaths”</a></li>
 <li class="chapter" data-level="3.5" data-path="navegabilidad-rio-magdalena.html"><a href="navegabilidad-rio-magdalena.html#python-dentro-de-r"><i class="fa fa-check"></i><b>3.5</b> Python dentro de R</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
-<li class="chapter" data-level="4" data-path="python-dentro-de-r-1.html"><a href="python-dentro-de-r-1.html"><i class="fa fa-check"></i><b>4</b> Python dentro de R</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a>
+<ul>
+<li class="chapter" data-level="3.6" data-path="referencias.html"><a href="referencias.html#python-dentro-de-r-1"><i class="fa fa-check"></i><b>3.6</b> Python dentro de R</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -5887,14 +5889,14 @@ Posterior se toman valores unicos en este caso, que no se llegue a repetir ning�
 ## [11] &quot;Freddy Quintero Morales&quot;       &quot;MARIA PAULA GUERRERO CHALELA&quot; 
 ## [13] &quot;Alavaro  Jose Redondo&quot;         &quot;MARIA ESTELA PAEZ BETTER&quot;</code></pre>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="navegabilidad-rio-magdalena.html#cb24-1" tabindex="-1"></a>PAA_2024<span class="sc">$</span><span class="st">`</span><span class="at">Nombre del responsable</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="fu">tolower</span>(PAA_2024<span class="sc">$</span><span class="st">`</span><span class="at">Nombre del responsable</span><span class="st">`</span>)</span>
-<span id="cb24-2"><a href="navegabilidad-rio-magdalena.html#cb24-2" tabindex="-1"></a>obtener_iniciales <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre) {</span>
-<span id="cb24-3"><a href="navegabilidad-rio-magdalena.html#cb24-3" tabindex="-1"></a>  iniciales <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="fu">strsplit</span>(nombre, <span class="st">&quot; &quot;</span>), <span class="cf">function</span>(x) <span class="fu">paste</span>(<span class="fu">substr</span>(x, <span class="dv">1</span>, <span class="dv">1</span>), <span class="at">collapse =</span> <span class="st">&quot;&quot;</span>))</span>
-<span id="cb24-4"><a href="navegabilidad-rio-magdalena.html#cb24-4" tabindex="-1"></a> <span class="fu">return</span>(iniciales)</span>
-<span id="cb24-5"><a href="navegabilidad-rio-magdalena.html#cb24-5" tabindex="-1"></a>}</span>
-<span id="cb24-6"><a href="navegabilidad-rio-magdalena.html#cb24-6" tabindex="-1"></a>PAA_2024<span class="sc">$</span><span class="st">`</span><span class="at">Nombre del responsable</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="fu">sapply</span>(PAA_2024<span class="sc">$</span><span class="st">`</span><span class="at">Nombre del responsable</span><span class="st">`</span>, obtener_iniciales)</span>
-<span id="cb24-7"><a href="navegabilidad-rio-magdalena.html#cb24-7" tabindex="-1"></a><span class="fu">unique</span>(PAA_2024<span class="sc">$</span><span class="st">`</span><span class="at">Nombre del responsable</span><span class="st">`</span>)</span></code></pre></div>
-<pre><code>##  [1] &quot;mpsl&quot; &quot;mepb&quot; &quot;mpgc&quot; &quot;oc&quot;   &quot;dcd&quot;  &quot;nq&quot;   &quot;ajrc&quot; &quot;niqa&quot; &quot;dcdf&quot; &quot;fqm&quot; 
-## [11] &quot;ajr&quot;</code></pre>
+<span id="cb24-2"><a href="navegabilidad-rio-magdalena.html#cb24-2" tabindex="-1"></a><span class="fu">unique</span>(PAA_2024<span class="sc">$</span><span class="st">`</span><span class="at">Nombre del responsable</span><span class="st">`</span>)</span></code></pre></div>
+<pre><code>##  [1] &quot;maría patria suárez leiva&quot;     &quot;maría estela paez better&quot;     
+##  [3] &quot;maría paula guerrero chalela&quot;  &quot;oriana carbono&quot;               
+##  [5] &quot;diana carolina delgado&quot;        &quot;nubia quevedo&quot;                
+##  [7] &quot;alvaro jose redondo castillo&quot;  &quot;maría patricia suarez leiva&quot;  
+##  [9] &quot;nubia isabel quevedo angel&quot;    &quot;diana carolina delgado florez&quot;
+## [11] &quot;freddy quintero morales&quot;       &quot;maria paula guerrero chalela&quot; 
+## [13] &quot;alavaro  jose redondo&quot;         &quot;maria estela paez better&quot;</code></pre>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="navegabilidad-rio-magdalena.html#cb26-1" tabindex="-1"></a><span class="fu">unique</span>(PAA_2024<span class="sc">$</span>Ubicación)</span></code></pre></div>
 <pre><code>##  [1] &quot;Atlántico - Barranquilla&quot;            &quot;Distrito Capital de Bogotá - Bogotá&quot;
 ##  [3] &quot;Santander - Barrancabermeja&quot;         &quot;Bolívar - Mompós&quot;                   
@@ -5931,8 +5933,12 @@ en la variable <code>Nombre del responsable</code> ya los nombres se encuentran 
 <span id="cb30-5"><a href="navegabilidad-rio-magdalena.html#cb30-5" tabindex="-1"></a>Responsable_Ubicacion<span class="sc">$</span><span class="st">`</span><span class="at">Nombre del responsable</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;i&quot;</span>, <span class="st">&quot;í&quot;</span>, Responsable_Ubicacion<span class="sc">$</span><span class="st">`</span><span class="at">Nombre del responsable</span><span class="st">`</span>)</span>
 <span id="cb30-6"><a href="navegabilidad-rio-magdalena.html#cb30-6" tabindex="-1"></a></span>
 <span id="cb30-7"><a href="navegabilidad-rio-magdalena.html#cb30-7" tabindex="-1"></a><span class="fu">unique</span>(Responsable_Ubicacion<span class="sc">$</span><span class="st">`</span><span class="at">Nombre del responsable</span><span class="st">`</span>)</span></code></pre></div>
-<pre><code>##  [1] &quot;mpsl&quot; &quot;mepb&quot; &quot;mpgc&quot; &quot;oc&quot;   &quot;dcd&quot;  &quot;nq&quot;   &quot;ajrc&quot; &quot;níqa&quot; &quot;dcdf&quot; &quot;fqm&quot; 
-## [11] &quot;ajr&quot;</code></pre>
+<pre><code>##  [1] &quot;maría patría suárez leíva&quot;     &quot;maría estela paez better&quot;     
+##  [3] &quot;maría paula guerrero chalela&quot;  &quot;oríana carbono&quot;               
+##  [5] &quot;díana carolína delgado&quot;        &quot;nubía quevedo&quot;                
+##  [7] &quot;alvaro jose redondo castíllo&quot;  &quot;maría patrícía suarez leíva&quot;  
+##  [9] &quot;nubía ísabel quevedo angel&quot;    &quot;díana carolína delgado florez&quot;
+## [11] &quot;freddy quíntero morales&quot;       &quot;alavaro  jose redondo&quot;</code></pre>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="navegabilidad-rio-magdalena.html#cb32-1" tabindex="-1"></a><span class="fu">unique</span>(Responsable_Ubicacion<span class="sc">$</span>Ubicación)</span></code></pre></div>
 <pre><code>##  [1] &quot;Barranquilla&quot;    &quot;Bogotá&quot;          &quot;Barrancabermeja&quot; &quot;Mompós&quot;         
 ##  [5] &quot;Cartagena&quot;       &quot;Puerto Colombia&quot; &quot;San Agustín&quot;     &quot;Plato&quot;          
@@ -5966,16 +5972,30 @@ en la variable <code>Nombre del responsable</code> ya los nombres se encuentran 
 ## [1] TRUE
 ## 
 ## $type
-##    Barranquilla          Bogotá Barrancabermeja          Mompós       Cartagena 
-##           FALSE           FALSE           FALSE           FALSE           FALSE 
-## Puerto Colombia     San Agustín           Plato           Neiva        Magangué 
-##           FALSE           FALSE           FALSE           FALSE           FALSE 
-##           Honda            mpsl            mepb            mpgc              oc 
-##           FALSE            TRUE            TRUE            TRUE            TRUE 
-##             dcd              nq            ajrc            níqa            dcdf 
-##            TRUE            TRUE            TRUE            TRUE            TRUE 
-##             fqm             ajr 
-##            TRUE            TRUE</code></pre>
+##                  Barranquilla                        Bogotá 
+##                         FALSE                         FALSE 
+##               Barrancabermeja                        Mompós 
+##                         FALSE                         FALSE 
+##                     Cartagena               Puerto Colombia 
+##                         FALSE                         FALSE 
+##                   San Agustín                         Plato 
+##                         FALSE                         FALSE 
+##                         Neiva                      Magangué 
+##                         FALSE                         FALSE 
+##                         Honda     maría patría suárez leíva 
+##                         FALSE                          TRUE 
+##      maría estela paez better  maría paula guerrero chalela 
+##                          TRUE                          TRUE 
+##                oríana carbono        díana carolína delgado 
+##                          TRUE                          TRUE 
+##                 nubía quevedo  alvaro jose redondo castíllo 
+##                          TRUE                          TRUE 
+##   maría patrícía suarez leíva    nubía ísabel quevedo angel 
+##                          TRUE                          TRUE 
+## díana carolína delgado florez       freddy quíntero morales 
+##                          TRUE                          TRUE 
+##         alavaro  jose redondo 
+##                          TRUE</code></pre>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="navegabilidad-rio-magdalena.html#cb44-1" tabindex="-1"></a><span class="fu">V</span>(bn2)<span class="sc">$</span>type <span class="ot">&lt;-</span> <span class="fu">bipartite_mapping</span>(bn2)<span class="sc">$</span>type</span>
 <span id="cb44-2"><a href="navegabilidad-rio-magdalena.html#cb44-2" tabindex="-1"></a><span class="fu">V</span>(bn2)<span class="sc">$</span>color <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">V</span>(bn2)<span class="sc">$</span>type, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;green&quot;</span>)</span>
 <span id="cb44-3"><a href="navegabilidad-rio-magdalena.html#cb44-3" tabindex="-1"></a><span class="fu">V</span>(bn2)<span class="sc">$</span>shape <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">V</span>(bn2)<span class="sc">$</span>type, <span class="st">&quot;circle&quot;</span>, <span class="st">&quot;square&quot;</span>)</span>

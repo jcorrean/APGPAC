@@ -38,12 +38,6 @@ Los fondos para la financiación de los proyectos por parte del FONDOCYT se entr
 ## Datos relevantes del proyecto
 ```{r}
 library(readxl)
-PrecipitacionRD <- read_excel("Data/PrecipitacionRD.xlsx")
-hist(PrecipitacionRD$`PRECIPITACION EN MILIMETRO`)
-```
-
-```{r}
-library(readxl)
 library(ggplot2)
 PrecipitacionRD <- read_excel("Data/PrecipitacionRD.xlsx")
 

@@ -3,6 +3,35 @@
 ## Situación Problema
 Este proyecto busca financiar iniciativas empresariales de diferentes sectores que sean desarrolladas por emprendedores que residan en la ciudad de Montería, departamento de Córdoba.
 
+```{r}
+library(readr)
+Empresas <- read_delim("Data/EMPRESAS_REGISTRADAS_MONTERIA_2005-2019_20241011.csv", 
+    delim = ";", escape_double = FALSE, trim_ws = TRUE)
+variable.names(Empresas)
+colnames(Empresas)[10] <- "Actividad"
+nrow(Empresas)
+library(tidyverse)
+colnames(Empresas)[9] <- "Municipio"
+Monteria <- Empresas %>% dplyr::filter(., Empresas$Municipio == "23001 - MONTERIA")
+Bogota <- Empresas %>% dplyr::filter(., Empresas$Municipio == "11001 - BOGOTA")
+nrow(Monteria)
+nrow(Bogota)
+MonteriaActividades <- data.frame(table(Monteria$Actividad)) 
+MonteriaActividadesDesc <- MonteriaActividades %>% 
+  arrange(desc(Freq))
+MonteriaActividadesPrincipales <- head(MonteriaActividadesDesc, 15)
+library(ggplot2)
+# Assuming your data frame is named "MonteriasActividades" with variables "Var1" and "Freq"
+ggplot(MonteriaActividadesPrincipales, aes(x = reorder(Var1, Freq, FUN = "mean"), y = Freq)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  coord_flip() +
+  labs(title = "Bar Chart of Monteria Activities",
+       x = "Activity",
+       y = "Frequency") +
+  theme_minimal()
+```
+
+
 ## Agencia Financiadora del Proyecto
 La agencia financiadora de este proyecto es el FONDO EMPRENDER. Su objetivo general es incentivar y facilitar la generación y creación de empresas, contribuyendo al desarrollo humano y la inserción de estas en el sector productivo. De esta manera, se busca coadyuvar al desarrollo social y económico del país a través de una formación pertinente y la provisión de capital semilla.
 
@@ -28,3 +57,5 @@ Cierre: 18 de noviembre de 2024
 7. No estar desempeñando ningún cargo público. 
 8. No contar con ningún tipo de vinculación laboral o contractual con el Servicio Nacional de Aprendizaje - SENA, exceptuando el contrato de aprendizaje. 
 9. La dedicación de los beneficiarios al proyecto deberá ser de tiempo completo y exclusivo, salvo que, se justifique la dedicación parcial, indicando su compromiso de asistir directa y personalmente a todas las citaciones que realicen el SENA, el operador de los recursos o la interventoría. 
+
+

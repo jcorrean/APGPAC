@@ -36,6 +36,9 @@ Los fondos para la financiación de los proyectos por parte del FONDOCYT se entr
 4) Posibilidad de ajustes: En casos donde se requiera la adquisición de equipos necesarios y se proyecte un exceso en el presupuesto anual aprobado, el MESCyT puede autorizar una dispensa, siempre que la petición esté debidamente justificada.
 
 ## Datos relevantes del proyecto
+
+El problema de las precipitaciones en República Dominicana se observa a continuación. Entre 2018 y 2024, las precipitaciones han estado por debajo de los 350 milímetros a excepción de dos ocasiones que han excedido los 400 milímetros. 
+
 ```{r}
 library(readxl)
 library(ggplot2)

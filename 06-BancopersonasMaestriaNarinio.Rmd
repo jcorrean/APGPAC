@@ -164,11 +164,21 @@ La vigencia del banco definitivo de candidatos elegibles será de dos (2) años 
 
 Para realizar el análisis y selección de los posibles candidatos, utilizamos la base de datos "Investigadores reconocidos por convocatoria 2013 - 2021", disponible en Datos Abiertos. El archivo contiene más de 77 mil registros de investigadores reconocidos y de esos hay información sobre las siguientes variables:
 
-![](images/parte%201.png)
+![](images/parte%201.png){width="820"}
 
+![](images/parte%202-01.png)
 
+Para llegar al número de posibles candidatos realizamos los siguientes pasos:
 
+1.  Tomamos únicamente los registros relacionados con el año 2021 para reducir la muestra, con el siguiente código:
 
+Investigadores2021 \<- Investigadores_Reconocidos_por_convocatoria_20241018 %\>% filter(.,ano_extr=="2021")
+
+Pasamos de más de 77 registros a 21.094 registros. Dividimos esa última muestra entre las diferentes cateogrías de investigadores, con el siguiente código:
+
+Consolidado \<- data.frame(table(Investigadores2021\$NME_CLASIFICACION_PR))
+
+![](images/consolidado.png)
 
 
 ```{r}
@@ -185,8 +195,8 @@ Investigadores_Reconocidos_por_convocatoria_20241018$ANO_CONVO <- as.Date(Invest
 Investigadores_Reconocidos_por_convocatoria_20241018$ano_extr <- format(Investigadores_Reconocidos_por_convocatoria_20241018$ANO_CONVO, "%Y")
 Investigadores2021 <- Investigadores_Reconocidos_por_convocatoria_20241018 %>% filter(.,ano_extr=="2021")
 
-Consolidado <- data.frame(table(Investigadores2021$NME_CLASIFICACION_PR))
+Consolidado <- data.frame(table(Investigadores2021$NME_CLASIFICACION_PR))  
 colnames(Investigadores2021)[8] <- "Areas"
-Areas <- dplyr::filter(Investigadores2021, grepl('Ciencias Agrícolas|Ciencias Naturales', Areas))
-ConAreas <- data.frame(table(Areas$Areas))
+Areas <- dplyr::filter(Investigadores2021, grepl('Ciencias Agrícolas|Ciencias Naturales|Ciencias Sociales|Ingeniería y Tecnología', Areas))
+ConAreas <- data.frame(table(Investigadores2021$Areas))
 ```

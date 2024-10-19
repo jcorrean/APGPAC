@@ -29,6 +29,7 @@ python-dentro-de-r-1
 situación-problema-1
 agencias-financiadoras
 datos-de-cormagdalena
+<<<<<<< Updated upstream
 nombre-del-proyecto
 plantilla-para-documentar
 <<<<<<< HEAD
@@ -51,3 +52,5 @@ datos-relevantes-del-proyecto-2
 monto-financiado-1
 sectores-económicos
 >>>>>>> 5d2b018e74a5e4c314ec32349ae0ee074472e890
+=======
+>>>>>>> Stashed changes

@@ -162,9 +162,20 @@ La vigencia del banco definitivo de candidatos elegibles será de dos (2) años 
 | 3.  En caso de contar con recursos adicionales para la financiación del banco definitivo de candidatos elegibles, se publicarán bancos adicionales de candidatos financiables, conservando la asignación en estricto orden descendente, de acuerdo con el orden del banco definitivo de candidatos elegibles, en función del número de cupos disponibles según el programa de maestría seleccionado, y se informará a los candidatos la fecha de inicio de la financiación, la cual puede variar de acuerdo con el momento de publicación y los recursos disponibles.                                                                                                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-```{r, message==FALSE}
+
+```{r}
 library(readxl)
-Investigadores <- read_excel("Data/Investigadores_Reconocidos_por_convocatoria_20241018.xlsx")
+Investigadores_Reconocidos_por_convocatoria_20241018 <- read_excel("Data/Investigadores_Reconocidos_por_convocatoria_20241018.xlsx")
+View(Investigadores_Reconocidos_por_convocatoria_20241018)
+variable.names(Investigadores_Reconocidos_por_convocatoria_20241018)
 library(dplyr)
-pie(table(Investigadores$NME_NIV_FORM_PR))
+table(Investigadores_Reconocidos_por_convocatoria_20241018$NME_CLASIFICACION_PR)
+table(Investigadores_Reconocidos_por_convocatoria_20241018$ANO_CONVO)
+table(Investigadores_Reconocidos_por_convocatoria_20241018$NME_GRAN_AREA_PR)
+
+Investigadores_Reconocidos_por_convocatoria_20241018$ANO_CONVO <- as.Date(Investigadores_Reconocidos_por_convocatoria_20241018$ANO_CONVO, format = "%Y-%m-%d")
+Investigadores_Reconocidos_por_convocatoria_20241018$ano_extr <- format(Investigadores_Reconocidos_por_convocatoria_20241018$ANO_CONVO, "%Y")
+Investigadores2021 <- Investigadores_Reconocidos_por_convocatoria_20241018 %>% filter(.,ano_extr=="2021")
+
+Consolidado <- data.frame(table(Investigadores2021$NME_CLASIFICACION_PR))
 ```

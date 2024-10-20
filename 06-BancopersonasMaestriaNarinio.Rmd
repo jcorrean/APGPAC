@@ -1,4 +1,4 @@
-# Convocatoria para la formación de docentes en maestrías de investigación científica en el pacífico nariñense
+# 06- Convocatoria para la formación de docentes en maestrías de investigación científica en el pacífico nariñense
 
 ## Contexto del Proyecto
 
@@ -73,8 +73,8 @@ El monto total del apoyo económico a otorgar a cada beneficiario dependerá de 
 10. Enfoque diferencial y/o interseccional (cuando aplique): Este requisito es opcional y en caso de que los documentos presentados no concuerden con la certificación requerida en el anexo 3, al beneficiario no se le asignará la puntuación correspondiente. Aquellos docentes que pertenezcan a población con enfoque diferencial en alguna de las categorías que se especifica en la Tabla No. 1 “Categorías de enfoque diferencial e interseccional para los candidatos de la convocatoria”, deberán adjuntar en el SIGP la documentación que se especifica en la columna “Descripción” de la Tabla No. 1, para poder optar por los puntos correspondientes al enfoque diferencial o enfoque interseccional, por razón de sus características particulares. Las características de enfoque diferencial que acredite el candidato deberán especificarse en el Anexo No. 3, adjuntando su respectivo soporte.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notas:                                                                                                                                                                                                                                                                                 |
-+========================================================================================================================================================================================================================================================================================+
+| **Notas:**                                                                                                                                                                                                                                                                             |
+|                                                                                                                                                                                                                                                                                        |
 | 1.  Si alguno de los documentos mencionados previamente está en un idioma diferente al español, es obligatorio adjuntar la traducción oficial al español. Se deberán anexar los dos documentos (original y traducido) en un único PDF de acuerdo con la descripción de los requisitos. |
 |                                                                                                                                                                                                                                                                                        |
 | 2.  El Ministerio podrá solicitar en cualquier momento información y documentación adicional, complementaria o aclaraciones de los documentos entregados en la plataforma SIGP.                                                                                                        |
@@ -97,8 +97,8 @@ El periodo de subsanación de los requisitos exigidos en el presente documento s
 -   En caso de que el candidato suba alguno de los documentos sin su respectiva firma, tendrá la posibilidad de subsanarlo de acuerdo con la actividad período de subsanación de requisitos en el numeral 17. Cronograma.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Nota:                                                                                                                                                                                      |
-+============================================================================================================================================================================================+
+| **Nota:**                                                                                                                                                                                  |
+|                                                                                                                                                                                            |
 | El Ministerio de Ciencia, Tecnología e Innovación podrá solicitar en cualquier momento, información y documentación adicional, complementaria o aclaraciones de los documentos entregados. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -151,8 +151,8 @@ Los resultados de la convocatoria se publicarán en la página web del Ministeri
 La vigencia del banco definitivo de candidatos elegibles será de dos (2) años a partir de su publicación definitiva. La inclusión de un candidato en el listado no implica obligatoriedad ni compromiso alguno del Ministerio de asignar recursos, ni genera derecho a recibir recursos económicos para quienes hayan presentado las candidaturas correspondientes. En todo caso, el número de beneficiarios se determinará de acuerdo con la disponibilidad de recursos.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Notas:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-+==================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
+| **Notas:**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | 1.  Surtida la publicación definitiva del banco definitivo de candidatos elegibles, el Ministerio publicará el banco de candidatos financiables. Los recursos disponibles serán asignados en estricto orden descendente, de acuerdo con el orden del listado definitivo de candidatos elegibles, en función del número de cupos disponibles según el programa de maestría seleccionado. En el caso de contarse con recursos adicionales para las financiaciones del banco de candidatos elegibles, se publicaran bancos adicionales de candidatos financiables y se informará a los proponentes la fecha de inicio de financiación, la cual puede variar de acuerdo con el momento de publicación y de los recursos disponibles. |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | 2.  Una vez publicado el banco definitivo de candidatos elegibles y financiables, el Ministerio informará mediante comunicación escrita y/o electrónica a los aspirantes que hayan sido seleccionados para ser financiados, indicando las instrucciones y condiciones para recibir el apoyo económico.                                                                                                                                                                                                                                                                                                                                                                                                                           |
@@ -160,6 +160,44 @@ La vigencia del banco definitivo de candidatos elegibles será de dos (2) años 
 | 3.  En caso de contar con recursos adicionales para la financiación del banco definitivo de candidatos elegibles, se publicarán bancos adicionales de candidatos financiables, conservando la asignación en estricto orden descendente, de acuerdo con el orden del banco definitivo de candidatos elegibles, en función del número de cupos disponibles según el programa de maestría seleccionado, y se informará a los candidatos la fecha de inicio de la financiación, la cual puede variar de acuerdo con el momento de publicación y los recursos disponibles.                                                                                                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+## Análisis para la Selección de Posibles Candidatos para la Convocatoria
+
+Para realizar el análisis y selección de los posibles candidatos, utilizamos la base de datos "Investigadores reconocidos por convocatoria 2013 - 2021", disponible en Datos Abiertos. El archivo contiene más de 77 mil registros de investigadores reconocidos y de esos hay información sobre las siguientes variables:
+
+![](images/parte%201.png){width="820"}
+
+![](images/parte%202-01.png)
+
+Para llegar al número de posibles candidatos realizamos los siguientes pasos:
+
+1.  Tomamos únicamente los registros relacionados con el año 2021 para reducir la muestra, utiliiando el siguiente código:
+
+Investigadores2021 \<- Investigadores_Reconocidos_por_convocatoria_20241018 %\>% filter(.,ano_extr=="2021")
+
+2.  Pasamos de más de 77 mil registros a 21.094 registros. Dividimos esa última muestra entre las diferentes cateogorías de investigadores, utilizando el siguiente código:
+
+Consolidado \<- data.frame(table(Investigadores2021\$NME_CLASIFICACION_PR))
+
+![](images/consolidado.png)
+
+3.  Con la base de 21.094 registros empezamos a filtar por las áreas de conocimiento que aplican para la convocatoria, reduciendo la muestra a 15.908 registros, utilizando el siguiente código:
+
+Areas \<- dplyr::filter(Investigadores2021,grepl('Ciencias Agrícolas\|Ciencias Naturales',Areas))
+
+4.  Los 15.908 registros los clasificamos entre las diferentes áreas de conocimiento, utilizando el siguiente código:
+
+ConsolidadoAreas \<- data.frame(table(Areas\$Areas))
+
+![](images/consolidado%20áreas.png)
+
+5.  Para seguir reduciendo la muestra, aplicamos el filtro de nivel de formación de los registrados. Dejando una nueva muestra de 14.121, utilizando el siguiente código:
+
+Nivelformación \<- dplyr::filter(Areas,grepl('Doctorado\|Especialización\|Maestría/Magister\|Pregrado/Universitaro',Nivelformación))
+
+![](images/nivel de formación.png)
+
+
+[**CÓDIGOS UTILIZADOS:**]{.underline}
 
 ```{r}
 library(readxl)
@@ -175,9 +213,9 @@ Investigadores_Reconocidos_por_convocatoria_20241018$ANO_CONVO <- as.Date(Invest
 Investigadores_Reconocidos_por_convocatoria_20241018$ano_extr <- format(Investigadores_Reconocidos_por_convocatoria_20241018$ANO_CONVO, "%Y")
 Investigadores2021 <- Investigadores_Reconocidos_por_convocatoria_20241018 %>% filter(.,ano_extr=="2021")
 
-Consolidado <- data.frame(table(Investigadores2021$NME_CLASIFICACION_PR))
+Consolidado <- data.frame(table(Investigadores2021$NME_CLASIFICACION_PR))  
 colnames(Investigadores2021)[8] <- "Areas"
-Areas <- dplyr::filter(Investigadores2021, grepl('Ciencias Agrícolas|Ciencias Naturales', Areas))
-ConAreas <- data.frame(table(Areas$Areas))
-
+Areas <- dplyr::filter(Investigadores2021,grepl("Ciencias Agrícolas|Ciencias Naturales",Areas))
+ConsolidadoAreas <- data.frame(table(Areas$Areas))
+Nivelformación <- dplyr::filter(Areas,grepl('Doctorado|Especialización|Maestría/Magister|Pregrado/Universitaro',Nivelformación))
 ```

@@ -52,5 +52,13 @@ datos-relevantes-del-proyecto-2
 monto-financiado-1
 sectores-económicos
 >>>>>>> 5d2b018e74a5e4c314ec32349ae0ee074472e890
-=======
 >>>>>>> Stashed changes
+activación-economía-montería-córdoba-1
+agencia-financiadora-del-proyecto-3
+sectores-económicos-de-la-convocatoria-1
+fechas-importantes-1
+requisitos-para-aplicar-1
+situación-problema-4
+datos-relevantes-del-proyecto-3
+monto-financiado-2
+convocatoria-para-la-formación-de-docentes-en-maestrías-de-investigación-científica-en-el-pacífico-nariñense

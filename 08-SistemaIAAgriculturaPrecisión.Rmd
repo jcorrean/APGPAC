@@ -36,25 +36,47 @@ Los fondos para la financiación de los proyectos por parte del FONDOCYT se entr
 4) Posibilidad de ajustes: En casos donde se requiera la adquisición de equipos necesarios y se proyecte un exceso en el presupuesto anual aprobado, el MESCyT puede autorizar una dispensa, siempre que la petición esté debidamente justificada.
 
 ## Datos relevantes del proyecto
+<<<<<<< HEAD
 
 El problema de las precipitaciones en República Dominicana se observa a continuación. Entre 2018 y 2024, las precipitaciones han estado por debajo de los 350 milímetros a excepción de dos ocasiones que han excedido los 400 milímetros. 
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+```{r}
+library(readxl)
+PrecipitacionRD <- read_excel("Data/PrecipitacionRD.xlsx")
+hist(PrecipitacionRD$`PRECIPITACION EN MILIMETRO`)
+library(tidyr)
+Lluvias <- PrecipitacionRD %>% unite(Fecha, MES, AÑO)
+colnames(Lluvias)[2] <- "Precipitacion"
+```
+=======
+>>>>>>> Stashed changes
+>>>>>>> ec767ed163f48d9e73b7cee0f2445e980f3d30f9
 
+El problema de las precipitaciones en República Dominicana se observa a continuación. Entre 2018 y 2024, las precipitaciones han estado por debajo de los 350 milímetros a excepción de dos ocasiones que han excedido los 400 milímetros.  
+
+<<<<<<< Updated upstream
+
+
+=======
+>>>>>>> Stashed changes
 ```{r}
 library(readxl)
 library(ggplot2)
 PrecipitacionRD <- read_excel("Data/PrecipitacionRD.xlsx")
 
-ggplot(PrecipitacionRD, aes(x = FECHA, y = PRECIPITACION)) + geom_line(color = "blue") +
+ggplot(Lluvias, aes(x = Fecha, y = Precipitacion, group = ESTACION)) + geom_line(color = "blue") +
   labs(title = "Precipitación en San Francisco de Macorís", x = "Fecha", y = "Precipitación en milímetros") +
   theme_minimal() +
   theme(
     plot.title = element_text(hjust = 0.5, margin = margin(b = 20)),
     plot.margin = margin(t = 20, r = 10, b = 10, l = 10),
-    axis.title.y = element_text(margin = margin(r = 20))
+    axis.title.y = element_text(margin = margin(r = 20)),
+    axis.text.x = element_text(angle = 90, hjust = 1)  # Rotate x-axis labels by 45 degrees
   )
-
-View(PrecipitacionRD)
 ```
+
 
 ## Monto financiado
 

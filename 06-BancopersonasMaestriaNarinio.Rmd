@@ -26,7 +26,7 @@ El monto total del apoyo económico a otorgar a cada beneficiario dependerá de 
 
 [^06-bancopersonasmaestrianarinio-2]: Este beneficio económico no aplica para los programas académicos disponibles en modalidad virtual.
 
-## Datos relevantes del proyecto
+## Datos Relevantes del Proyecto
 
 **A. Las Misiones de la Política de Investigación e Innovación del Ministerio de Ciencia, Tecnología e Innovación:**
 
@@ -40,7 +40,7 @@ El monto total del apoyo económico a otorgar a cada beneficiario dependerá de 
 
 5.  Ciencia para la paz y la ciudadanía: Poner fin a todas las formas de violencia en Colombia y comprender las diversas causas de violencia como base para construir soluciones tecnológicas y sociales que fomenten y fortalezcan la convivencia pacífica en condiciones de equidad y justicia social.
 
-**B. Maestrías a elegir entre los candidatos seleccionados:**
+**B. Maestrías a Elegir Entre los Candidatos Seleccionados:**
 
 ![](cuadro%20maestrías.png)
 
@@ -126,7 +126,7 @@ El periodo de subsanación de los requisitos exigidos en el presente documento s
 
 Las inhabilidades son de orden Constitucional y legal, el artículo 126 de la Constitución Nacional establece inhabilidades para los grados de parentesco y en la ley se encuentran las inhabilidades contempladas en el Artículo 8 (Inhabilidades e incompatibilidades para contratar) de la Ley 80 de 1993. Disposiciones especiales de la Ley 1474 de 2011 respecto al régimen de inhabilidades y el artículo 71 de la Ley 1952 de 2019 el Código General Disciplinario contempla otras causales de inhabilidad, entre otras normas. Las inhabilidades e incompatibilidades están establecidas para asegurar los intereses públicos y proteger la transparencia, objetividad e imparcialidad en las relaciones entre el Estado y los particulares.
 
-**D. Banco definitivo de candiatos:**
+**D. Banco Definitivo de Candiatos:**
 
 En el banco definitivo de candidatos elegibles se incluirá a todos aquellos que hayan cumplido con la totalidad de los requisitos. El banco será ordenado de forma independiente y en estricto orden descendente de calificación por cada Programa de Maestría, teniendo en cuenta los cupos disponibles en cada Programa. Solo se considerarán como elegibles los candidatos que obtengan un puntaje igual o superior a 70 puntos en promedio según lo descrito en el procedimiento de evaluación:
 
@@ -160,7 +160,7 @@ La vigencia del banco definitivo de candidatos elegibles será de dos (2) años 
 | 3.  En caso de contar con recursos adicionales para la financiación del banco definitivo de candidatos elegibles, se publicarán bancos adicionales de candidatos financiables, conservando la asignación en estricto orden descendente, de acuerdo con el orden del banco definitivo de candidatos elegibles, en función del número de cupos disponibles según el programa de maestría seleccionado, y se informará a los candidatos la fecha de inicio de la financiación, la cual puede variar de acuerdo con el momento de publicación y los recursos disponibles.                                                                                                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-## Análisis para la Selección de Posibles Candidatos para la Convocatoria
+## Análisis Para la Selección de Posibles Candidatos Para la Convocatoria
 
 Para realizar el análisis y selección de los posibles candidatos, utilizamos la base de datos "Investigadores reconocidos por convocatoria 2013 - 2021", disponible en Datos Abiertos. El archivo contiene más de 77 mil registros de investigadores reconocidos y de esos hay información sobre las siguientes variables:
 
@@ -170,52 +170,84 @@ Para realizar el análisis y selección de los posibles candidatos, utilizamos l
 
 Para llegar al número de posibles candidatos realizamos los siguientes pasos:
 
-1.  Tomamos únicamente los registros relacionados con el año 2021 para reducir la muestra, utiliiando el siguiente código:
+1.  Tomamos únicamente los registros relacionados con el año 2021 para reducir la muestra. Utiliiando el siguiente código:
 
 Investigadores2021 \<- Investigadores_Reconocidos_por_convocatoria_20241018 %\>% filter(.,ano_extr=="2021")
 
-2.  Pasamos de más de 77 mil registros a 21.094 registros. Dividimos esa última muestra entre las diferentes cateogorías de investigadores, utilizando el siguiente código:
+2.  Pasamos de más de 77 mil registros a 21.094 registros. Dividimos esa última muestra entre las diferentes cateogorías de investigadores. Utilizando el siguiente código:
 
 Consolidado \<- data.frame(table(Investigadores2021\$NME_CLASIFICACION_PR))
 
 ![](images/consolidado.png)
 
-3.  Con la base de 21.094 registros empezamos a filtar por las áreas de conocimiento que aplican para la convocatoria, reduciendo la muestra a 15.908 registros, utilizando el siguiente código:
+3.  Con la base de 21.094 registros empezamos a filtar por las áreas de conocimiento que aplican para la convocatoria, reduciendo la muestra a 15.908 registros. Utilizando el siguiente código:
 
 Areas \<- dplyr::filter(Investigadores2021,grepl('Ciencias Agrícolas\|Ciencias Naturales',Areas))
 
-4.  Los 15.908 registros los clasificamos entre las diferentes áreas de conocimiento, utilizando el siguiente código:
+4.  Los 15.908 registros los clasificamos entre las diferentes áreas de conocimiento. Utilizando el siguiente código:
 
 ConsolidadoAreas \<- data.frame(table(Areas\$Areas))
 
 ![](images/consolidado%20áreas.png)
 
-5.  Para seguir reduciendo la muestra, aplicamos el filtro de nivel de formación de los registrados. Dejando una nueva muestra de 14.121, utilizando el siguiente código:
+5.  Para seguir reduciendo la muestra, aplicamos el filtro de nivel de formación de los registrados. Dejando una nueva muestra de 14.121. Utilizando el siguiente código:
 
 Nivelformación \<- dplyr::filter(Areas,grepl('Doctorado\|Especialización\|Maestría/Magister\|Pregrado/Universitaro',Nivelformación))
 
-![](images/nivel de formación.png)
+![](images/nivel%20de%20formación.png)
 
+6.  El siguiente filtro que se aplicó fue el de departamento de nacimiento de los registrados, al ser un factor que da puntos extras sobre el posible candidato o candidata, reduciendo la muestra a 2.390 registrado. Utilizando el siguiente código:
 
-[**CÓDIGOS UTILIZADOS:**]{.underline}
+Departamento \<- dplyr::filter(Nivelformación,grepl('Caquetá\|Cauca\|Chocó\|Nariño\|Putumayo\|Tolima\|Valle del Cauca',Departamento))
+
+![](images/departamentos.jpeg)
+
+7.  Por último, aplicamos el flitro de municipio de nacimiento, seleccionado los municipios ZOMAC y PDET de los departamentos del filtro anterior, dando como resultado una muestra final de 206 posibles candidatos, distribuidos en tres categorías de investigadores. Utilizando el siguiente código:
+
+Municipiopdetyzomac \<- dplyr::filter(Departamento,grepl('SI',Municipiopdetyzomac))
+
+![](images/MUNICIPIOS.jpeg)
+
+## Conclusiones
+
+Con base en los filtros aplicados, se puede inferir que existe una mayor probabilidad de selección dentro del grupo de investigadores junior al ser el grupo con mayor registro. Además, consideramos que es más probable que exista un mayor interés de aplicar y realizar una maestría por parte de los investigadores junior y asociados para profesionalziarse y profundizar aún más sus conocimientos, frente a un investigador senior, que es probable ya tenga un doctorado y menos incentivos para aplicar a una maestría.
+
+Teniendo en cuenta que la mayoría de registrados provienen del departamento del Valle de Cauca, pero que el proyecto esta enfocado en el departamento de Nariño, consideramos importante que se priorice los perfiles de las personas provenientes del departamento objetivo.
+
+Por último, creemos que la muestra de 206 registrados ofrece un abanico más amplio de perfiles, incrementando la probabilidad de encontrar candidatos con mayor potencial. También da mayor margen de transparencia sobre la selección, al reducir la probabilidad de que sea por favoritismo o conexiones.
+
+## Código Completo
 
 ```{r}
 library(readxl)
 Investigadores_Reconocidos_por_convocatoria_20241018 <- read_excel("Data/Investigadores_Reconocidos_por_convocatoria_20241018.xlsx")
 View(Investigadores_Reconocidos_por_convocatoria_20241018)
 variable.names(Investigadores_Reconocidos_por_convocatoria_20241018)
-library(dplyr)
-table(Investigadores_Reconocidos_por_convocatoria_20241018$NME_CLASIFICACION_PR)
-table(Investigadores_Reconocidos_por_convocatoria_20241018$ANO_CONVO)
-table(Investigadores_Reconocidos_por_convocatoria_20241018$NME_GRAN_AREA_PR)
 
+library(dplyr)
 Investigadores_Reconocidos_por_convocatoria_20241018$ANO_CONVO <- as.Date(Investigadores_Reconocidos_por_convocatoria_20241018$ANO_CONVO, format = "%Y-%m-%d")
 Investigadores_Reconocidos_por_convocatoria_20241018$ano_extr <- format(Investigadores_Reconocidos_por_convocatoria_20241018$ANO_CONVO, "%Y")
-Investigadores2021 <- Investigadores_Reconocidos_por_convocatoria_20241018 %>% filter(.,ano_extr=="2021")
 
-Consolidado <- data.frame(table(Investigadores2021$NME_CLASIFICACION_PR))  
-colnames(Investigadores2021)[8] <- "Areas"
-Areas <- dplyr::filter(Investigadores2021,grepl("Ciencias Agrícolas|Ciencias Naturales",Areas))
+Investigadores2021 <- Investigadores_Reconocidos_por_convocatoria_20241018 %>% filter(.,ano_extr=="2021")
+Consolidado <- data.frame(table(Investigadores2021$NME_CLASIFICACION_PR))
+
+colnames(Investigadores2021)[8] <- "Areas" 
+Areas <- dplyr::filter(Investigadores2021,grepl('Ciencias Agrícolas|Ciencias Naturales|Ciencias Sociales|Ingeniería y Tecnología',Areas))
 ConsolidadoAreas <- data.frame(table(Areas$Areas))
+
+colnames(Areas)[17] <- "Nivelformación" 
 Nivelformación <- dplyr::filter(Areas,grepl('Doctorado|Especialización|Maestría/Magister|Pregrado/Universitaro',Nivelformación))
+Consolidadonivelformación <- data.frame(table(Nivelformación$Nivelformación))
+
+colnames(Nivelformación)[12] <- "Departamento"
+Departamento <- dplyr::filter(Nivelformación,grepl('Caquetá|Cauca|Chocó|Nariño|Putumayo|Tolima|Valle del Cauca',Departamento))
+Consolidadodepartamento <- data.frame(table(Departamento$Departamento))
+
+colnames(Departamento)[14] <- "Municipiopdetyzomac"
+Municipiopdetyzomac <- dplyr::filter(Departamento,grepl('SI',Municipiopdetyzomac))
+ConsolidadoMunicipiopdetyzomac <- data.frame(table(Municipiopdetyzomac$NME_CLASIFICACION_PR))
 ```
+
+**A. Tabla Soporte del Modelo:**
+
+![](images/soporte.png)

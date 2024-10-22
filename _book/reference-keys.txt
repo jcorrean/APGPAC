@@ -61,3 +61,7 @@ requisitos-para-aplicar-1
 situación-problema-4
 datos-relevantes-del-proyecto-3
 monto-financiado-2
+<<<<<<< HEAD
+convocatoria-para-la-formación-de-docentes-en-maestrías-de-investigación-científica-en-el-pacífico-nariñense
+=======
+>>>>>>> a2286f2444138aad0936aa0a0ba7cb84ef458671

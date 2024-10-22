@@ -1,10 +1,8 @@
-# Nombre del Proyecto
-
-Convocatoria para la formación de docentes en maestrías de investigación científica en el pacífico nariñense
+# 06- Convocatoria para la formación de docentes en maestrías de investigación científica en el pacífico nariñense
 
 ## Contexto del Proyecto
 
-Conformar un banco de candidatos elegibles con el fin de otorgar apoyos económicos a nivel de maestría de investigación a docentes que trabajen o acrediten haber trabajado en el último año (previo a la apertura de la presente convocatoria), como docentes en establecimientos educativos de las Subregiones: Pacífico Sur (Francisco Pizarro y Tumaco), Telembí (Barbacoas, Magüí y Roberto Payán) y Sanquianga (El Charco, La Tola, Mosquera, Olaya Herrera y Santa Bárbara) del departamento de Nariño, para fomentar la investigación en el marco de la Política de Investigación e Innovación Orientada por Misiones, contribuyendo al cierre de brechas en materia de ciencia, tecnología e innovación. Estas personas deben estar interesados en cursar un programa de maestría ofertado por La Universidad Santiago de Cali para el desarrollo de un proyecto de investigación, en el marco de las Misiones de la Política de Investigación e Innovación del Ministerio de Ciencia, Tecnología e Innovación.
+Conformar un banco de candidatos elegibles con el fin de otorgar apoyos económicos a nivel de maestría de investigación a docentes que trabajen o acrediten haber trabajado en el último año (previo a la apertura de la presente convocatoria), como docentes en establecimientos educativos de las Subregiones: Pacífico Sur (Francisco Pizarro y Tumaco), Telembí (Barbacoas, Magüí y Roberto Payán) y Sanquianga (El Charco, La Tola, Mosquera, Olaya Herrera y Santa Bárbara) del departamento de Nariño, para fomentar la investigación en el marco de la Política de Investigación e Innovación Orientada por Misiones, contribuyendo al cierre de brechas en materia de ciencia, tecnología e innovación. Estas personas deben estar interesados en cursar un programa de maestría ofertado por La Universidad Santiago de Cali para el desarrollo de un proyecto de investigación, en el marco de las Misiones de la Política de Investigación e Innovación del Ministerio de Ciencia, Tecnología e Innovación.
 
 ## Agencia Financiadora del Proyecto
 
@@ -28,9 +26,9 @@ El monto total del apoyo económico a otorgar a cada beneficiario dependerá de 
 
 [^06-bancopersonasmaestrianarinio-2]: Este beneficio económico no aplica para los programas académicos disponibles en modalidad virtual.
 
-## Datos relevantes del proyecto
+## Datos Relevantes del Proyecto
 
-Las Misiones de la Política de Investigación e Innovación del Ministerio de Ciencia, Tecnología e Innovación:
+**A. Las Misiones de la Política de Investigación e Innovación del Ministerio de Ciencia, Tecnología e Innovación:**
 
 1.  Bioeconomía, ecosistemas naturales, territorios sostenibles: Potenciar el desarrollo territorial sostenible mediante el conocimiento, conservación y aprovechamiento de la biodiversidad y sus servicios ecosistémicos.
 
@@ -42,13 +40,214 @@ Las Misiones de la Política de Investigación e Innovación del Ministerio de C
 
 5.  Ciencia para la paz y la ciudadanía: Poner fin a todas las formas de violencia en Colombia y comprender las diversas causas de violencia como base para construir soluciones tecnológicas y sociales que fomenten y fortalezcan la convivencia pacífica en condiciones de equidad y justicia social.
 
-Maestrías a elegir entre los candidatos seleccionados:
+**B. Maestrías a Elegir Entre los Candidatos Seleccionados:**
 
-![](cuadro maestrías.png)
+![](cuadro%20maestrías.png)
 
-```{r, message==FALSE}
+**C. Requisitos:**
+
+1.  Cumplir con lo establecido con el numeral 3. “Dirigido A” de los Términos de referencia.
+
+2.  Inscribir y finalizar la inscripción de los documentos en el Sistema Integrado de Gestión de Proyectos del Ministerio de Ciencia, Tecnología e Innovación – SIGP, a través del formulario en línea disponible en el portal del Ministerio de Ciencia,Tecnología e Innovación (www.minciencias.gov.co). Lo anterior con la información descrita en el numeral 10 de los presentes términos de referencia y en el Anexo No. 2 “Proyecto de investigación a desarrollar en el marco de la maestría”.
+
+3.  Ser ciudadano(a) colombiano(a). Para acreditar este requisito adjuntar copia legible de la cédula de ciudadanía por ambas caras.
+
+4.  Carta respaldo al docente del establecimiento educativo (Anexo No. 1). Adjuntar el Anexo No. 1 debidamente diligenciado y firmado por el representante legal o delegado del establecimiento educativo que respalda la labor docente del candidato. Este documento acredita que el docente trabaja para la entidad o trabajó durante el último año (previo a la apertura de la presente convocatoria), en un establecimiento educativo de las Subregiones: Pacífico Sur (Francisco Pizarro y Tumaco), Telembí (Barbacoas, Magüí y Roberto Payán) y Sanquianga (El Charco, La Tola, Mosquera, Olaya Herrera y Santa Bárbara) en el departamento de Nariño. En el caso de apoderado(s) o delegado(s), de manera obligatoria deberá anexar el documento que lo faculte para la representación legal del establecimiento educativo.
+
+5.  Acreditación del establecimiento educativo. Para garantizar la validez y existencia de la institución educativa donde labora o laboró el docente, se deben considerar los siguientes requisitos de acreditación:
+
+-   En caso de ser docente en el nivel de educación inicial, educación preescolar, educación básica (primaria cinco grados y secundaria cuatro grados) y educación media (dos grados y culmina con el título de bachiller), el candidato debe adjuntar en PDF el resultado de la búsqueda en el Directorio Único de Establecimientos Educativos19 (DUE), de la entidad que a través del Anexo No. 1 respalda la acreditación de su labor como docente. El establecimiento educativo deberá aparecer en estado activo. En caso de no cumplir con las especificaciones anteriormente mencionadas, será causal de rechazo.
+
+-   En caso de ser docente de educación superior, el candidato debe adjuntar en PDF el resultado de la búsqueda de la institución de educación superior (IES) en el Sistema Nacional de Información de Educación Superior (SNIES), de la entidad que a través del Anexo No. 1 respalda la acreditación de su labor como docente. El establecimiento educativo deberá aparecer en estado activo. En caso de no cumplir con las especificaciones anteriormente mencionadas, será causal de rechazo.
+
+-   Así mismo el docente deberá adjuntar el certificado laboral, en caso de ser una Institución Educativa Pública se adjuntará el certificado emitido por la Secretaría de Educación, y si la entidad es privada se deberá adjuntar el certificado laboral emitido por el representante legal o rector de la Institución.
+
+6.  Proyecto de investigación a desarrollar en el marco de la maestría (Anexo No. 2): El candidato deberá inscribir y finalizar la inscripción del proyecto de investigación en el Sistema Integrado de Gestión de Proyectos del Ministerio de Ciencia, Tecnología e Innovación – SIGP, a través del formulario en línea disponible en el portal del Ministerio de Ciencia, Tecnología e Innovación (www.minciencias.gov.co).
+
+7.  Estado Académico: Debe adjuntar copia del diploma y/o acta de grado del pregrado. Se aceptarán los documentos electrónicos expedidos por las Instituciones de formación. En caso de que el título del pregrado sea de una universidad extranjera se deberá adjuntar la convalidación emitida por el Ministerio de Educación Nacional. NO se aceptan capturas de pantalla de sistemas de información de las Instituciones de Educación. En caso de no cumplir con las especificaciones anteriormente mencionadas, será causal de rechazo.
+
+8.  Acreditar el promedio general acumulado del pregrado. Para acreditar este requisito se debe adjuntar certificado o documento equivalente de la Institución de Educación Superior donde se evidencie el promedio de mínimo 3.8 obtenido durante el pregrado en una escala de 0.0 a 5.0. En caso de que la escala empleada por la IES sea diferente, adjuntar la respectiva equivalencia expedida por la Institución. Serán válidos los documentos electrónicos aprobados y expedidos a través de los sistemas de información de las IES.
+
+9.  Perfil del candidato que asumirá el desarrollo del Proyecto (Anexo No. 3). Proporcionar una descripción detallada del perfil del candidato que desarrollará el proyecto en el marco de su formación en el Programa de Maestría a financiar. El documento debe incluir información relevante sobre sus motivaciones y expectativas para el desarrollo del proyecto de investigación, así como la relación del proyecto con su formación académica y experiencia profesional y respectivamente debe ser firmado por el candidato.
+
+10. Enfoque diferencial y/o interseccional (cuando aplique): Este requisito es opcional y en caso de que los documentos presentados no concuerden con la certificación requerida en el anexo 3, al beneficiario no se le asignará la puntuación correspondiente. Aquellos docentes que pertenezcan a población con enfoque diferencial en alguna de las categorías que se especifica en la Tabla No. 1 “Categorías de enfoque diferencial e interseccional para los candidatos de la convocatoria”, deberán adjuntar en el SIGP la documentación que se especifica en la columna “Descripción” de la Tabla No. 1, para poder optar por los puntos correspondientes al enfoque diferencial o enfoque interseccional, por razón de sus características particulares. Las características de enfoque diferencial que acredite el candidato deberán especificarse en el Anexo No. 3, adjuntando su respectivo soporte.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Notas:**                                                                                                                                                                                                                                                                             |
+|                                                                                                                                                                                                                                                                                        |
+| 1.  Si alguno de los documentos mencionados previamente está en un idioma diferente al español, es obligatorio adjuntar la traducción oficial al español. Se deberán anexar los dos documentos (original y traducido) en un único PDF de acuerdo con la descripción de los requisitos. |
+|                                                                                                                                                                                                                                                                                        |
+| 2.  El Ministerio podrá solicitar en cualquier momento información y documentación adicional, complementaria o aclaraciones de los documentos entregados en la plataforma SIGP.                                                                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+[Subsanación de requisitos establecidos:]{.underline}
+
+El periodo de subsanación de los requisitos exigidos en el presente documento se tramitará con base en las siguientes reglas:
+
+-   En la etapa de subsanación de requisitos no se podrá modificar la información registrada en el formulario SIGP concerniente al candidato, título del proyecto y Área OCDE.
+
+-   El proponente es responsable de consultar permanentemente que sus documentos hayan quedado registrados correctamente en el aplicativo SIGP antes del cierre de la convocatoria y durante el periodo de ajuste de los requisitos de la convocatoria establecido en el CRONOGRAMA de cada uno de los mecanismos de participación.
+
+-   Recuerde que, en el periodo de revisión de requisitos, el Ministerio verificará que los documentos adjuntos presentan la información requerida de forma consistente y reportará en la sección de observaciones generales en el SIGP las inconsistencias en la información de tal modo que el proponente pueda ajustarla directamente en el aplicativo durante el período de ajuste de requisitos establecido en el CRONOGRAMA de cada uno de los mecanismos de participación de esta convocatoria.
+
+-   Los resultados de la etapa de validación de requisitos de la convocatoria pueden ser consultados ingresando al FORMULARIO DE PROYECTOS Y PROGRAMAS, con el usuario y contraseña enviados mediante correo electrónico al momento de registrar el proyecto en el sistema. <https://plataformasigp.minciencias.gov.co:7003/FormularioProyectos/>. Las observaciones se pueden consultar en el módulo “Requisitos”, campo “Observaciones Generales de los Requisitos”. (Ampliando el cuadro de observaciones desde la esquina inferior derecha).
+
+-   El proponente es responsable de garantizar la fiabilidad, coherencia y completitud de la información consignada en el formulario SIGP y en los anexos allegados bajo el marco de la presente convocatoria. La información que no coincida no será tenida en cuenta para continuar en el proceso de la convocatoria.
+
+-   En caso de que el candidato suba alguno de los documentos sin su respectiva firma, tendrá la posibilidad de subsanarlo de acuerdo con la actividad período de subsanación de requisitos en el numeral 17. Cronograma.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Nota:**                                                                                                                                                                                  |
+|                                                                                                                                                                                            |
+| El Ministerio de Ciencia, Tecnología e Innovación podrá solicitar en cualquier momento, información y documentación adicional, complementaria o aclaraciones de los documentos entregados. |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+[Condiciones inhabilitantes:]{.underline}
+
+1.  Incumplir con los requisitos y lineamientos establecidos en los términos de referencia de la convocatoria o que estos no se subsanen dentro de los plazos establecidos.
+
+2.  Alterar alguno de los documentos presentados para participar en la convocatoria. En caso de que se encuentre algún tipo de alteración a los documentos presentados para participar en la convocatoria, el proyecto será́ retirado del proceso de selección y el Ministerio informará a las instancias administrativas y judiciales sobre dicha situación.
+
+3.  Presentar proyectos que ya cuenten con financiación, sea con recursos del Ministerio de Ciencia, Tecnología e Innovación, del Sistema General de Regalías (SGR), o con financiación de otras entidades del Estado.
+
+4.  Ser representante legal del establecimiento educativo que le respalda como docente en el Anexo No. 1.
+
+5.  Ser beneficiario de manera simultánea de convocatorias o invitaciones financiadas o cofinanciadas por EL MINISTERIO o el Sistema General de Regalías.
+
+6.  Presentarse a dos programas de maestrías de manera simultánea en la presente convocatoria.
+
+7.  Haber recibido financiación del Programa de Formación de Alto Nivel a través del Ministerio de Ciencia, Tecnología e Innovación, Colfuturo, Fulbright o convocatorias financiadas por el Sistema General de Regalías o el ICETEX, a la fecha de apertura de la convocatoria
+
+8.  Tener título de Maestría o Doctorado en modalidad tanto presencial como virtual.
+
+9.  Estar cursando actualmente un programa de maestría en modalidad tanto presencial como virtual.
+
+10. Estar incurso en alguna de las causales de inhabilidad e incompatibilidad y que no se encuentre apta para contratar de acuerdo con lo establecido en la Constitución, en la Ley y Reglamentos en cualquier etapa del proceso: precontractual, contractual o post contractual.
+
+Las inhabilidades son de orden Constitucional y legal, el artículo 126 de la Constitución Nacional establece inhabilidades para los grados de parentesco y en la ley se encuentran las inhabilidades contempladas en el Artículo 8 (Inhabilidades e incompatibilidades para contratar) de la Ley 80 de 1993. Disposiciones especiales de la Ley 1474 de 2011 respecto al régimen de inhabilidades y el artículo 71 de la Ley 1952 de 2019 el Código General Disciplinario contempla otras causales de inhabilidad, entre otras normas. Las inhabilidades e incompatibilidades están establecidas para asegurar los intereses públicos y proteger la transparencia, objetividad e imparcialidad en las relaciones entre el Estado y los particulares.
+
+**D. Banco Definitivo de Candiatos:**
+
+En el banco definitivo de candidatos elegibles se incluirá a todos aquellos que hayan cumplido con la totalidad de los requisitos. El banco será ordenado de forma independiente y en estricto orden descendente de calificación por cada Programa de Maestría, teniendo en cuenta los cupos disponibles en cada Programa. Solo se considerarán como elegibles los candidatos que obtengan un puntaje igual o superior a 70 puntos en promedio según lo descrito en el procedimiento de evaluación:
+
+En caso de que dos o más candidatos obtengan el mismo puntaje, para la ubicación de estos en el banco definitivo de candidatos, se procederá a su desempate con la aplicación de los siguientes criterios:
+
+1.  Mayor calificación obtenida en el Criterio 1 aporte técnico y científico del proyecto.
+
+2.  En caso de que el empate persista, se seguirá con el mayor puntaje del criterio 2 Contribución del proyecto al desarrollo del Pacífico Nariñense y al fortalecimiento de la CTeI.
+
+3.  En caso de que el empate persista, se tendrá en cuenta la mayor calificación obtenida en el criterio 3 Capacidad técnica y trayectoria del candidato.
+
+4.  En caso de que el empate persista, se tendrá en cuenta la mayor calificación obtenida en el criterio 4 Capacidad de gestión y articulación de actores en el marco del proyecto de investigación.
+
+5.  En caso de que el empate persista, se tendrá en cuenta la mayor calificación obtenida en el criterio 5 Enfoque diferencial e interseccional.
+
+6.  Finalmente, y como último parámetro de desempate, se tomará como criterio la fecha y hora del registro en la que se generó el proyecto en el sistema.
+
+De acuerdo con el Cronograma de la convocatoria, se concederá un término para solicitar aclaraciones o modificaciones de la publicación preliminar del banco de candidatos elegibles. Una vez éstas sean resueltas, se procederá a la publicación del banco definitivo de candidatos elegibles.
+
+Los resultados de la convocatoria se publicarán en la página web del Ministerio ([https://minciencias.gov.co/)](https://minciencias.gov.co/)) en las fechas establecidas en el numeral 17 Cronograma.
+
+La vigencia del banco definitivo de candidatos elegibles será de dos (2) años a partir de su publicación definitiva. La inclusión de un candidato en el listado no implica obligatoriedad ni compromiso alguno del Ministerio de asignar recursos, ni genera derecho a recibir recursos económicos para quienes hayan presentado las candidaturas correspondientes. En todo caso, el número de beneficiarios se determinará de acuerdo con la disponibilidad de recursos.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Notas:**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 1.  Surtida la publicación definitiva del banco definitivo de candidatos elegibles, el Ministerio publicará el banco de candidatos financiables. Los recursos disponibles serán asignados en estricto orden descendente, de acuerdo con el orden del listado definitivo de candidatos elegibles, en función del número de cupos disponibles según el programa de maestría seleccionado. En el caso de contarse con recursos adicionales para las financiaciones del banco de candidatos elegibles, se publicaran bancos adicionales de candidatos financiables y se informará a los proponentes la fecha de inicio de financiación, la cual puede variar de acuerdo con el momento de publicación y de los recursos disponibles. |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 2.  Una vez publicado el banco definitivo de candidatos elegibles y financiables, el Ministerio informará mediante comunicación escrita y/o electrónica a los aspirantes que hayan sido seleccionados para ser financiados, indicando las instrucciones y condiciones para recibir el apoyo económico.                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| 3.  En caso de contar con recursos adicionales para la financiación del banco definitivo de candidatos elegibles, se publicarán bancos adicionales de candidatos financiables, conservando la asignación en estricto orden descendente, de acuerdo con el orden del banco definitivo de candidatos elegibles, en función del número de cupos disponibles según el programa de maestría seleccionado, y se informará a los candidatos la fecha de inicio de la financiación, la cual puede variar de acuerdo con el momento de publicación y los recursos disponibles.                                                                                                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+## Análisis Para la Selección de Posibles Candidatos Para la Convocatoria
+
+Para realizar el análisis y selección de los posibles candidatos, utilizamos la base de datos "Investigadores reconocidos por convocatoria 2013 - 2021", disponible en Datos Abiertos. El archivo contiene más de 77 mil registros de investigadores reconocidos y de esos hay información sobre las siguientes variables:
+
+![](images/parte%201.png){width="820"}
+
+![](images/parte%202-01.png)
+
+Para llegar al número de posibles candidatos realizamos los siguientes pasos:
+
+1.  Tomamos únicamente los registros relacionados con el año 2021 para reducir la muestra. Utiliiando el siguiente código:
+
+Investigadores2021 \<- Investigadores_Reconocidos_por_convocatoria_20241018 %\>% filter(.,ano_extr=="2021")
+
+2.  Pasamos de más de 77 mil registros a 21.094 registros. Dividimos esa última muestra entre las diferentes cateogorías de investigadores. Utilizando el siguiente código:
+
+Consolidado \<- data.frame(table(Investigadores2021\$NME_CLASIFICACION_PR))
+
+![](images/consolidado.png)
+
+3.  Con la base de 21.094 registros empezamos a filtar por las áreas de conocimiento que aplican para la convocatoria, reduciendo la muestra a 15.908 registros. Utilizando el siguiente código:
+
+Areas \<- dplyr::filter(Investigadores2021,grepl('Ciencias Agrícolas\|Ciencias Naturales',Areas))
+
+4.  Los 15.908 registros los clasificamos entre las diferentes áreas de conocimiento. Utilizando el siguiente código:
+
+ConsolidadoAreas \<- data.frame(table(Areas\$Areas))
+
+![](images/consolidado%20áreas.png)
+
+5.  Para seguir reduciendo la muestra, aplicamos el filtro de nivel de formación de los registrados. Dejando una nueva muestra de 14.121. Utilizando el siguiente código:
+
+Nivelformación \<- dplyr::filter(Areas,grepl('Doctorado\|Especialización\|Maestría/Magister\|Pregrado/Universitaro',Nivelformación))
+
+![](images/nivel%20de%20formación.png)
+
+6.  El siguiente filtro que se aplicó fue el de departamento de nacimiento de los registrados, al ser un factor que da puntos extras sobre el posible candidato o candidata, reduciendo la muestra a 2.390 registrado. Utilizando el siguiente código:
+
+Departamento \<- dplyr::filter(Nivelformación,grepl('Caquetá\|Cauca\|Chocó\|Nariño\|Putumayo\|Tolima\|Valle del Cauca',Departamento))
+
+![](images/departamentos.jpeg)
+
+7.  Por último, aplicamos el flitro de municipio de nacimiento, seleccionado los municipios ZOMAC y PDET de los departamentos del filtro anterior, dando como resultado una muestra final de 206 posibles candidatos, distribuidos en tres categorías de investigadores. Utilizando el siguiente código:
+
+Municipiopdetyzomac \<- dplyr::filter(Departamento,grepl('SI',Municipiopdetyzomac))
+
+![](images/MUNICIPIOS.jpeg)
+
+## Conclusiones
+
+Con base en los filtros aplicados, se puede inferir que existe una mayor probabilidad de selección dentro del grupo de investigadores junior al ser el grupo con mayor registro. Además, consideramos que es más probable que exista un mayor interés de aplicar y realizar una maestría por parte de los investigadores junior y asociados para profesionalziarse y profundizar aún más sus conocimientos, frente a un investigador senior, que es probable ya tenga un doctorado y menos incentivos para aplicar a una maestría.
+
+Teniendo en cuenta que la mayoría de registrados provienen del departamento del Valle de Cauca, pero que el proyecto esta enfocado en el departamento de Nariño, consideramos importante que se priorice los perfiles de las personas provenientes del departamento objetivo.
+
+Por último, creemos que la muestra de 206 registrados ofrece un abanico más amplio de perfiles, incrementando la probabilidad de encontrar candidatos con mayor potencial. También da mayor margen de transparencia sobre la selección, al reducir la probabilidad de que sea por favoritismo o conexiones.
+
+## Código Completo
+
+```{r}
 library(readxl)
-Investigadores <- read_excel("Data/Investigadores_Reconocidos_por_convocatoria_20241018.xlsx")
+Investigadores_Reconocidos_por_convocatoria_20241018 <- read_excel("Data/Investigadores_Reconocidos_por_convocatoria_20241018.xlsx")
+View(Investigadores_Reconocidos_por_convocatoria_20241018)
+variable.names(Investigadores_Reconocidos_por_convocatoria_20241018)
+
 library(dplyr)
-pie(table(Investigadores$NME_NIV_FORM_PR))
+Investigadores_Reconocidos_por_convocatoria_20241018$ANO_CONVO <- as.Date(Investigadores_Reconocidos_por_convocatoria_20241018$ANO_CONVO, format = "%Y-%m-%d")
+Investigadores_Reconocidos_por_convocatoria_20241018$ano_extr <- format(Investigadores_Reconocidos_por_convocatoria_20241018$ANO_CONVO, "%Y")
+
+Investigadores2021 <- Investigadores_Reconocidos_por_convocatoria_20241018 %>% filter(.,ano_extr=="2021")
+Consolidado <- data.frame(table(Investigadores2021$NME_CLASIFICACION_PR))
+
+colnames(Investigadores2021)[8] <- "Areas" 
+Areas <- dplyr::filter(Investigadores2021,grepl('Ciencias Agrícolas|Ciencias Naturales|Ciencias Sociales|Ingeniería y Tecnología',Areas))
+ConsolidadoAreas <- data.frame(table(Areas$Areas))
+
+colnames(Areas)[17] <- "Nivelformación" 
+Nivelformación <- dplyr::filter(Areas,grepl('Doctorado|Especialización|Maestría/Magister|Pregrado/Universitaro',Nivelformación))
+Consolidadonivelformación <- data.frame(table(Nivelformación$Nivelformación))
+
+colnames(Nivelformación)[12] <- "Departamento"
+Departamento <- dplyr::filter(Nivelformación,grepl('Caquetá|Cauca|Chocó|Nariño|Putumayo|Tolima|Valle del Cauca',Departamento))
+Consolidadodepartamento <- data.frame(table(Departamento$Departamento))
+
+colnames(Departamento)[14] <- "Municipiopdetyzomac"
+Municipiopdetyzomac <- dplyr::filter(Departamento,grepl('SI',Municipiopdetyzomac))
+ConsolidadoMunicipiopdetyzomac <- data.frame(table(Municipiopdetyzomac$NME_CLASIFICACION_PR))
 ```
+
+**A. Tabla Soporte del Modelo:**
+
+![](images/soporte.png)

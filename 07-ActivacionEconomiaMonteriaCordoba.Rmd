@@ -4,9 +4,9 @@
 Este proyecto busca financiar iniciativas empresariales de diferentes sectores que sean desarrolladas por emprendedores que residan en la ciudad de Montería, departamento de Córdoba.
 
 ```{r}
-#setwd("~/GitHub/APGPAC/Data") 
+setwd("~/GitHub/APGPAC/Data")
 library(readr)
-EMPRESAS_REGISTRADAS_MONTERIA_2005_2019_20241011 <- read_delim("Data/EMPRESAS_REGISTRADAS_MONTERIA_2005-2019_20241011_V2.csv",
+EMPRESAS_REGISTRADAS_MONTERIA_2005_2019_20241011 <- read_delim("EMPRESAS_REGISTRADAS_MONTERIA_2005-2019_20241011_V2.csv",
                                                                delim = ";", escape_double = FALSE, trim_ws = TRUE)
 
 Empresas=EMPRESAS_REGISTRADAS_MONTERIA_2005_2019_20241011
@@ -32,9 +32,9 @@ MonteriaActividadesPrincipales <- head(MonteriaActividadesDesc, 10)
 
 #diagrama barras
 
-#setwd("~/GitHub/APGPAC/Data")
+setwd("~/GitHub/APGPAC/Data")
 library(readr)
-EMPRESAS_REGISTRADAS_MONTERIA_2005_2019_20241011 <- read_delim("Data/EMPRESAS_REGISTRADAS_MONTERIA_2005-2019_20241011_V2.csv",
+EMPRESAS_REGISTRADAS_MONTERIA_2005_2019_20241011 <- read_delim("EMPRESAS_REGISTRADAS_MONTERIA_2005-2019_20241011_V2.csv",
                                                                delim = ";", escape_double = FALSE, trim_ws = TRUE)
 
 Empresas=EMPRESAS_REGISTRADAS_MONTERIA_2005_2019_20241011

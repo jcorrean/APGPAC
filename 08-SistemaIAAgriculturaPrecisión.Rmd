@@ -36,38 +36,30 @@ Los fondos para la financiación de los proyectos por parte del FONDOCYT se entr
 4) Posibilidad de ajustes: En casos donde se requiera la adquisición de equipos necesarios y se proyecte un exceso en el presupuesto anual aprobado, el MESCyT puede autorizar una dispensa, siempre que la petición esté debidamente justificada.
 
 ## Datos relevantes del proyecto
-<<<<<<< HEAD
+
 
 El problema de las precipitaciones en República Dominicana se observa a continuación. Entre 2018 y 2024, las precipitaciones han estado por debajo de los 350 milímetros a excepción de dos ocasiones que han excedido los 400 milímetros. 
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
 ```{r}
 library(readxl)
 PrecipitacionRD <- read_excel("Data/PrecipitacionRD.xlsx")
-hist(PrecipitacionRD$`PRECIPITACION EN MILIMETRO`)
+hist(PrecipitacionRD$`PRECIPITACION`)
 library(tidyr)
 Lluvias <- PrecipitacionRD %>% unite(Fecha, MES, AÑO)
 colnames(Lluvias)[2] <- "Precipitacion"
 ```
-=======
->>>>>>> Stashed changes
->>>>>>> ec767ed163f48d9e73b7cee0f2445e980f3d30f9
+
 
 El problema de las precipitaciones en República Dominicana se observa a continuación. Entre 2018 y 2024, las precipitaciones han estado por debajo de los 350 milímetros a excepción de dos ocasiones que han excedido los 400 milímetros.  
 
-<<<<<<< Updated upstream
 
-
-=======
->>>>>>> Stashed changes
 ```{r}
 library(readxl)
 library(ggplot2)
 PrecipitacionRD <- read_excel("Data/PrecipitacionRD.xlsx")
 
 ggplot(Lluvias, aes(x = Fecha, y = Precipitacion, group = ESTACION)) + geom_line(color = "blue") +
-  labs(title = "Precipitación en San Francisco de Macorís", x = "Fecha", y = "Precipitación en milímetros") +
+  labs(title = "Precipitacion en San Francisco de Macoris", x = "Fecha", y = "Precipitación en milímetros") +
   theme_minimal() +
   theme(
     plot.title = element_text(hjust = 0.5, margin = margin(b = 20)),
@@ -76,6 +68,63 @@ ggplot(Lluvias, aes(x = Fecha, y = Precipitacion, group = ESTACION)) + geom_line
     axis.text.x = element_text(angle = 90, hjust = 1)  # Rotate x-axis labels by 45 degrees
   )
 ```
+
+Según la FAO, para la producción de arroz de tipo tradicional, se necesita un rango entre 10,000 y 15,000 mililitros de agua. En la gráfica acontinuación, se muestra las precipitaciones ideales entre los mismos rangos de fecha para la correcta producción de arroz.
+
+```{r}
+library(readxl)
+library(ggplot2)
+PrecipitacionIdeal <- read_excel("Data/PrecipitacionIdeal.xlsx")
+library(tidyr)
+Ideal <- PrecipitacionIdeal %>% unite(Fecha, MES, AÑO)
+colnames(Ideal)[3] <- "Precipitacion"
+ggplot(Ideal, aes(x = Fecha, y = Precipitacion, group = ESTACION)) + geom_line(color = "red") +
+  labs(title = "Precipitación ideal para la producción de arroz", x = "Fecha", y = "Precipitación en milímetros") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, margin = margin(b = 20)),
+    plot.margin = margin(t = 20, r = 10, b = 10, l = 10),
+    axis.title.y = element_text(margin = margin(r = 20)),
+    axis.text.x = element_text(angle = 90, hjust = 1)  # Rotate x-axis labels by 45 degrees
+  )
+```
+
+En el siguiente gráfico se muestran ambos históricos donde se puede visualizar comparativamente las precipitaciones de San Francisco de Macorís versus las precipitaciones ideales en el mismo rango de tiempo.
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(readxl)
+
+
+datos <- read_excel("Data/PrecipitacionIdeal2.xlsx")
+
+colnames(datos) <- c("ESTACION", "PRECIPITACION_REAL", "PRECIPITACION_IDEAL", "MES", "AÑO")
+
+datos_largos <- datos %>%
+  pivot_longer(cols = c(PRECIPITACION_REAL, PRECIPITACION_IDEAL), 
+               names_to = "Tipo", 
+               values_to = "Precipitacion") %>%
+  mutate(Tipo = ifelse(Tipo == "PRECIPITACION_REAL", "Real", "Ideal"))
+
+datos_largos <- datos_largos %>%
+  mutate(Fecha = paste(MES, AÑO, sep = "-"))
+
+ggplot(datos_largos, aes(x = Fecha, y = Precipitacion, color = Tipo, group = Tipo)) + 
+  geom_line() +
+  labs(title = "Comparación de Precipitación Real e Ideal", 
+       x = "Fecha", 
+       y = "Precipitación en milímetros") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, margin = margin(b = 20)),
+    plot.margin = margin(t = 20, r = 10, b = 10, l = 10),
+    axis.title.y = element_text(margin = margin(r = 20)),
+    axis.text.x = element_text(angle = 90, hjust = 1)
+  ) + scale_color_manual(values = c("blue", "red"), labels = c("Ideal", "Real"))
+```
+
 
 
 ## Monto financiado
